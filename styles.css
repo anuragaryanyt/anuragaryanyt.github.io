@@ -34,6 +34,7 @@ body {
   --clr-fg-alt: #444;
   --clr-primary: #2978b5;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
 }
 
 .dark {
@@ -467,6 +468,12 @@ main {
   z-index: 1;
   opacity: 0.8;
   font-size: 18px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.date {
+  margin-right: 20px; /* Adjust as needed for the desired space */
 }
 
 .content .para-sm {
