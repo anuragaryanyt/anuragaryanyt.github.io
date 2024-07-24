@@ -532,6 +532,7 @@ main {
   font-size: 20px;
   line-height: 1.3;
   z-index: 1;
+  color: var(--clr-fg-alt);
 }
 
 
