@@ -34,7 +34,7 @@ body {
   --clr-fg-alt: #444;
   --clr-primary: #2978b5;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  
+
 }
 
 .dark {
@@ -220,7 +220,7 @@ button {
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
-  position:sticky;
+  position: sticky;
   top: 0;
 }
 
@@ -418,6 +418,19 @@ main {
   }
 }
 
+.last-updated {
+  font-size: 10px !important;
+}
+
+/* .last-updated {
+  font-size: 12px;
+
+}
+@media (max-width: 600px) {
+  .last-updated {
+    font-size: 10px;
+  }
+} */
 
 
 .card {
@@ -425,7 +438,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;  /* Ensures cards take full width in the grid column */
+  width: 100%;
+  /* Ensures cards take full width in the grid column */
   border-radius: 24px;
   line-height: 1.6;
   transition: all 0.64s cubic-bezier(0.23, 1, 0.32, 1);
@@ -475,7 +489,8 @@ main {
 }
 
 .date {
-  margin-right: 20px; /* Adjust as needed for the desired space */
+  margin-right: 20px;
+  /* Adjust as needed for the desired space */
 }
 
 .content .para-sm {
@@ -496,22 +511,29 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px; /* Adjust the size of the circle */
-  height: 70px; /* Adjust the size of the circle */
+  width: 70px;
+  /* Adjust the size of the circle */
+  height: 70px;
+  /* Adjust the size of the circle */
   border-radius: 50%;
   /* background-color: #2978b5; */
   color: #ffffff;
   font-size: 18px;
   z-index: 1;
   transition: all 0.64s cubic-bezier(0.23, 1, 0.32, 1);
-  padding: 10px; /* Add padding between image and circle */
+  padding: 10px;
+  /* Add padding between image and circle */
 }
 
 .icon img {
-  width: 100%; /* Take up full width of the parent circle */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Ensure the image itself is also circular */
-  object-fit: cover; /* Cover the entire space within the circle */
+  width: 100%;
+  /* Take up full width of the parent circle */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 50%;
+  /* Ensure the image itself is also circular */
+  object-fit: cover;
+  /* Cover the entire space within the circle */
 }
 
 .card:hover .icon {
@@ -525,7 +547,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   grid-gap: 2em;
-} 
+}
 
 .content .cheading {
   font-weight: 600;
@@ -534,6 +556,9 @@ main {
   z-index: 1;
   color: var(--clr-fg-alt);
 }
+
+
+
 
 
 /* FOR BOUNCY EFFECT TO THE SOCIAL CARD */
@@ -672,14 +697,15 @@ main {
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
   height: 50px;
   width: 200px;
 }
 
-.scard::before, .scard::after {
+.scard::before,
+.scard::after {
   position: absolute;
   display: flex;
   align-items: center;
@@ -704,7 +730,7 @@ main {
 }
 
 .scard:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .scard:hover span {
