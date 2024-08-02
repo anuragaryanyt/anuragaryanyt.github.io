@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png">
+    <link rel="stylesheet" href="/blog/blog_template.css" />
+    <title>Raj Aryan</title>
+</head>
+
+<body class="light" id="top">
+    <header class="header center">
+        <h3>
+            <a href="/" class="link">RA.</a>
+        </h3>
+
+        <nav class="nav center">
+            <ul class="nav__list center">
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="/blog/blog.html">Blog</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="/#projects">Projects</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="/#skills">Skills</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="/#certificates">Certificates</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="/#contact">Contact</a>
+                </li>
+            </ul>
+            <button type="button" aria-label="toggle theme" class="btn btn--icon">
+                <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+            </button>
+            <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
+                <i aria-hidden="true" class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="about center">
+            <!-- <h1>Hi, I am <span class="about__name">Raj Aryan.</span></h1> -->
+            <h2 class="about__role">Number Plate Recognition System.</h2>
+            <p class="about__desc">
+
+            <h4>Abstract</h4><br>
+
+            The Number Plate Recognition System presented in this project leverages computer
+            vision techniques and optical character recognition (OCR) to detect and recognize
+            number plates in real-time video streams. Implemented using Python and OpenCV,
+            the system processes each frame of the video, identifies number plate regions using
+            a pre-trained Haar cascade classifier, and extracts the alphanumeric characters
+            using Tesseract OCR. The recognized plate numbers are then matched against a
+            database of registered vehicles stored in MongoDB. Upon successful recognition,
+            the system retrieves and displays associated vehicle information, such as owner
+            name, make, model, and color, on the video frame. Additionally, recognized plates
+            are logged into a historical database for further analysis and tracking.
+            <br>
+            The system also includes a web interface built with Flask, enabling functionalities
+            like adding new vehicles to the database and viewing recognized plate records.
+            Moreover, to ensure secure access, the system incorporates user authentication,
+            requiring admin credentials for certain operations. Overall, the Number Plate
+            Recognition System offers a robust solution for automatic vehicle identification,
+            with potential applications in traffic management, law enforcement, and parking
+            systems.
+            <br><br>
+
+            <h4> Introduction</h4><br>
+
+            In recent years, the integration of computer vision technologies with everyday
+            applications has led to significant advancements in various fields, ranging from
+            surveillance and security to transportation and automation. One such application
+            is the development of a Number Plate Recognition System, which employs a
+            combination of image processing techniques and optical character recognition
+            (OCR) to automatically identify and recognize number plates in real-time video
+            streams. This system holds immense potential for enhancing traffic management,
+            law enforcement, and parking systems by providing efficient and accurate vehicle
+            identification capabilities.
+            <br><br>
+            In recent years, the integration of computer vision technologies with everyday
+            applications has led to significant advancements in various fields, ranging from
+            surveillance and security to transportation and automation. One such application
+            is the development of a Number Plate Recognition System, which employs a
+            combination of image processing techniques and optical character recognition
+            (OCR) to automatically identify and recognize number plates in real-time video
+            streams. This system holds immense potential for enhancing traffic management,
+            law enforcement, and parking systems by providing efficient and accurate vehicle
+            identification capabilities.
+            <br>
+            <img src="/icons/pic1_1.png" alt="Number plate is being recognized" height=50% width="80%">
+            <br>
+            Key components of the Number Plate Recognition System include a Haar cascade
+            classifier for number plate detection, Tesseract OCR for character recognition, and
+            MongoDB for storing and managing vehicle information. The system architecture
+            is designed to facilitate real-time processing of video streams, ensuring prompt
+            identification of vehicles as they pass through the monitored area. Additionally, a
+            user-friendly web interface built with Flask framework allows for functionalities
+            such as adding new vehicles to the database and viewing recognized plate records.
+            <br><br>
+            This project aims to address several challenges associated with Number plate
+            recognition, including variations in plate appearance due to factors such as lighting
+            conditions, viewing angle, and occlusions. Advanced image processing techniques
+            are employed to enhance the robustness and accuracy of plate detection and
+            character recognition, thereby improving the overall performance of the system.
+            Furthermore, the integration of user authentication mechanisms ensures secure
+            access to system functionalities, preventing unauthorized users from tampering
+            with the database or system settings.
+            <br><br>
+
+            <h4>SYSTEM COMPONENTS</h4><br>
+
+            <!-- ⇶ -->
+            ▶ Python:
+            Programming language used for system development.
+            Provides flexibility, ease of use, and extensive libraries for image processing.
+            <br><br>
+            ▶ OpenCV (Open Source Computer Vision Library):
+            Integral for image and video processing tasks.
+            Facilitates license plate detection and optical character recognition (OCR).
+            <br><br>
+            ▶ Flask:
+            Web framework for building the user interface.
+            Enables communication between the backend and frontend components.
+            <br><br>
+            ▶ MongoDB:
+            NoSQL database used for storing recognized plate information.
+            Provides scalability, flexibility, and compatibility with Python-based applications.
+
+            <br><br>
+
+
+            <h4>WORK FLOW</h4><br>
+
+            <img src="/icons/workflow.png" alt="WorkFlow Chart" height=70% width=80%>
+
+            <br><br>
+
+            <h4>System Architecture </h4><br>
+
+            <img src="/icons/system arch 2.png" alt="WorkFlow Chart" height=80% width=90%>
+
+            <br><br>
+
+            <h4>Libraries</h4><br>
+            ⇶ Install all the libraries and required dependencies.
+            <br><br>
+
+            <div id="card" class="card">
+                <div class="content">
+                    <div class="card-body">
+                        <div class="code-container float-animation">
+                            <span class="line"><span class="code-comment">// Libraries</span></span>
+                    
+                            <span class="line"> > import os</span>
+                            <span class="line"> > from unittest import result</span>
+                            <span class="line"> > import cv2</span>
+                            <span class="line"> > from datetime import datetime, timedelta, timezone</span>
+                            <span class="line"> > import pytesseract</span>
+                            <span class="line"> > import requests</span>
+                            <span class="line"> > from PIL import Image</span>
+                            <span class="line"> > from flask import Flask, jsonify, redirect, render_template, Response,
+                                request, session, url_for</span>
+                            <span class="line"> > import threading</span>
+                            <span class="line"> > from pymongo import MongoClient</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h4>Image Pre-Processing</h4><br>
+
+            ▶ Edge Detection:
+            Edge detection is indirectly utilized through the use of the pre-trained license
+            plate detection cascade (plate_cascade). While the specific edge detection
+            algorithm is not explicitly mentioned in the code, the detectMultiScale function
+            of OpenCV's CascadeClassifier class detects objects based on edges in the input
+            image. This method inherently involves edge detection techniques to identify
+            regions of interest (license plates) based on edge features.
+            <br><br>
+            ▶Contour Tracing:
+            Contour tracing is employed to highlight the boundaries of detected license
+            plates. After detecting the regions of interest using the cascade classifier, the
+            code draws rectangles around these regions, effectively outlining the contours of
+            the license plates.
+            <br>
+            <img src="/icons/imageprocesing.jpg" alt="WorkFlow Chart" height=35% width=50%>
+
+            <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <br>
+
+            <h6>next topic</h6>
+
+
+
+
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
