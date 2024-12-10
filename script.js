@@ -4,8 +4,8 @@ const btnTheme = document.querySelector('.fa-moon')
 const btnHamburger = document.querySelector('.fa-bars')
 
 const addThemeClass = (bodyClass, btnClass) => {
-  body.classList.add(bodyClass)
-  btnTheme.classList.add(btnClass)
+	body.classList.add(bodyClass)
+	btnTheme.classList.add(btnClass)
 }
 
 const getBodyTheme = localStorage.getItem('portfolio-theme')
@@ -20,7 +20,7 @@ const setTheme = (bodyClass, btnClass) => {
 	body.classList.remove(localStorage.getItem('portfolio-theme'))
 	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
 
-  addThemeClass(bodyClass, btnClass)
+	addThemeClass(bodyClass, btnClass)
 
 	localStorage.setItem('portfolio-theme', bodyClass)
 	localStorage.setItem('portfolio-btn-theme', btnClass)
@@ -61,3 +61,18 @@ const scrollUp = () => {
 }
 
 document.addEventListener('scroll', scrollUp)
+
+// prevent shortcut keys 
+document.addEventListener('keydown', function (e) {
+	if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+		e.preventDefault();
+	}
+	if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+		e.preventDefault();
+	}
+});
+
+// prevent right clicks
+document.addEventListener('contextmenu', function (e) {
+	e.preventDefault();
+});
