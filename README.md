@@ -1,4 +1,4 @@
-<img src="https://socialify.git.ci/anuragaryanyt/profile/image?description=1&font=Raleway&forks=1&language=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Light" alt="profile" width="400" height="200" />
+<img src="https://socialify.git.ci/anuragaryanyt/profile/image?description=1&font=Raleway&forks=1&language=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Light" alt="profile" width="480" height="240" />
 
 # Portfolio Website
 
