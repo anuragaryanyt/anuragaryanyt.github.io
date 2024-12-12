@@ -10,7 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
   <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="/styles.css" />
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <meta NAME="Description" CONTENT="Raj Aryan portfolio " />
+  </b:if>
+  <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
+  <meta NAME="Author" CONTENT="Raj Aryan " />
+  <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
+  <meta NAME="Country" CONTENT="India" />
+  <meta NAME="Robots" CONTENT="All" />
   <title>Raj Aryan</title>
 </head>
 
@@ -59,12 +68,32 @@
   <main>
     <!-- About -->
     <div class="about center">
-      <h1>Hi, I am <span class="about__name">Raj Aryan.</span></h1>
+      <div style="text-align: center">
+        <!-- <img src="https://shorturl.at/pcRGt" class="w3-margin" alt="image" width="200px" height="200px" -->
+        <!-- https://drive.google.com/file/d/1spnoasvRCIwVxq_5YZu4Xm_Axt0fnsc8/view?usp=sharing -->
+
+        <img src="https://drive.google.com/thumbnail?id=1spnoasvRCIwVxq_5YZu4Xm_Axt0fnsc8" class="w3-margin" alt="image"
+          width="200px" height="200px" style="border-radius: 50%;">
+      </div>
+      <br>
+
+
+
+      <h1>Hi, I am <span class="about__name">Raj Aryan</span></h1>
       <!-- <h2 class="about__role">A Front end Developer.</h2> -->
+
       <p class="about__desc">
-        a student at Kalinga Institute of Industrial Technology (KIIT) in Bhubaneswar. I’m really interested in database management, especially using MySQL and MongoDB. I enjoy designing and improving databases to ensure they work well and keep the data secure. I'm also currently learning Machine Learning to expand my skills even further.
+        currently pursuing a bachelor's degree in Computer Science & Engineering at KIIT University, Bhubaneswar. With a
+        strong academic background, I specialize in software development, database management, & machine learning. I'm
+        committed to developing innovative solutions and enhancing systems by leveraging the latest technologies. <br>
+        In addition to my technical skills in programming languages like C++, Python and C, I am passionate about
+        database management systems (DBMS). I am particularly proficient in working with MySQL.
         <br><br>
-        I’m also skilled in programming with Python, C++, and C, and I enjoy using these languages to solve problems and create new solutions. As I continue my studies, I’m excited to put my skills to work in real-world situations and connect with others in the tech field. Looking forward to connecting with you!
+        Outside of my academic and professional endeavors, I have a keen interest in cricket, which helps me build
+        teamwork and leadership skills. I also enjoy staying informed about geopolitics, global affairs, and emerging
+        technology trends, which keeps me connected to the ever-evolving world around us. <br>
+        Eager to continue expanding my knowledge and skills, I am excited to collaborate with professionals in the tech
+        field and contribute meaningfully to real-world projects.
       </p>
 
       <div class="about__contact center">
@@ -89,6 +118,9 @@
       <h2 class="section__title">Projects</h2>
 
       <div class="projects__grid">
+
+        <!-- project 1 -->
+
         <div class="project">
           <h3>Number Plate Detection System</h3>
           <p class="project__description">
@@ -112,28 +144,58 @@
           </a>
         </div>
 
-
+        <!-- project 2 -->
         <div class="project">
-          <h3>Portfolio Website</h3>
+          <h3>Resume Screening & Placement Prediction</h3>
           <p class="project__description">
-            Built with HTML and CSS, my portfolio website highlights my projects and skills in a sleek, user-friendly
-            interface. Explore my work and achievements in a visually appealing environment.
+            This project leverages Machine Learning and Natural Language Processing (NLP) for efficient resume screening
+            and placement prediction.
           </p>
           <ul class="project__stack">
-            <li class="project__stack-item">HTML</li>
-            <li class="project__stack-item">CSS</li>
-            <!-- <li class="project__stack-item">React</li> -->
+            <li class="project__stack-item">NumPy</li>
+            <li class="project__stack-item">Pandas</li>
+            <li class="project__stack-item">Scikit-learn</li>
+            <li class="project__stack-item">Matplotlib</li>
+            <li class="project__stack-item">Seaborn</li>
           </ul>
 
-          <a href="https://github.com/anuragaryanyt/profile" aria-label="source code" class="link link--icon">
+          <a href="https://github.com/anuragaryanyt/ResumeScreeningPlacementPrediciton" aria-label="source code"
+            class="link link--icon">
             <i aria-hidden="true" class="fab fa-github"></i>
           </a>
-          <a href="https://rajaryan.netlify.app" aria-label="live preview" class="link link--icon">
+          <a href="https://github.com/anuragaryanyt/ResumeScreeningPlacementPrediciton/blob/main/Major_Project_Notebook.ipynb"
+            aria-label="live preview" class="link link--icon">
             <i aria-hidden="true" class="fas fa-external-link-alt"></i>
           </a>
         </div>
 
 
+        <!-- project 3 -->
+        <div class="project">
+          <h3>Banking Management System</h3>
+          <p class="project__description">
+            Utilizing Python our Bank Management System offers a robust solution for managing banking operations.
+            Seamlessly handle customer accounts, transactions, and employee management within a secure, efficient
+            database environment.
+          </p>
+          <ul class="project__stack">
+            <li class="project__stack-item">Python</li>
+            <!-- <li class="project__stack-item">TypeScript</li>
+          <li class="project__stack-item">React</li> -->
+          </ul>
+
+          <a href="https://github.com/anuragaryanyt/BankingSystemPY" aria-label="source code" class="link link--icon">
+            <i aria-hidden="true" class="fab fa-github"></i>
+          </a>
+          <a href="https://github.com/anuragaryanyt/BankingSystemPY" aria-label="live preview" class="link link--icon">
+            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+
+
+
+        <!-- project 4 -->
         <div class="project">
           <h3>Weather App</h3>
           <p class="project__description">
@@ -156,28 +218,27 @@
         </div>
 
 
+
+        <!-- project 5 -->
         <div class="project">
-          <h3>Banking Management System</h3>
+          <h3>Portfolio Website</h3>
           <p class="project__description">
-            Utilizing Python our Bank Management System offers a robust solution for managing banking operations.
-            Seamlessly handle customer accounts, transactions, and employee management within a secure, efficient
-            database environment.
+            Built with HTML and CSS, my portfolio website highlights my projects and skills in a sleek, user-friendly
+            interface. Explore my work and achievements in a visually appealing environment.
           </p>
           <ul class="project__stack">
-            <li class="project__stack-item">Python</li>
-            <!-- <li class="project__stack-item">TypeScript</li>
-            <li class="project__stack-item">React</li> -->
+            <li class="project__stack-item">HTML</li>
+            <li class="project__stack-item">CSS</li>
+            <!-- <li class="project__stack-item">React</li> -->
           </ul>
 
-          <a href="https://github.com/anuragaryanyt/BankingSystemPY" aria-label="source code" class="link link--icon">
+          <a href="https://github.com/anuragaryanyt/profile" aria-label="source code" class="link link--icon">
             <i aria-hidden="true" class="fab fa-github"></i>
           </a>
-          <a href="https://github.com/anuragaryanyt/BankingSystemPY" aria-label="live preview" class="link link--icon">
+          <a href="https://rajaryan.netlify.app" aria-label="live preview" class="link link--icon">
             <i aria-hidden="true" class="fas fa-external-link-alt"></i>
           </a>
         </div>
-
-
 
 
 
@@ -191,20 +252,28 @@
       <ul class="skills__list">
         <li class="skills__list-item btn btn--plain">C++</li>
         <li class="skills__list-item btn btn--plain">Python</li>
-        <li class="skills__list-item btn btn--plain">HTML</li>
-        <li class="skills__list-item btn btn--plain">CSS</li>
         <li class="skills__list-item btn btn--plain">C</li>
         <li class="skills__list-item btn btn--plain">Java</li>
+        <li class="skills__list-item btn btn--plain">HTML</li>
+        <li class="skills__list-item btn btn--plain">CSS</li>
         <li class="skills__list-item btn btn--plain">MySQL</li>
         <li class="skills__list-item btn btn--plain">MongoDB</li>
+        <li class="skills__list-item btn btn--plain">Oracle SQL</li>
+        <li class="skills__list-item btn btn--plain">Cloud Computing</li>
         <li class="skills__list-item btn btn--plain">JavaScript</li>
-        <li class="skills__list-item btn btn--plain">GitHub</li>
-        <li class="skills__list-item btn btn--plain">Git</li>
-        <li class="skills__list-item btn btn--plain">Linux</li>
-        <li class="skills__list-item btn btn--plain">Flask</li>
-        <li class="skills__list-item btn btn--plain">openCV</li>
+        <li class="skills__list-item btn btn--plain">Numpy</li>
         <li class="skills__list-item btn btn--plain">Pandas</li>
-        <!-- <li class="skills__list-item btn btn--plain">Pandas</li> -->
+        <li class="skills__list-item btn btn--plain">Matplotlib</li>
+        <li class="skills__list-item btn btn--plain">OpenCV</li>
+        <li class="skills__list-item btn btn--plain">Flask</li>
+        <li class="skills__list-item btn btn--plain">Git</li>
+        <li class="skills__list-item btn btn--plain">GitHub</li>
+        <li class="skills__list-item btn btn--plain">Linux</li>
+        <li class="skills__list-item btn btn--plain">Netlify</li>
+        <li class="skills__list-item btn btn--plain">Vercel</li>
+        <li class="skills__list-item btn btn--plain">Visual Studio</li>
+        <li class="skills__list-item btn btn--plain">Visual Studio Code</li>
+
 
       </ul>
     </section>
@@ -241,7 +310,8 @@
               <img src="icons/ms.png" alt="Microsoft Logo">
             </div>
             <p class="cheading">Microsoft Azure SQL
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
             <!-- <p class="para">
             </p> -->
             <p class="para para-sm">
@@ -557,16 +627,63 @@
 
 
 
-<!-- Education -->
+    <!-- Education -->
 
     <section class="section skills" id="education">
       <h2 class="section__title">Education</h2>
-      <div style="text-align: center;">
-        <img src="icons/raj Education page.jpg" height="90%" width="80%" alt="Education Image">
+
+      <div class="timeline">
+        <div class="container left">
+          <div class="date">Sep 2021-Now</div>
+          <i class="icon fa fa-home"></i>
+          <div class="content">
+            <h2><strong>Kalinga Institute of Industrial Technology (KIIT) </strong></h2>
+            <p>
+              Bachelor of Technology in Computer Science <br> Bhubaneswar, Odisha
+            </p>
+            <p>
+              <strong> Courses: </strong> OOPS, Operating Systems, Data Structure and Algorithm, DBMS, Computer
+              Networks, Big Data, Artificial Intelligence, Cloud Computing, Software Engineering.
+            </p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="date">Jun 2019-May 2021</div>
+          <i class="icon fa fa-gift"></i>
+          <div class="content">
+            <h2><strong>Vivekananda Vidya Mandir</strong></h2>
+            <p>
+              AISSCE, CBSE, Science <br> Ranchi, Jharkhand
+            </p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="date">Mar 2008-Apr 2019</div>
+          <i class="icon fa fa-user"></i>
+          <div class="content">
+            <h2><strong>DAV Public School, Mathurapur</strong></h2>
+            <p>
+              AISSE, CBSE <br> Bhagalpur, Bihar
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="container right">
+          <div class="date">18 May</div>
+          <i class="icon fa fa-running"></i>
+          <div class="content">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>
+              Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
+            </p>
+          </div>
+        </div> -->
+
       </div>
+
     </section>
-    
-    
+
+
 
 
 
@@ -574,32 +691,49 @@
     <!-- Contact -->
     <section class="section contact center" id="contact">
       <h2 class="section__title">Contact</h2>
-      <a href="mailto:anuragraj718@gmail.com">
-        <span class="btn btn--outline">Email me</span>
-      </a>
 
-      <br>
 
-      <div class="scard">
-        <!-- <span>Social Links</span> -->
-        <span class="btn btn--outline">Social Links</span>
+      <div class="social-links">
+        <div id="github" class="social-btn flex-center">
+          <a href="https://github.com/anuragaryanyt" target="_blank">
+            <i class="fa-brands fa-github fa-lg"></i><span>anuragaryanyt</span>
+          </a>
+        </div>
 
-        <a class="social-link" href="https://x.com/anuragaryanyt" target="_blank">
-          <img src="icons/x-social-media-black-icon.png" alt="Social Icon 1">
-        </a>
-        <a class="social-link" href="https://github.com/anuragaryanyt" target="_blank">
-          <img src="icons/github-icon.png" alt="Social Icon 2">
-        </a>
-        <a class="social-link" href="https://instagram.com/anuragaryanyt" target="_blank">
-          <img src="icons/black-instagram-icon.png" alt="Social Icon 3">
-        </a>
-        <a class="social-link" href="https://linkedin.com/in/anuragaryanyt" target="_blank">
-          <img src="icons/linkedin-square-icon.png" alt="Social Icon 4">
-        </a>
-        <a class="social-link" href="https://bit.ly/Anuragaryanyt" target="_blank">
-          <img src="icons/open-external-link-icon.png" alt="Social Icon 4">
-        </a>
+        <div id="instagram" class="social-btn flex-center">
+          <a href="https://instagram.com/rajxaryann" target="_blank">
+            <i class="fa-brands fa-instagram fa-lg"></i><span>rajxaryann</span>
+          </a>
+        </div>
+
+        <div id="twitter" class="social-btn flex-center">
+          <a href="https://twitter.com/anuragaryanyt" target="_blank">
+            <i class="fa-brands fa-twitter fa-lg"></i><span>anuragaryanyt</span>
+          </a>
+        </div>
+
+        <div id="linkedin" class="social-btn flex-center">
+          <a href="https://linkedin.com/in/anuragaryanyt" target="_blank">
+            <i class="fa-brands fa-linkedin fa-lg"></i><span>in/anuragaryanyt</span>
+          </a>
+        </div>
+
+        <div id="medium" class="social-btn flex-center">
+          <a href="https://anuragaryanyt.medium.com/" target="_blank">
+            <i class="fa-brands fa-medium fa-lg"></i><span>anuragaryanyt</span>
+          </a>
+        </div>
+
+        <div id="mailto" class="social-btn flex-center">
+          <a href="mailto:anuragraj718@gmail.com">
+            <i class="fa-solid fa-at fa-lg"></i><span>anuragraj718@gmail.com</span>
+          </a>
+        </div>
       </div>
+
+
+
+
     </section>
   </main>
 
@@ -613,12 +747,13 @@
     <span class="last-updated">
       <!-- hitwebcounter Code START -->
 
-      <img src="https://hitwebcounter.com/counter/counter.php?page=15688382&style=0008&nbdigits=5&type=ip&initCount=90" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>  
+      <img src="https://hitwebcounter.com/counter/counter.php?page=15688382&style=0008&nbdigits=5&type=ip&initCount=90"
+        title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
 
       Visitors
 
       <br>
-      Last updated: Dec 10, 2024
+      Last updated: Dec 15, 2024
 
     </span>
   </footer>

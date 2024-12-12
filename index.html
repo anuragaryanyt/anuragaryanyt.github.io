@@ -3,8 +3,17 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png">
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <meta NAME="Description" CONTENT="Raj Aryan portfolio " />
+  </b:if>
+  <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
+  <meta NAME="Author" CONTENT="Raj Aryan " />
+  <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
+  <meta NAME="Country" CONTENT="India" />
+  <meta NAME="Robots" CONTENT="All" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   <link rel="stylesheet" href="stylesheet.css">
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">     -->
@@ -82,11 +91,12 @@
 
     <!-- Image and name container. Change to your pictue here. -->
     <div style="text-align: center">
-      <img src="https://shorturl.at/pcRGt" class="w3-margin" alt="image" width="150px" height="150px"
-        style="border-radius: 50%;">
+      <img src="https://drive.google.com/thumbnail?id=11iOp53CJ07uABdysFpSJJDAL9Ce85beK" class="w3-margin" alt="image"
+          width="150px" height="150px" style="border-radius: 50%;">
       <p><span class="name w3-padding w3-pink w3-round" style="font-weight: bolder;">Hi, I'm Raj!</span></p>
       <p style="font-weight: bolder;">Check out my links!</p>
     </div>
+
 
 
     <h4 class="margin-top-2" style="text-align: center;">MY SOCIAL NETWORKS</h4>
@@ -165,7 +175,7 @@
         Visitors
         <br>
       </span>
-      
+
     </div>
 
 
@@ -175,20 +185,20 @@
     feather.replace()
 
 
-// prevent shortcut keys 
+    // prevent shortcut keys 
     document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
         e.preventDefault();
-    }
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      }
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
         e.preventDefault();
-    }
-});
+      }
+    });
 
-// prevent right clicks
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
+    // prevent right clicks
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
 
 
   </script>

@@ -1,87 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Raj's Resume</title>
-    <meta charset="UTF-8" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
-
-    <style>
-
-
-    .resume-section {
-      padding: 50px 15px;
-    }
-
-    .resume iframe {
-      width: 100%;
-      height: 800px;
-      border: 1px solid #ddd;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-    }
-
-    .btn-download {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .btn-download:hover {
-      background-color: #0056b3;
-      color: white;
-    }
-  </style>
-  </head>
-
-  <body>
-   <center>
-
-    <div id="app">
-        <h1 style="color: #2978b5;">Resume</h1>
-
-
-        <div class="text-center mt-4">
-          <a href="https://drive.usercontent.google.com/u/0/uc?id=1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX&export=download"
-            target="_blank" class="btn-download">
-            <i class="fas fa-download"></i>&nbsp;Download Resume
-          </a>
-        </div>
-        <br>
-        <br>
-      <iframe
-        src="https://drive.google.com/file/d/1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX/preview?type=embed "
-        width="800px"
-        height="900px"
-      >
-      </iframe>
-    </div>
-     
-</center> 
-  </body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <title>Raj's Resume</title>
+  <meta charset="UTF-8" />
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <meta NAME="Description" CONTENT="Raj Aryan portfolio " />
+  </b:if>
+  <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
+  <meta NAME="Author" CONTENT="Raj Aryan " />
+  <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
+  <meta NAME="Country" CONTENT="India" />
+  <meta NAME="Robots" CONTENT="All" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/styles.css" />
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      background: url("/icons/vivid.jpg");
     }
-
     .resume-section {
       padding: 50px 15px;
     }
@@ -95,7 +39,7 @@
     }
 
     .btn-download {
-      background-color: #007bff;
+      background-color: #2978b5;
       color: white;
       border: none;
       padding: 10px 20px;
@@ -105,27 +49,81 @@
     }
 
     .btn-download:hover {
-      background-color: #0056b3;
+      background-color: #5d92cb;
       color: white;
     }
   </style>
 </head>
 
-<body>
-  <div class="container-fluid resume-section">
-    <div class="text-center mb-4">
-      <a href="https://drive.usercontent.google.com/u/0/uc?id=1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX&export=download"
+<body class="light" id="top">
+  <header class="header center">
+    <h3>
+      <a href="/portfolio.html" class="link">RA.</a>
+    </h3>
+
+    <nav class="nav center">
+      <ul class="nav__list center">
+
+        <li class="nav__list-item">
+          <a class="link link--nav" href="/blog/blog.html">Blog</a>
+        </li>
+
+        <li class="nav__list-item">
+          <a class="link link--nav" href="#projects">Projects</a>
+        </li>
+
+        <li class="nav__list-item">
+          <a class="link link--nav" href="#skills">Skills</a>
+        </li>
+
+        <li class="nav__list-item">
+          <a class="link link--nav" href="#certificates">Certificates</a>
+        </li>
+
+        <li class="nav__list-item">
+          <a class="link link--nav" href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+      <button type="button" aria-label="toggle theme" class="btn btn--icon">
+        <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+      </button>
+
+      <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
+        <i aria-hidden="true" class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+  <center>
+
+    <div id="app">
+      <!-- <h1 style="color: #2978b5;">Resume</h1> -->
+
+      <div class="text-center mt-4">
+        <a href="https://drive.usercontent.google.com/u/0/uc?id=1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX&export=download"
+          target="_blank" class="btn-download">
+          <i class="fas fa-download"></i>&nbsp;Download Resume
+        </a>
+      </div>
+      <br>
+      <br>
+      <iframe src="https://drive.google.com/file/d/1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX/preview?type=embed " width="800px"
+        height="900px">
+      </iframe>
+    </div>
+
+    <br><br><br>
+    <div class="text-center mt-4">
+      <a href="https://drive.google.com/file/d/1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX/view"
         target="_blank" class="btn-download">
-        <i class="fas fa-download"></i>&nbsp;Download Resume
+        <i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i>&nbsp;&nbsp;Open in full screen
       </a>
     </div>
+    <br><br><br>
 
-    <div class="resume text-center">
-      <iframe src="https://drive.google.com/file/d/1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX/preview?type=embed "></iframe>
-    </div>
-
-   
-  </div>
+  </center>
+  <script src="./script.js"></script>
 </body>
 
-</html> -->
+</html>

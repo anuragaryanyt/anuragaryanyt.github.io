@@ -561,227 +561,263 @@ main {
 
 
 
-/* FOR BOUNCY EFFECT TO THE SOCIAL CARD */
 
-/* 
-.scard img {
-  height: 25px;
+ .social-links, .flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.scard {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  overflow: hidden;
+.social-btn {
+  cursor: pointer;
   height: 50px;
-  width: 200px;
-}
-
-.scard::before, .scard::after {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  width: 50%;
-  height: 100%;
-  transition: 0.25s linear;
-  z-index: 1;
-}
-
-.scard::before {
-  content: "";
-  left: 0;
-  justify-content: flex-end;
-  background-color: #4d60b6;
-}
-
-.scard::after {
-  content: "";
-  right: 0;
-  justify-content: flex-start;
-  background-color: #4453a6;
-}
-
-.scard:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.scard:hover span {
-  opacity: 0;
-  z-index: -3;
-}
-
-.scard:hover::before {
-  opacity: 0.5;
-  transform: translateY(-100%);
-}
-
-.scard:hover::after {
-  opacity: 0.5;
-  transform: translateY(100%);
-}
-
-.scard span {
-  position: absolute;
-  display: flex;
-  align-items: center;
+  width: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 5px;
+  transition: 0.3s;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: #2978b5;
-
-  font-size: 20px;
-  font-weight: 450;
-  opacity: 1;
-  transition: opacity 0.25s;
-  z-index: 2;
-}
-
-.scard .social-link {
-  position: relative;
-  display: flex;
+  display: flex; /* Ensure it's a flex container */
   align-items: center;
-  justify-content: center;
-  width: 25%;
-  height: 100%;
-  color: whitesmoke;
-  font-size: 24px;
-  text-decoration: none;
-  transition: 0.25s;
 }
 
-.scard .social-link img {
-  text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
-  transform: scale(1);
+.social-btn a {
+  display: flex; /* Make the <a> tag a flex container */
+  align-items: center; /* Vertically align the icon and text */
+  text-decoration: none; /* Remove underline from link */
+}
+
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+}
+
+.social-btn span {
+  opacity: 0; /* Start with text hidden */
+  transition: opacity 0.3s, width 0.3s;
+  text-align: center;
+  margin-left: 5px;
+  width: 0;
+  white-space: nowrap; /* Prevent line breaks and keep the text in one line */
+}
+
+.social-btn:hover {
+  width: 170px;
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  opacity: 1; /* Show text on hover */
+  width: auto; /* Allow width to adjust based on content */
+  margin-left: 10px; /* Adjust margin for spacing between icon and text */
+}
+
+
+
+
+
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
 } */
 
-/* .scard .social-link:hover {
-  background-color: rgba(249, 244, 255, 0.774);
-  animation: bounce_613 0.4s linear;
-
-}
-
-@keyframes bounce_613 {
-  40% {
-    transform: scale(1.4);
-  }
-
-  60% {
-    transform: scale(0.8);
-  }
-
-  80% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+/* body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
 } */
 
 
-
-
-
-
-.scard img {
-  height: 25px;
-}
-
-.scard {
+.timeline {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  overflow: hidden;
-  height: 50px;
-  width: 200px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px 0;
 }
 
-.scard::before,
-.scard::after {
+.timeline::after {
+  content: '';
   position: absolute;
-  display: flex;
-  align-items: center;
+  width: 2px;
+  background: #2978b5;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.container {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
   width: 50%;
-  height: 100%;
-  transition: 0.25s linear;
+}
+
+.container.left {
+  left: 0;
+}
+
+.container.right {
+  left: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid #2978b5;
+  border-radius: 16px;
   z-index: 1;
 }
 
-.scard::before {
-  content: "";
-  left: 0;
-  justify-content: flex-end;
-  background-color: #4d60b6;
+.container.right::after {
+  left: -8px;
 }
 
-.scard::after {
-  content: "";
-  right: 0;
-  justify-content: flex-start;
-  background-color: #4453a6;
-}
-
-.scard:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.scard:hover span {
-  opacity: 0;
-  z-index: -3;
-}
-
-.scard:hover::before {
-  opacity: 0.5;
-  transform: translateY(-100%);
-}
-
-.scard:hover::after {
-  opacity: 0.5;
-  transform: translateY(100%);
-}
-
-.scard span {
+.container::before {
+  content: '';
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 50px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #2978b5;
+  z-index: 1;
+}
+
+.container.right::before {
+  left: 8px;
+}
+
+.container .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
   color: #2978b5;
-  font-size: 20px;
-  font-weight: 450;
-  opacity: 1;
-  transition: opacity 0.25s;
-  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  white-space: normal;
+  max-width: 120px;
+  word-wrap: break-word;
 }
 
-.scard .social-link {
+.container.left .date {
+  right: -170px;
+}
+
+.container.right .date {
+  left: -150px;
+}
+
+.container .icon {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 9px 0;
+  top: calc(50% - 20px);
+  background: #ffffff;
+  border: 2px solid #2978b5;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #2978b5;
+  z-index: 1;
+}
+
+.container.left .icon {
+  right: 56px;
+}
+
+.container.right .icon {
+  left: 56px;
+}
+
+.container .content {
+  padding: 30px 90px 30px 30px;
+  background: #ffffff;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25%;
-  height: 100%;
-  color: whitesmoke;
-  font-size: 24px;
-  text-decoration: none;
-  transition: transform 0.5s ease-out, background-color 0.25s ease-out;
+  border: 2px solid #2978b5;
+  border-radius: 0 500px 500px 0;
 }
 
-.scard .social-link img {
-  text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
-  transform: scale(1);
+.container.right .content {
+  padding: 30px 30px 30px 90px;
+  border-radius: 500px 0 0 500px;
 }
 
-.scard .social-link:hover {
-  background-color: rgba(249, 244, 255, 0.774);
-  transform: scale(1.3);
+.container .content h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: #2978b5;
+}
+
+.container .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .container.right {
+    left: 0%;
+  }
+
+  .container.left::after, 
+  .container.right::after {
+    left: 82px;
+  }
+
+  .container.left::before,
+  .container.right::before {
+    left: 100px;
+    border-color: transparent #2978b5 transparent transparent;
+  }
+
+  .container.left .date,
+  .container.right .date {
+    right: auto;
+    left: 15px;
+    max-width: 100px;
+    top: calc(50% - 15px); /* Adjusted to prevent overlap with the line */
+    padding-top: 5px;  /* Added padding to give more space */
+    margin-top: 25px; /* Added margin to separate date from the circle */
+  }
+
+  .container.left .icon,
+  .container.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .container.left .content,
+  .container.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+  }
 }
