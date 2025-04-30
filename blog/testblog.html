@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post - Bank Management System</title>
+    <style>
+         
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #fff;
+            color: #333;
+        }
+        
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        h3 {
+            padding: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            overflow-x: auto;
+            border-left: 2px solid #737576;
+            position: relative;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 15px;
+        }
+
+        code .comment {
+            color: #4caf50;
+            /* Green color for comments */
+        }
+
+        .blockchar {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 5px
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul li {
+            margin-bottom: 4px;
+            /* or use padding-bottom */
+        }
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    pre {
+        font-size: 14px;
+    }
+
+    .copy-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <h1>How I Built a <u>Bank Management System</u></h1>
+    <p><strong>Author:</strong> Raj Aryan | <em>Published: April 30, 2025</em></p>
+
+    <img src="https://bitl.to/4SMr" alt="Bank Management System Screenshot" />
+
+    <p>
+        In this blog, I'll walk you through how I developed a <strong>Bank Management System</strong> using C++. This
+        system supports basic banking functionalities like creating accounts, depositing money, and checking balances.
+    </p>
+
+    <h3>🔑 Key Features</h2>
+
+        <ul>
+            <li>Create and delete accounts</li>
+            <li>Deposit and withdraw money</li>
+            <li>Transaction history display</li>
+        </ul>
+
+
+        <h3>Introduction</h2>
+
+            <p>The bank management system presented here is implemented using Python. It provides functionalities such
+                as account creation, deposit, withdrawal, updating account details, and checking balances. Below, I
+                elaborate on the key points and provide detailed explanations of important code snippets and keywords.
+            </p>
+
+
+            <h3>Importing Modules</h2>
+
+                <p>The program begins by importing several essential modules:
+
+                <pre>  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <code>
+    import pickle
+    import datetime
+    import os
+    import random
+</code></pre>
+
+                <ul>
+                    <li><strong>pickle: </strong> Used for serializing and deserializing Python object structures,
+                        enabling the storage and retrieval of account data to and from a file.</li>
+                    <li><strong>datetime: </strong>Provides functionalities to work with dates and times, useful for
+                        logging account creation times and other time-based operations. </li>
+
+                    <li><strong>os: </strong>Provides a way to interact with the operating system, enabling file
+                        operations like renaming and deleting files. </li>
+
+                    <li><strong>random: </strong> Used for generating random numbers, essential for creating unique
+                        account numbers and OTPs.</li>
+                </ul>
+                </p>
+
+
+    <h3>Creating an Account</h2>
+
+    <p>The <span class="blockchar">create()</span> function allows users to create a new bank account.It ensures all necessary details are collected and validated before storing the account information.
+
+        <pre>
+        <code>
+def create():
+    f = open("bank.dat", "wb")
+    ans = 'y'
+    while ans == 'y':
+        while True:
+            accno = random.randint(10000000, 99999999)
+            r = acc_no(accno)
+            if r == 1:
+                break
+        name = input("Enter Account Name=").capitalize()
+        <span class="comment">#(Other input fields: phone, address, city, email, date of birth, password) </span>
+        deposit = int(input("Deposit Min^m rs500="))
+        while deposit < 500:
+            deposit += int(input("Add more money: "))
+        rec = [accno, name, phone, address, city, email, dob, passwd, deposit]
+        pickle.dump(rec, f)
+        print("....ACCOUNT SUCCESSFULLY CREATED...")
+        ans = input("Create More Account\nPRESS(y/n)=")
+    f.close()
+        </code>
+    </pre>
+
+    <ul>
+        <li><strong>Account number Generation:</strong> A random 8-digit account number is generated using <span class="blockchar">random.randint()</span> , and  <span class="blockchar">acc_no()</span> checks for uniqueness.</li>
+
+        <li><strong>validation:</strong> Ensures that phone number, email, date of birth, and initial deposit are valid.</li>
+
+        <li><strong>Data Storage:</strong> Uses <span class="blockchar">pickle.dump()</span> to store account data in <span class="blockchar">bank.dat</span></li>
+    </ul></p>
+
+
+
+    <h3>Account Number Check</h3>
+
+    <p>The <span class="blockchar">acc_no()</span> function checks if an account number already exists.
+        <pre>
+            <code>
+def acc_no(a):
+    f = open("bank.dat", "rb")
+    found = False
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[0] == a:
+                found = True
+    except:
+        if not found:
+            return 1
+    f.close()
+            </code>
+        </pre>
+<ul>
+    <li><strong>Reading Data:</strong> Uses <span class="blockchar">pickle.load()</span> to read records from the file.</li>
+
+    <li><strong>Unique Check:</strong>Returns  <span class="blockchar">1</span> if the account number is unique.</li>
+</ul>
+
+
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <p>
+                        For the full project, visit my <a href="https://rajaryan.netlify.app" target="_blank">portfolio
+                            website</a>.
+                    </p>
+
+                    <script src="/blog/copy.js"></script>
+
+</body>
+
+</html>
