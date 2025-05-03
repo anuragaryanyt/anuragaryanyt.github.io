@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+      <meta NAME="Description" CONTENT="anuragaryanyt portfolio " />
+    </b:if>
+    <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
+    <meta NAME="Author" CONTENT="Raj Aryan " />
+    <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
+    <meta NAME="Country" CONTENT="India" />
+    <meta NAME="Robots" CONTENT="All" />
+
+    <!-- <link rel="stylesheet" href="/blog/blogarticle.css" /> -->
+    <title>Blog Post - Bank Management System</title>
+
+    <style>
+         
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1000px;
+            background-color: #fff;
+            color: #333;
+        }
+        
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        h3 {
+            padding: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+             width: 600px; 
+
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            overflow-x: auto;
+            border-left: 2px solid #737576;
+            position: relative;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 15px;
+        }
+
+        code .comment {
+            color: #4caf50;
+            /* Green color for comments */
+        }
+
+        .blockchar {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 5px
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul li {
+            margin-bottom: 4px;
+            /* or use padding-bottom */
+        }
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    pre {
+        font-size: 14px;
+    }
+
+    .copy-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+<!-- 
+    <header class="header center">
+        <h3>
+          <a href="/" class="link">RA.</a>
+        </h3>
+    
+        <nav class="nav center">
+          <ul class="nav__list center">
+    
+            <li class="nav__list-item">
+              <a class="link link--nav" href="/blog/blog.html">Blog</a>
+            </li>
+    
+            <li class="nav__list-item">
+              <a class="link link--nav" href="#projects">Projects</a>
+            </li>
+    
+            <li class="nav__list-item">
+              <a class="link link--nav" href="#skills">Skills</a>
+            </li>
+    
+            <li class="nav__list-item">
+              <a class="link link--nav" href="#certificates">Certificates</a>
+            </li>
+    
+            <li class="nav__list-item">
+              <a class="link link--nav" href="#contact">Contact</a>
+            </li>
+    
+          </ul>
+    
+          <button type="button" aria-label="toggle theme" class="btn btn--icon">
+            <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+          </button>
+    
+          <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
+            <i aria-hidden="true" class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </header> -->
+    
+    
+
+
+
+
+
+
+
+    <h1>How I Built a <u>Bank Management System</u></h1>
+    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank" style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: April 30, 2025</em></p>
+    
+    
+
+    <!-- <img src="https://drive.google.com/thumbnail?id=1DjrkwyRxgmzm9tAXEOX5Mxnbso3nuqrh" alt="Bank Management System Screenshot" /> -->
+    <img src="/images/pybankmanagement (1).jpg" alt="Bank Management System Screenshot" />
+    
+
+
+
+    <p>
+        In this blog, I'll walk you through how I developed a <strong>Bank Management System</strong> using C++. This
+        system supports basic banking functionalities like creating accounts, depositing money, and checking balances.
+    </p>
+
+    <h3>🔑 Key Features</h2>
+
+        <ul>
+            <li>Create and delete accounts</li>
+            <li>Deposit and withdraw money</li>
+            <li>Transaction history display</li>
+        </ul>
+
+
+        <h3>Introduction</h2>
+
+            <p>The bank management system presented here is implemented using Python. It provides functionalities such
+                as account creation, deposit, withdrawal, updating account details, and checking balances. Below, I
+                elaborate on the key points and provide detailed explanations of important code snippets and keywords.
+            </p>
+
+
+            <h3>Importing Modules</h2>
+
+                <p>The program begins by importing several essential modules:
+
+                <pre>  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <code>
+    import pickle
+    import datetime
+    import os
+    import random
+</code></pre>
+
+                <ul>
+                    <li><strong>pickle: </strong> Used for serializing and deserializing Python object structures,
+                        enabling the storage and retrieval of account data to and from a file.</li>
+                    <li><strong>datetime: </strong>Provides functionalities to work with dates and times, useful for
+                        logging account creation times and other time-based operations. </li>
+
+                    <li><strong>os: </strong>Provides a way to interact with the operating system, enabling file
+                        operations like renaming and deleting files. </li>
+
+                    <li><strong>random: </strong> Used for generating random numbers, essential for creating unique
+                        account numbers and OTPs.</li>
+                </ul>
+                </p>
+
+
+    <h3>Creating an Account</h2>
+
+    <p>The <span class="blockchar">create()</span> function allows users to create a new bank account.It ensures all necessary details are collected and validated before storing the account information.
+
+        <pre>
+        <code>
+def create():
+    f = open("bank.dat", "wb")
+    ans = 'y'
+    while ans == 'y':
+        while True:
+            accno = random.randint(10000000, 99999999)
+            r = acc_no(accno)
+            if r == 1:
+                break
+        name = input("Enter Account Name=").capitalize()
+        <span class="comment">#(Other input fields: phone, address, city, email, date of birth, password) </span>
+        deposit = int(input("Deposit Min^m rs500="))
+        while deposit < 500:
+            deposit += int(input("Add more money: "))
+        rec = [accno, name, phone, address, city, email, dob, passwd, deposit]
+        pickle.dump(rec, f)
+        print("....ACCOUNT SUCCESSFULLY CREATED...")
+        ans = input("Create More Account\nPRESS(y/n)=")
+    f.close()
+        </code>
+    </pre>
+
+    <ul>
+        <li><strong>Account number Generation:</strong> A random 8-digit account number is generated using <span class="blockchar">random.randint()</span> , and  <span class="blockchar">acc_no()</span> checks for uniqueness.</li>
+
+        <li><strong>validation:</strong> Ensures that phone number, email, date of birth, and initial deposit are valid.</li>
+
+        <li><strong>Data Storage:</strong> Uses <span class="blockchar">pickle.dump()</span> to store account data in <span class="blockchar">bank.dat</span></li>
+    </ul></p>
+
+
+
+    <h3>Account Number Check</h3>
+
+    <p>The <span class="blockchar">acc_no()</span> function checks if an account number already exists.
+        <pre>
+            <code>
+def acc_no(a):
+    f = open("bank.dat", "rb")
+    found = False
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[0] == a:
+                found = True
+    except:
+        if not found:
+            return 1
+    f.close()
+            </code>
+        </pre>
+<ul>
+    <li><strong>Reading Data:</strong> Uses <span class="blockchar">pickle.load()</span> to read records from the file.</li>
+
+    <li><strong>Unique Check:</strong>Returns  <span class="blockchar">1</span> if the account number is unique.</li>
+</ul>
+
+
+    </p>
+
+    <h3> Date of Birth Validation</h3>
+        <p>
+            The <span class="blockchar">birth(dob)</span> function ensures the provided date of birth is in the correct format and the user is at least 18 years old.
+
+            <pre>
+                <code>
+def birth(dob):
+    if dob[:4].isdigit() and dob[5:7].isdigit() and dob[8:10].isdigit() and dob[4] == '-' and dob[7] == '-':
+        if int(dob[:4]) < 2004:
+           <span class="comment"># (Further validations for months and days)</span> 
+            return 1
+    else:
+        print("Invalid format")
+                </code>
+            </pre>
+
+            <ul>
+                <li><strong>Format Check: </strong>Validates the format <span class="blockchar"> YYYY-MM-DD.</span></li>
+                <li><strong>Age Check: </strong>Ensures the user is at least 18 years old.</li>
+            </ul>
+
+
+        </p>
+
+        <h3>Displaying All Account Details</h3>
+<p>
+    <pre>
+        <code>
+def all_details():
+    f = open("bank.dat", "rb")
+    try:
+        while True:
+            rec = pickle.load(f)
+            print(rec)
+    except EOFError:
+        f.close()
+        </code>
+    </pre>
+</p>
+
+<h3>Viewing Specific A/c Details</h3>
+<p>
+    The <span class="blockchar">detail()</span> function shows the details of a specific account.
+
+    <pre>
+        <code>
+def detail():
+    f = open("bank.dat", "rb")
+    accno = int(input("Enter account number"))
+    passwd = input("Enter password")
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[0] == accno and rec[7] == passwd:
+                <span class="comment"># (Print account details)</span>
+                break
+    except EOFError:
+        print("Account Not Found")
+    f.close()
+        </code>
+    </pre>
+    <strong>Authentication:</strong> Checks if the entered account number and password match.
+</p>
+
+<h3>Deleting an Account</h3>
+<p>
+    The <span class="blockchar">delete()</span> function removes an account from the database.
+    <pre>
+        <code>
+def delete():
+    temp = open("temp.dat", "wb")
+    f = open("bank.dat", "rb")
+    accno = int(input("Enter account number"))
+    passwd = input("Enter account password")
+    found = False
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[0] == accno and rec[7] == passwd:
+                found = True
+                continue
+            pickle.dump(rec, temp)
+    except EOFError:
+        if found:
+            os.remove("bank.dat")
+            os.rename("temp.dat", "bank.dat")
+        </code>
+    </pre>
+
+    <ul>
+        <li><strong>Temporary File: </strong>Creates a temporary file to store all records except the one to be deleted.</li>
+        <li><strong>File Replacement: </strong>Deletes the original file and renames the temporary file.</li>
+    </ul>
+
+    
+
+</p>
+
+<h3>Updaitng Account Details</h3>
+    <p>The <span class="blockchar">update()</span>function allows modification of account details.
+        <pre><code>
+def update():
+    accno = int(input("enter account no."))
+    passwd = input("enter account password")
+    f = open("bank.dat", "rb+")
+    try:
+        while True:
+            pos = f.tell()
+            rec = pickle.load(f)
+            if rec[0] == accno and rec[7] == passwd:
+                while True:
+                    z = int(input("enter for update"))
+                    if z == 1:
+                        rec[1] = input("enter new name")
+                    <span class="comment"># (Other updates)</span>
+                    if z == 0:
+                        break
+                f.seek(pos)
+                pickle.dump(rec, f)
+                break
+    except EOFError:
+        print("Account not found")
+    f.close()
+        </code></pre>
+        <strong>Seek and Update: </strong>Uses <span class="blockchar">f.seek(pos)</span>to update the specific record in place.
+
+    </p>
+
+    <h3>Depositing Money</h3>
+<p>
+    The <span class="blockchar">deposit()</span> function adds money to an account.
+    <pre><code>
+def deposit():
+    f = open("bank.dat", "rb+")
+    accno = int(input("Enter account number"))
+    passwd = input("Enter account password")
+    try:
+        while True:
+            pos = f.tell()
+            rec = pickle.load(f)
+            if rec[0] == accno and rec[7] == passwd:
+                d = int(input("Enter amount to deposit"))
+                rec[8] += d
+                f.seek(pos)
+                pickle.dump(rec, f)
+                break
+    except EOFError:
+        print("Account not found")
+    f.close()
+    </code></pre>
+</p>
+
+<h3>Withdrawing Money</h3>
+
+<p><strong>OTP Verification:</strong> Ensures secure transactions using a randomly generated OTP.
+
+    <pre><code>
+def withdraw():
+    f = open("bank.dat", "rb+")
+    accno = int(input("Enter account number"))
+    passwd = input("Enter account password")
+    try:
+        while True:
+            pos = f.tell()
+            rec = pickle.load(f)
+            if rec[0] == accno and rec[7] == passwd:
+                d = int(input("Enter amount to withdraw"))
+                otp = random.randint(1000, 9999)
+                ou = int(input("Enter OTP"))
+                if otp == ou and rec[8] >= d:
+                    rec[8] -= d
+                    f.seek(pos)
+                    pickle.dump(rec, f)
+                    break
+    except EOFError:
+        print("Account not found")
+    f.close()
+    </code></pre>
+
+</p>
+
+
+<h3>Checking Balance</h3>
+<p>
+    The <span class="blockchar">balance()</span> function shows the balance of an account.
+    <pre><code>
+def balance():
+    f = open("bank.dat", "rb")
+    accno = int(input("Enter account number"))
+    passwd = input("Enter password")
+    try:
+        while True:
+            rec = pickle.load(f)
+            if rec[0] == accno and rec[7] == passwd:
+                print("Balance=", rec[8])
+                break
+    except EOFError:
+        print("Account not found")
+    f.close()
+    </code></pre>
+</p>
+
+
+<h3>Main Menu</h3>
+<p>The main menu handles user interactions and directs them to the appropriate functions based on their choices.
+
+    <pre><code>
+ch = None
+while True:
+    print('*'*73)
+    print("TODAY'S DATE:", datetime.date.today(), "\tMAIN MENU\t")
+    ch = int(input("Enter Your Choice="))
+    if ch == 1:
+        create()
+    elif ch == 2:
+        while True:
+            ch1 = int(input("enter your choice="))
+            if ch1 == 1:
+                detail()
+            elif ch1 == 2:
+                balance()
+            elif ch1 == 3:
+                deposit()
+            elif ch1 == 4:
+                withdraw()
+            elif ch1 == 5:
+                break
+    elif ch == 0:
+        break
+    elif ch == 9:
+        key = 12345
+        p = int(input("Enter password To See Details"))
+        if key == p:
+            while True:
+                ch2 = int(input("Enter your choice="))
+                if ch2 == 1:
+                    all_details()
+                elif ch2 == 2:
+                    update()
+                elif ch2 == 3:
+                    delete()
+                elif ch2 == 4:
+                    break
+        else:
+            print("Wrong Password")
+    else:
+        print("Wrong choice")
+    </code></pre>
+
+    <ul>
+        <li><strong>Users Choice: </strong>Directs users to account creation, management, and transaction functionalities.</li>
+        <li><strong>Password Protection: </strong>The banker-specific menu is protected by a hardcoded password (<span class="blockchar">key = 12345</span>).</li>
+    </ul>
+
+</p>
+<h3>Conclusion</h3>
+<p>
+    This bank management system covers all essential functionalities required for basic banking operations. It ensures data validation, security (through OTPs and password protection), and provides a user-friendly interface for managing accounts and transactions. The use of pickle for data storage makes it easy to serialize and deserialize account information efficiently.
+</p>
+
+<p>
+
+<p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/BankingSystemPY">GitHub</a></p>
+
+</p>
+
+
+
+<footer><div style="display: flex; justify-content: space-between; margin-top: 40px;">
+    <a href="blog.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr; Home</a>
+
+    <a href="numberplate.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next &rarr;</a>
+</div>
+</footer>
+
+
+
+
+<script src="/blog/script.js"></script>
+
+</body>
+
+</html>
