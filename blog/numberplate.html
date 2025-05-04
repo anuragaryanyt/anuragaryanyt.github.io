@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Portfolio" />
+
+    <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png">
+    <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+      <meta NAME="Description" CONTENT="anuragaryanyt portfolio " />
+    </b:if>
+    <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
+    <meta NAME="Author" CONTENT="Raj Aryan " />
+    <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
+    <meta NAME="Country" CONTENT="India" />
+    <meta NAME="Robots" CONTENT="All" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
+    <link rel="stylesheet" href="/blog/blogarticle.css" />
+    <title>Blog Post - Number Plate Detection System</title>
+
+
+</head>
+
+<body>
+
+
+    <h1>How I Built a <u>Number Plate Detection System</u></h1>
+    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank" style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: April 30, 2025</em></p>
+
+    <!-- <img src="https://drive.google.com/thumbnail?id=1DjrkwyRxgmzm9tAXEOX5Mxnbso3nuqrh" alt="Bank Management System Screenshot" /> -->
+    <img class="banner" src="https://shorturl.at/TE6FE" alt="Number Plate Iamge" />
+
+    <p>
+        In this blog, I'll walk you through how I developed a Number Plate Detection System using Python and OpenCV. This system is capable of automatically detecting vehicle number plates from images or video streams, extracting the plate region, and preparing it for further recognition or OCR processing.
+
+    </p>
+
+    <h3>🔑 Key Features</h3>
+    <p>
+        <ul class="circle-list">
+            <li>Detects number plates from static images.</li>
+            <li>Uses OpenCV for real-time image processing.</li>
+            <li>Highlights detected number plate region with bounding boxes.</li>
+            <li>Can be extended for video stream processing or integrated with OCR tools like Tesseract.</li>
+        </ul>
+    </p>
+
+    <h3>Introduction</h3>
+    <p>
+        In recent years, the integration of computer vision technologies with everyday applications has led to significant advancements in various fields, ranging from surveillance and security to transportation and automation. One such application is the development of a Number Plate Recognition System, which employs a combination of image processing techniques and optical character recognition (OCR) to automatically identify and recognize number plates in real-time video streams. This system holds immense potential for enhancing traffic management, law enforcement, and parking systems by providing efficient and accurate vehicle identification capabilities.
+        <br><br>
+        Key components of the Number Plate Recognition System include a Haar cascade classifier for number plate detection, Tesseract OCR for character recognition, and MongoDB for storing and managing vehicle information. The system architecture is designed to facilitate real-time processing of video streams, ensuring prompt identification of vehicles as they pass through the monitored area. Additionally, a user-friendly web interface built with Flask framework allows for functionalities such as adding new vehicles to the database and viewing recognized plate records.
+        <br><br>
+        This project aims to address several challenges associated with Number plate recognition, including variations in plate appearance due to factors such as lighting conditions, viewing angle, and occlusions. Advanced image processing techniques are employed to enhance the robustness and accuracy of plate detection and character recognition, thereby improving the overall performance of the system. Furthermore, the integration of user authentication mechanisms ensures secure access to system functionalities, preventing unauthorized users from tampering with the database or system settings.
+
+
+
+    </p>
+
+    <h3>System Components</h3>
+    <p>
+        <ul>
+            <li><strong>Python:</strong> Programming language used for system development. Provides flexibility, ease of use, and extensive libraries for image processing.</li>
+
+            <li><strong>OpenCV (Open Source Computer Vision Library):</strong> Integral for image and video processing tasks. Facilitates license plate detection and optical character recognition (OCR).</li>
+
+            <li><strong>Flask:</strong> Web framework for building the user interface. Enables communication between the backend and frontend components.</li>
+
+            <li><strong>MongoDB:</strong> NoSQL database used for storing recognized plate information. Provides scalability, flexibility, and compatibility with Python-based applications.</li>
+        </ul>
+
+
+    </p>
+
+    <h3>Work Flow</h3>
+    <p>
+        <img src="https://shorturl.at/TFNag" alt="Work Flow" class="banner">
+
+
+    </p>
+
+    <h3>System Architecture</h3>
+    <p>
+        <img src="https://shorturl.at/D2r0x" alt="System arct" class="banner">
+
+
+    </p>
+
+
+    <h3>Image Pre-Processing</h3>
+
+    <p>
+        <ul>
+            <li><strong>Edge Detection:</strong> Edge detection is indirectly utilized through the use of the pre-trained license plate detection cascade (plate_cascade). While the specific edge detection algorithm is not explicitly mentioned in the code, the detectMultiScale function of OpenCV's CascadeClassifier class detects objects based on edges in the input image. This method inherently involves edge detection techniques to identify regions of interest (license plates) based on edge features.</li>
+
+            <li><strong>Contour Tracing:</strong> Contour tracing is employed to highlight the boundaries of detected license plates. After detecting the regions of interest using the cascade classifier, the code draws rectangles around these regions, effectively outlining the contours of the license plates.</li>
+
+        </ul>
+
+        <img src="https://shorturl.at/PcVOW" alt="Image Pre-Processing" class="banner">
+
+    </p>
+
+    <h3>Libraries</h3>
+    <p>
+        Install all the libraries and required dependencies.
+        
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+            <code>
+import os
+from unittest import result
+import cv2
+from datetime import datetime, timedelta, timezone
+import pytesseract
+import requests
+from PIL import Image
+from flask import Flask, jsonify, redirect, render_template, Response, request, session, url_for
+import threading
+from pymongo import MongoClient
+        </code></pre>
+        </p>
+
+        <h3>Database Connection</h3>
+        <p>
+            The application connects to a MongoDB database. MongoDB Atlas is used for cloud-hosted MongoDB, allowing easy scaling and management.
+
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+            <code>
+client = MongoClient("&lt;mongodb server url&gt;")
+db = client['vehicle_database']
+vehicles_collection = db['vehicle']
+history_collection = db['history']
+            </code></pre>
+
+
+        </p>
+
+        <h3>Loading Vehicle Database</h3>
+        <p>
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+def load_vehicle_database():
+    database = {}
+    vehicles_collection = db['vehicle']
+    for vehicle in vehicles_collection.find():
+        plate_number = vehicle['plate_number']
+        database[plate_number] = {
+            "owner_name": vehicle['owner_name'],
+            "make": vehicle['make'],
+            "model": vehicle['model'],
+            "color": vehicle['color']
+        }
+    print("Vehicle database loaded successfully.")
+    return database
+
+vehicle_database = load_vehicle_database()             
+</code></pre>
+This function queries all vehicle records from MongoDB and stores them in a dictionary where the plate number is the key.
+        </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+<!-- <h3>Youtube Video</h3>
+<div class="yt">
+    <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+</div> 
+
+<br>-->
+
+
+<p><strong>Full Code:</strong> <a href="">GitHub</a></p>
+
+
+<footer><div style="display: flex; justify-content: space-between; margin-top: 40px;">
+    <a href="blog.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr; Home</a>
+
+    <a href="numberplate.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next &rarr;</a>
+</div>
+</footer>
+
+
+
+
+<script src="copy.js"></script>
+
+</body>
+
+</html>
+

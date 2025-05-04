@@ -119,10 +119,10 @@ a:hover {
   text-decoration: underline;
 }
 
-/* List Styling */
+
 ul li {
   margin-bottom: 4px;
-  /* or use padding-bottom */
+
 }
 
 /* Responsive Design */
