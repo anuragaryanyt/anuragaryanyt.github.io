@@ -22,6 +22,7 @@
     <meta NAME="Robots" CONTENT="All" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+    <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
     <link rel="stylesheet" href="/blog/blogarticle.css" />
     <title>Blog Post - Bank Management System</title>
 
@@ -43,7 +44,7 @@
         system supports basic banking functionalities like creating accounts, depositing money, and checking balances.
     </p>
 
-    <h3>🔑 Key Features</h2>
+    <h3>🔑 Key Features</h3>
 
         <ul>
             <li>Create and delete accounts</li>
@@ -52,7 +53,7 @@
         </ul>
 
 
-        <h3>🧾 Introduction</h2>
+        <h3>🧾 Introduction</h3>
 
             <p>The bank management system presented here is implemented using Python. It provides functionalities such
                 as account creation, deposit, withdrawal, updating account details, and checking balances. Below, I
@@ -60,17 +61,21 @@
             </p>
 
 
-            <h3>📦 Importing Modules</h2>
+            <h3>📦 Importing Modules</h3>
 
                 <p>The program begins by importing several essential modules:
 
-                <pre>  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+
+<pre>
+    <button class="copybtn" onclick="copyCode(this)">Copy</button>
     <code>
-    import pickle
-    import datetime
-    import os
-    import random
-</code></pre>
+import pickle
+import datetime
+import os
+import random
+    </code>
+</pre>
 
                 <ul>
                     <li><strong>pickle: </strong> Used for serializing and deserializing Python object structures,
@@ -87,11 +92,11 @@
                 </p>
 
 
-    <h3>🆕 Creating an Account</h2>
+    <h3>🆕 Creating an Account</h3>
 
     <p>The <span class="blockchar">create()</span> function allows users to create a new bank account.It ensures all necessary details are collected and validated before storing the account information.
 
-        <pre>
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def create():
     f = open("bank.dat", "wb")
@@ -128,7 +133,7 @@ def create():
     <h3>💳 Account Number Check</h3>
 
     <p>The <span class="blockchar">acc_no()</span> function checks if an account number already exists.
-        <pre>
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
             <code>
 def acc_no(a):
     f = open("bank.dat", "rb")
@@ -157,7 +162,7 @@ def acc_no(a):
         <p>
             The <span class="blockchar">birth(dob)</span> function ensures the provided date of birth is in the correct format and the user is at least 18 years old.
 
-            <pre>
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
                 <code>
 def birth(dob):
     if dob[:4].isdigit() and dob[5:7].isdigit() and dob[8:10].isdigit() and dob[4] == '-' and dob[7] == '-':
@@ -179,7 +184,7 @@ def birth(dob):
 
         <h3>📂 Displaying All Account Details</h3>
 <p>
-    <pre>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def all_details():
     f = open("bank.dat", "rb")
@@ -197,7 +202,7 @@ def all_details():
 <p>
     The <span class="blockchar">detail()</span> function shows the details of a specific account.
 
-    <pre>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def detail():
     f = open("bank.dat", "rb")
@@ -220,7 +225,7 @@ def detail():
 <h3>🚮 Deleting an Account</h3>
 <p>
     The <span class="blockchar">delete()</span> function removes an account from the database.
-    <pre>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def delete():
     temp = open("temp.dat", "wb")
@@ -253,7 +258,9 @@ def delete():
 
 <h3>📝 Updating Account Details</h3>
     <p>The <span class="blockchar">update()</span>function allows modification of account details.
-        <pre><code>
+        <pre>
+            <button class="copybtn" onclick="copyCode(this)">Copy</button>
+            <code>
 def update():
     accno = int(input("enter account no."))
     passwd = input("enter account password")
@@ -284,7 +291,8 @@ def update():
     <h3>💰 Depositing Money</h3>
 <p>
     The <span class="blockchar">deposit()</span> function adds money to an account.
-    <pre><code>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+        <code>
 def deposit():
     f = open("bank.dat", "rb+")
     accno = int(input("Enter account number"))
@@ -309,7 +317,7 @@ def deposit():
 
 <p><strong>OTP Verification:</strong> Ensures secure transactions using a randomly generated OTP.
 
-    <pre><code>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 def withdraw():
     f = open("bank.dat", "rb+")
     accno = int(input("Enter account number"))
@@ -338,7 +346,7 @@ def withdraw():
 <h3>🧾 Checking Balance</h3>
 <p>
     The <span class="blockchar">balance()</span> function shows the balance of an account.
-    <pre><code>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 def balance():
     f = open("bank.dat", "rb")
     accno = int(input("Enter account number"))
@@ -359,7 +367,7 @@ def balance():
 <h3>📜 Main Menu</h3>
 <p>The main menu handles user interactions and directs them to the appropriate functions based on their choices.
 
-    <pre><code>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 ch = None
 while True:
     print('*'*73)
@@ -413,12 +421,20 @@ while True:
     This bank management system covers all essential functionalities required for basic banking operations. It ensures data validation, security (through OTPs and password protection), and provides a user-friendly interface for managing accounts and transactions. The use of pickle for data storage makes it easy to serialize and deserialize account information efficiently.
 </p>
 
-<p>
+<br>
+
+<!-- <h3>Youtube Video</h3>
+<div class="yt">
+    <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+</div> 
+
+<br>-->
+
 
 <p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/BankingSystemPY">GitHub</a></p>
-
-</p>
-
 
 
 <footer><div style="display: flex; justify-content: space-between; margin-top: 40px;">
@@ -431,7 +447,7 @@ while True:
 
 
 
-<script src="/blog/script.js"></script>
+<script src="copy.js"></script>
 
 </body>
 

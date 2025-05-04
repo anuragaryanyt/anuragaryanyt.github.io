@@ -1,125 +1,129 @@
-   
-         body {
-          font-family: 'Poppins', sans-serif;
-          /* font-family: Arial, sans-serif; */
-          margin: 0 auto;
-          padding: 20px;
-          max-width: 1000px;
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Font Style */
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1000px;
 
-          color: var(--clr-fg);
-          background-color: var(--clr-bg);
-      }
-      
+}
 
-      .light {
-        --clr-bg: #fcfcfc;
-        --clr-bg-alt: #fff;
-        --clr-fg: #555;
-        --clr-fg-alt: #444;
-        --clr-primary: #2978b5;
-        --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      
-      }
-      
-      .dark {
-        --clr-bg: #23283e;
-        --clr-bg-alt: #2a2f4c;
-        --clr-fg: #bdbddd;
-        --clr-fg-alt: #cdcdff;
-        --clr-primary: #90a0d9;
-        --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-      }
 
-      
-  ::-moz-selection {
-    background: var(--clr-primary);
-    color: var(--clr-bg);
+/* Headings */
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+  padding: 10px;
+}
+
+h3 {
+  border-left: 4px solid #3498db;
+}
+
+p {
+  text-align: justify;
+}
+/* li p {
+  text-align: justify;
+} */
+
+/* Image Banner */
+.banner,
+.pic {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* YouTube Embed */
+.yt {
+  position: relative;
+  width: 100%;                    /* Full width */
+  max-width: 900px;               /* Max width for larger screens, can be adjusted */
+  height: 0;
+  padding-bottom: 56.25%;         /* 16:9 Aspect Ratio */
+  background-color: #000;         /* Background color in case of empty space */
+  margin: 20px auto;              /* Center horizontally and add space on top/bottom */
+  border-radius: 10px;            /* Optional: rounded corners */
+}
+
+.yt iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;            /* Optional: rounded corners for the iframe */
+}
+
+/* Optional: Make the iframe behave well on extra-large screens (beyond 1200px) */
+@media (min-width: 1200px) {
+  .yt {
+      max-width: 1000px;          /* Increase max width for larger screens */
   }
-  
-  ::-webkit-selection,
-  ::selection {
-    background: var(--clr-primary);
-    color: var(--clr-bg);
-  }
+}
 
 
-      h1,
-      h2,
-      h3 {
-          color: #2c3e50;
-          padding: 10px;
-      }
+/* Code Blocks */
+pre {
+  position: relative;
+  background-color: #f3f3f3;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  overflow-x: auto;
+}
 
-      h3{
-        border-left: 4px solid #3498db;
-      }
+.copybtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
 
+.copybtn:hover {
+  background-color: #3784d7;
+}
 
-      .banner {
-        width: 90%;
-        max-width: 600px;
-        height: auto;
-        display: block;
-        margin: 20px auto;
-        border-radius: 10px;
-      }
-      
+code {
+  font-family: Consolas, monospace;
+  font-size: 15px;
+}
 
-      pre {
-          background-color: #f5f5f5;
-          padding: 15px;
-          overflow-x: auto;
-          border-left: 2px solid #737576;
-          position: relative;
-      }
+code .comment {
+  color: #4caf50;  /* Green color for comments */
+}
 
-      code {
-          font-family: Consolas, monospace;
-          font-size: 15px;
-      }
+.blockchar {
+  font-family: monospace;
+  background-color: #f5f5f5;
+  padding: 2px 5px;
+}
 
-      code .comment {
-          color: #4caf50;
-          /* Green color for comments */
-      }
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
 
-      .blockchar {
-          font-family: monospace;
-          background-color: #f5f5f5;
-          padding: 2px 5px
-      }
+a:hover {
+  text-decoration: underline;
+}
 
-      .copy-btn {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          padding: 5px 10px;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          cursor: pointer;
-          font-size: 14px;
-      }
-
-      .copy-btn:hover {
-          background-color: #0056b3;
-      }
-
-      a {
-          color: #3498db;
-          text-decoration: none;
-      }
-
-      a:hover {
-          text-decoration: underline;
-      }
-
-      ul li {
-          margin-bottom: 4px;
-          /* or use padding-bottom */
-      }
-
+/* List Styling */
+ul li {
+  margin-bottom: 4px;
+  /* or use padding-bottom */
+}
 
 /* Responsive Design */
 @media screen and (max-width: 600px) {
@@ -136,17 +140,16 @@
       font-size: 14px;
   }
 
-  .copy-btn {
+  .copybtn {
       font-size: 12px;
       padding: 4px 8px;
   }
+
+  .yt {
+      max-width: 100%;  /* Full width on smaller screens */
+  }
 }
-
-
 
 html {
   scroll-behavior: smooth;
 }
-
-
-
