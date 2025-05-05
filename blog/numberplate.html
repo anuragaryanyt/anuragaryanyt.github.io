@@ -166,6 +166,102 @@ vehicle_database = load_vehicle_database()
 This function queries all vehicle records from MongoDB and stores them in a dictionary where the plate number is the key.
         </p>
 
+        <h3>Video Processing</h3>
+        <p>
+            The <span class="blockchar">process_video</span>function captures video frames from the camera, detects license plates using OpenCV, and performs OCR using Tesseract to recognize the plate numbers.
+
+            <ol type="i">
+                <li><strong>Load Cascade for Plate Detection:</strong> The Haar Cascade classifier is pre-trained to detect license plates.</li>
+                
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+                <code>
+plate_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_russian_plate_number.xml')
+                </code></pre>
+
+                <li><strong>Configure Tesseract OCR:</strong> Specifies the path to the Tesseract executable.</li>
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+<span class="comment"># for ubuntu</span>
+pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+    
+<span class="comment"># for windows paste the path where it is installed</span>
+</code></pre>
+
+<li><strong>Define OCR Function:</strong></li>
+<pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
+def perform_ocr(img):
+    custom_config = r'--oem 3 --psm 6'
+    plate_number = pytesseract.image_to_string(img, config=custom_config)
+    return plate_number.strip()
+</code></pre>
+
+<li><trong>Process Video Frames:</trong></li>
+<pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
+def process_video():
+    cap = cv2.VideoCapture(-1)
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        plates = plate_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+        for (x, y, w, h) in plates:
+            plate_roi = frame[y:y + h, x:x + w]
+            pil_image = Image.fromarray(cv2.cvtColor(plate_roi, cv2.COLOR_BGR2RGB))
+            plate_number = perform_ocr(pil_image)
+            if plate_number in vehicle_database:
+                vehicle_info = vehicle_database[plate_number]
+                if plate_number not in [plate['plate_number'] for plate in recognized_plates]:
+                    timestamp = datetime.now()
+                    recognized_plates.append({
+                        "plate_number": plate_number,
+                        "owner_name": vehicle_info['owner_name'],
+                        "make": vehicle_info['make'],
+                        "model": vehicle_info['model'],
+                        "color": vehicle_info['color'],
+                        "timestamp": timestamp
+                    })
+                    history_collection.insert_one({
+                        "plate_number": plate_number,
+                        "owner_name": vehicle_info['owner_name'],
+                        "make": vehicle_info['make'],
+                        "model": vehicle_info['model'],
+                        "color": vehicle_info['color'],
+                        "timestamp": timestamp
+                    })
+                info_text = f"Owner: {vehicle_info['owner_name']}, Make: {vehicle_info['make']}, Model: {vehicle_info['model']}, Color: {vehicle_info['color']}"
+                cv2.putText(frame, info_text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        ret, jpeg = cv2.imencode('.jpg', frame)
+        frame_bytes = jpeg.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n\r\n')
+    cap.release()
+
+</code></pre>
+
+<img src="https://shorturl.at/9EsPf" alt="Number Scanning" class="banner">
+
+<ul type="disc">
+    <li>Captures video frames and converts them to grayscale.</li>
+    <li>Detects license plates in the frame using the Haar Cascade classifier.</li>
+    <li>Extracts the region of interest (ROI) and performs OCR to get the plate number.</li>
+    <li>Matches the recognized plate number with the database and logs the information if it's a new recognition.</li>
+    <li>Annotates the frame with vehicle information and the detected plate.</li>
+</ul>
+</ol>
+</p>
+
+<h3>Video Streaming</h3>
+<p>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+@app.route('/video_feed')
+def video_feed():
+    return Response(process_video(), mimetype='multipart/x-mixed-replace; boundary=frame')
+</code></pre>
+</p>
+
 
 
 

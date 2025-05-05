@@ -120,9 +120,9 @@ a:hover {
 }
 
 
-ul li {
+ul li,
+ol li {
   margin-bottom: 4px;
-
 }
 
 /* Responsive Design */
