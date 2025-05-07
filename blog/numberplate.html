@@ -33,9 +33,9 @@
 
 
     <h1>How I Built a <u>Number Plate Detection System</u></h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank" style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: April 30, 2025</em></p>
+    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank" style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: May 05, 2025</em></p>
 
-    <!-- <img src="https://drive.google.com/thumbnail?id=1DjrkwyRxgmzm9tAXEOX5Mxnbso3nuqrh" alt="Bank Management System Screenshot" /> -->
+
     <img class="banner" src="https://shorturl.at/TE6FE" alt="Number Plate Iamge" />
 
     <p>
@@ -240,7 +240,7 @@ def process_video():
 
 </code></pre>
 
-<img src="https://shorturl.at/9EsPf" alt="Number Scanning" class="banner">
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*QehCHub_uFteF51ikufVng.png" alt="Number Scanning" class="banner">
 
 <ul type="disc">
     <li>Captures video frames and converts them to grayscale.</li>
@@ -260,23 +260,134 @@ def process_video():
 def video_feed():
     return Response(process_video(), mimetype='multipart/x-mixed-replace; boundary=frame')
 </code></pre>
+
+The <span class="blockchar">video_feed</span> route returns a video stream using the process_video generator function.
+
+</p>
+
+<h3>User Authentication</h3>
+<p>
+    Basic user authentication is implemented to restrict access to certain routes. The login system uses Flask's session management to keep track of logged-in users.
+    <ol type="1">
+        <li>Define Admin Credentials</li>
+        <li>Login Route</li>
+        <li>Logout Route</li>
+    </ol>
+
+
+</p>
+
+<h3>Vehicle Record Management</h3>
+<p>
+    <ol type="1">
+        <li>Add Vehicle Route:</li>
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+@app.route('/add_vehicle', methods=['POST'])
+    def add_vehicle():
+        if 'logged_in' not in session:
+            return redirect(url_for('login'))
+        plate_number = request.form['plate_number']
+        owner_name = request.form['owner_name']
+        make = request.form['make']
+        model = request.form['model']
+        color = request.form['color']
+        vehicles_collection.insert_one({
+            "plate_number": plate_number,
+            "owner_name": owner_name,
+            "make": make,
+            "model": model,
+            "color": color
+        })
+        return redirect(url_for('index'))
+</code></pre>
+
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*fgRKpWZ2c5lZW4fSEhYamw.png" alt="Add New Vehicle Record" class="banner">
+
+
+
+
+        <li>Recognized Plates Route:</li>
+
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+app.route('/recognized_plates')
+def recognized_plates_page():
+    return render_template('recognized_plates.html', recognized_plates=recognized_plates)
+</code></pre>
+
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*7l_bD-4Ab4zKi_VF07G9fA.png" alt="Recognised Plate" class="banner">
+    </ol>
+</p>
+
+<h3>Displaying Data</h3>
+<p>
+    The application provides a dashboard to display recognized plates and vehicle records.
+
+    <ol type="1">
+        <li>Index Route:</li>
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+@app.route('/index')
+def index():
+    try:
+        past_24_hours = datetime.now() - timedelta(hours=24)
+        data = history_collection.find({"timestamp": {"$gte": past_24_hours}})
+        return render_template('index.html', data=data)
+    except Exception as e:
+        app.logger.error(f"An error occurred while fetching data from the database: {e}")
+        return "An error occurred while fetching data from the database. Please check the logsfor more information."
+</code></pre>
+
+
+        <li>Records Route:</li>
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+@app.route('/records')
+def records():
+    try:
+        database = {}
+        records_collection = db['vehicle']
+        database = records_collection.find()
+        app.logger.info("Records fetched successfully")
+        return render_template('records.html', rec=database)
+    except Exception as e:
+        app.logger.error(f"An error occurred while fetching records from the database: {e}")
+        return "An error occurred while fetching records from the database. Please check the logs for more information."
+</code></pre>
+    </ol>
+
+    The <span class="blockchar">index</span> route displays recognized plates within the past 24 hours, while the <span class="blockchar">records</span> route displays all vehicle records.
+
+    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*WB1Jw8rpAjkPXOF1hmtFQw.png" alt="History of previous 24 hrs" class="banner">
+</p>
+
+<h3>Running the Application</h3>
+<p>
+    The Flask application is started, and video processing is run in a separate thread to avoid blocking the main thread.
+
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+<code>
+def run_video_processing():
+    with app.app_context():
+        app.video_thread = threading.Thread(target=process_video)
+        app.video_thread.start()
+
+if __name__ == '__main__':
+    run_video_processing()
+    app.run(debug=True)
+</code></pre>
+
+The <span class="blockchar">run_video_processing</span> function initializes and starts the video processing thread, ensuring the application remains responsive while processing video frames.
+
+
 </p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h3>Conclusion</h3>
+<p>
+This number plate detection system integrates real-time video processing with a web-based interface, leveraging OpenCV, Tesseract OCR, and MongoDB. It demonstrates the practical application of computer vision and web technologies for automated license plate recognition and vehicle management.
+</p>
 
 
 
@@ -300,13 +411,13 @@ def video_feed():
 <br>-->
 
 
-<p><strong>Full Code:</strong> <a href="">GitHub</a></p>
+<p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/number_plate_detection">GitHub</a></p>
 
 
 <footer><div style="display: flex; justify-content: space-between; margin-top: 40px;">
     <a href="blog.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr; Home</a>
 
-    <a href="placementpredict.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next &rarr;</a>
+    <a href="Automate-Email-Sending.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next &rarr;</a>
 </div>
 </footer>
 
