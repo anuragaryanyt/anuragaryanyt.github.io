@@ -23,13 +23,12 @@ h3 {
 p {
   text-align: justify;
 }
-/* li p {
-  text-align: justify;
-} */
+
 
 /* Image Banner */
-.banner,
-.pic {
+
+
+.banner{
   width: 90%;
   max-width: 600px;
   height: auto;
@@ -37,6 +36,49 @@ p {
   margin: 20px auto;
   border-radius: 10px;
 }
+
+/* Your existing figcaption CSS */
+figcaption {
+  text-align: center;
+  margin-top: 2px; /* Or even 0px or 2px if you want it very close */
+  font-style: italic;
+  color: #555;
+}
+
+.pic {
+  /* Your existing styles */
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+
+  /* Add transition for smooth effect */
+  transition: transform 0.3s ease, max-width 0.3s ease, max-height 0.3s ease;
+  cursor: zoom-in; /* Indicate it's clickable */
+}
+
+.pic.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 95vw;   /* Responsive to viewport width */
+  max-height: 90vh;  /* Responsive to viewport height */
+  width: auto;
+  height: auto;
+  cursor: zoom-out;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional for emphasis */
+}
+
+
+
+
 
 /* YouTube Embed */
 .yt {
@@ -123,6 +165,7 @@ a:hover {
 ul li,
 ol li {
   margin-bottom: 4px;
+  text-align: justify;
 }
 
 /* Responsive Design */
