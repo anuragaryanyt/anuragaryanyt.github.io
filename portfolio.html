@@ -1,787 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
   <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="/cssjs/styles.css" />
-
   <b:if cond='data:blog.url == data:blog.homepageUrl'>
-    <meta NAME="Description" CONTENT="anuragaryanyt portfolio " />
+    <meta NAME="Description" CONTENT="Raj Aryan portfolio " />
   </b:if>
   <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
   <meta NAME="Author" CONTENT="Raj Aryan " />
   <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
   <meta NAME="Country" CONTENT="India" />
   <meta NAME="Robots" CONTENT="All" />
-  <title>Raj Aryan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="/cssjs/stylesheet.css">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">     -->
+  <link rel="stylesheet" href="cssjs/linktree.css">
+  <title>RAJ ARYAN</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    body {
+      /* background: url("https://www.w3schools.com/howto/img_link_tree_template2_bg.jpg"); The image used for background */
+      background: url("/icons/vivid.jpg");
+      /* The image used for background */
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      jusify-content: center;
+      align-items: center;
+    }
+
+    .links-container a {
+      width: 80%;
+    }
+
+    .w3-theme-l1:hover {
+      background-color: #c5e0f9 !important;
+    }
+
+    .margin-top-2 {
+      margin-top: 32px;
+    }
+
+    .bottom {
+      width: 100%;
+      text-align: center;
+      width: auto;
+      font-weight: bolder;
+    }
+
+    .bottom span {
+      color: #2978b5;
+    }
+
+    /* .bottom svg {
+      stroke: #171717;
+      fill: transparent;
+    } */
+
+    @media (min-width: 768px) {
+      .link {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px;
+      }
+    }
+  </style>
 </head>
 
-<body class="light" id="top">
-  <header class="header center">
-    <h3>
-      <a href="/" class="link">RA.</a>
-    </h3>
+<body>
+  <!-- Content container -->
+  <div class="container">
 
-    <nav class="nav center">
-      <ul class="nav__list center">
-
-        <li class="nav__list-item">
-          <a class="link link--nav" href="/blog/blog.html">Blog</a>
-        </li>
-
-        <li class="nav__list-item">
-          <a class="link link--nav" href="#projects">Projects</a>
-        </li>
-
-        <li class="nav__list-item">
-          <a class="link link--nav" href="#skills">Skills</a>
-        </li>
-
-        <li class="nav__list-item">
-          <a class="link link--nav" href="#certificates">Certificates</a>
-        </li>
-
-        <li class="nav__list-item">
-          <a class="link link--nav" href="#contact">Contact</a>
-        </li>
-
-      </ul>
-
-      <button type="button" aria-label="toggle theme" class="btn btn--icon">
-        <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-      </button>
-
-      <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
-        <i aria-hidden="true" class="fas fa-bars"></i>
-      </button>
-    </nav>
-  </header>
-
-
-  <main>
-    <!-- About -->
-    <div class="about center">
-      <div style="text-align: center">
-        <!-- <img src="https://shorturl.at/pcRGt" class="w3-margin" alt="image" width="200px" height="200px" -->
-        <!-- https://drive.google.com/file/d/1spnoasvRCIwVxq_5YZu4Xm_Axt0fnsc8/view?usp=sharing -->
-
-        <img src="https://drive.google.com/thumbnail?id=1spnoasvRCIwVxq_5YZu4Xm_Axt0fnsc8" class="w3-margin" alt="image"
-          width="200px" height="200px" style="border-radius: 50%;">
-      </div>
-      <br>
-
-
-
-      <h1>Hi, I am <span class="about__name">Raj Aryan</span></h1>
-      <!-- <h2 class="about__role">A Front end Developer.</h2> -->
-
-      <p class="about__desc">
-        currently pursuing a bachelor's degree in Computer Science & Engineering at KIIT University, Bhubaneswar. With a
-        strong academic background, I specialize in software development, database management, & machine learning. I'm
-        committed to developing innovative solutions and enhancing systems by leveraging the latest technologies. <br>
-        In addition to my technical skills in programming languages like C++, Python and C, I am passionate about
-        database management systems (DBMS). I am particularly proficient in working with MySQL.
-        <br><br>
-        Outside of my academic and professional endeavors, I have a keen interest in cricket, which helps me build
-        teamwork and leadership skills. I also enjoy staying informed about geopolitics, global affairs, and emerging
-        technology trends, which keeps me connected to the ever-evolving world around us. <br>
-        Eager to continue expanding my knowledge and skills, I am excited to collaborate with professionals in the tech
-        field and contribute meaningfully to real-world projects.
-      </p>
-
-      <div class="about__contact center">
-        <a href="https://rxresu.me/anuragaryanyt/rajresume" target="_blank">
-          <span class="btn btn--outline">Resume</span> <!-- update resume link here ( to be done later) -->
-        </a>
-
-        <a href="https://github.com/anuragaryanyt" target="_blank" aria-label="github" class="link link--icon">
-          <i aria-hidden="true" class="fab fa-github"></i>
-        </a>
-
-        <a href="https://linkedin.com/in/anuragaryanyt" target="_blank" aria-label="linkedin" class="link link--icon">
-          <i aria-hidden="true" class="fab fa-linkedin"></i>
-        </a>
-      </div>
+    <!-- Image and name container. Change to your pictue here. -->
+    <div style="text-align: center">
+      <img src="https://drive.google.com/thumbnail?id=11iOp53CJ07uABdysFpSJJDAL9Ce85beK" class="w3-margin" alt="image"
+          width="150px" height="150px" style="border-radius: 50%;">
+      <p><span class="name w3-padding w3-pink w3-round" style="font-weight: bolder;">Hi, I'm Raj!</span></p>
+      <p style="font-weight: bolder;">Check out my links!</p>
     </div>
 
 
 
-    <!-- Projects -->
-    <section id="projects" class="section projects">
-      <h2 class="section__title">Projects</h2>
+    <h4 class="margin-top-2" style="text-align: center;">MY SOCIAL NETWORKS</h4>
+    <div class="links-container">
 
-      <div class="projects__grid">
 
-        <!-- project 1 -->
-
-        <div class="project">
-          <h3>Number Plate Detection System</h3>
-          <p class="project__description">
-            Our Vehicle Number Plate Detection system extracts number plate information from real-time footage with
-            precision.
-          </p>
-          <ul class="project__stack">
-            <li class="project__stack-item">Python</li>
-            <li class="project__stack-item">Flask</li>
-            <li class="project__stack-item">MongoDB</li>
-            <li class="project__stack-item">HTML CSS</li>
-            <li class="project__stack-item">openCV</li>
-          </ul>
-
-          <a href="https://github.com/anuragaryanyt/number_plate_detection" aria-label="source code"
-            class="link link--icon">
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-          <a href="/blog/Number-plate-detection.html" aria-label="live preview" class="link link--icon">
-            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-        <!-- project 2 -->
-        <div class="project">
-          <h3>Resume Screening & Placement Prediction</h3>
-          <p class="project__description">
-            This project leverages Machine Learning and Natural Language Processing (NLP) for efficient resume screening
-            and placement prediction.
-          </p>
-          <ul class="project__stack">
-            <li class="project__stack-item">NumPy</li>
-            <li class="project__stack-item">Pandas</li>
-            <li class="project__stack-item">Scikit-learn</li>
-            <li class="project__stack-item">Matplotlib</li>
-            <li class="project__stack-item">Seaborn</li>
-          </ul>
-
-          <a href="https://github.com/anuragaryanyt/ResumeScreeningPlacementPrediciton" aria-label="source code"
-            class="link link--icon">
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-          <a href="blog/Resume-screening-placement-prediction.html"
-            aria-label="live preview" class="link link--icon">
-            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-
-        <!-- project 3 -->
-        <div class="project">
-          <h3>Banking Management System</h3>
-          <p class="project__description">
-            Utilizing Python our Bank Management System offers a robust solution for managing banking operations.
-            Seamlessly handle customer accounts, transactions, and employee management within a secure, efficient
-            database environment.
-          </p>
-          <ul class="project__stack">
-            <li class="project__stack-item">Python</li>
-            <!-- <li class="project__stack-item">TypeScript</li>
-          <li class="project__stack-item">React</li> -->
-          </ul>
-
-          <a href="https://github.com/anuragaryanyt/BankingSystemPY" aria-label="source code" class="link link--icon">
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-          <a href="/blog/Bank-management-system.html" aria-label="live preview" class="link link--icon">
-            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-
-
-
-        <!-- project 4 -->
-        <div class="project">
-          <h3>Weather App</h3>
-          <p class="project__description">
-            Harnessing the power of OpenWeather API, our intuitive web app provides instant, customizable weather
-            updates and forecasts, ensuring accurate planning with ease.
-          </p>
-          <ul class="project__stack">
-            <li class="project__stack-item">HTML</li>
-            <li class="project__stack-item">CSS</li>
-            <li class="project__stack-item">Js</li>
-          </ul>
-
-          <a href="https://github.com/anuragaryanyt/weatherapp" aria-label="source code" class="link link--icon">
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-          <a href="https://anuragaryanyt.github.io/weatherapp/index.html" aria-label="live preview"
-            class="link link--icon">
-            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-
-
-        <!-- project 5 -->
-        <div class="project">
-          <h3>Portfolio Website</h3>
-          <p class="project__description">
-            Built with HTML and CSS, my portfolio website highlights my projects and skills in a sleek, user-friendly
-            interface. Explore my work and achievements in a visually appealing environment.
-          </p>
-          <ul class="project__stack">
-            <li class="project__stack-item">HTML</li>
-            <li class="project__stack-item">CSS</li>
-            <!-- <li class="project__stack-item">React</li> -->
-          </ul>
-
-          <a href="https://github.com/anuragaryanyt/profile" aria-label="source code" class="link link--icon">
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-          <a href="https://rajaryan.netlify.app" aria-label="live preview" class="link link--icon">
-            <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-          </a>
-        </div>
-
-
-
-
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section skills" id="skills">
-      <h2 class="section__title">Skills</h2>
-      <ul class="skills__list">
-        <li class="skills__list-item btn btn--plain">C++</li>
-        <li class="skills__list-item btn btn--plain">Python</li>
-        <li class="skills__list-item btn btn--plain">C</li>
-        <li class="skills__list-item btn btn--plain">Java</li>
-        <li class="skills__list-item btn btn--plain">HTML</li>
-        <li class="skills__list-item btn btn--plain">CSS</li>
-        <li class="skills__list-item btn btn--plain">MySQL</li>
-        <li class="skills__list-item btn btn--plain">MongoDB</li>
-        <li class="skills__list-item btn btn--plain">Oracle SQL</li>
-        <li class="skills__list-item btn btn--plain">Cloud Computing</li>
-        <li class="skills__list-item btn btn--plain">JavaScript</li>
-        <li class="skills__list-item btn btn--plain">Numpy</li>
-        <li class="skills__list-item btn btn--plain">Pandas</li>
-        <li class="skills__list-item btn btn--plain">Matplotlib</li>
-        <li class="skills__list-item btn btn--plain">OpenCV</li>
-        <li class="skills__list-item btn btn--plain">Flask</li>
-        <li class="skills__list-item btn btn--plain">Git</li>
-        <li class="skills__list-item btn btn--plain">GitHub</li>
-        <li class="skills__list-item btn btn--plain">Linux</li>
-        <li class="skills__list-item btn btn--plain">Netlify</li>
-        <li class="skills__list-item btn btn--plain">Vercel</li>
-        <li class="skills__list-item btn btn--plain">Visual Studio</li>
-        <li class="skills__list-item btn btn--plain">Visual Studio Code</li>
-
-
-      </ul>
-    </section>
-
-
-    <!-- certificates -->
-    <section id="certificates" class="section certificates">
-      <h2 class="section__title">Certificates</h2>
-      <div class="certificates__grid">
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/google-color-icon.png" alt="Google Logo">
-            </div>
-            <p class="cheading">Technical Support Fundamentals
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <p class="para">
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jun 12, 2024</span>
-              <a href="https://drive.google.com/file/d/1MgeOE-RNrJddLDlSDos624o1RPisXOjL/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/ms.png" alt="Microsoft Logo">
-            </div>
-            <p class="cheading">Microsoft Azure SQL
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Aug 15, 2024</span>
-              <a href="https://drive.google.com/file/d/1FJYaYsEoRoSJ6PFWrvxrzc0aqmELvJPM/view?usp=drive_link"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/aws-icon.png" alt="AWS Logo">
-            </div>
-            <p class="cheading">AWS Cloud Foundations
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Mar 28, 2024</span>
-              <a href="https://drive.google.com/file/d/1sS2TsMBCThAaxlkfC17JzQzv0ITCvSVH/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/linux foundation.png" alt="Linux Foundation Logo">
-            </div>
-            <p class="cheading">Linux Tools for Developers
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jul 1, 2024</span>
-              <a href="https://drive.google.com/file/d/17tNFF6mu7_w7DUlR50ActZn5EuXLOEkR/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/linkedin logo.png" alt="Linkedin Logo">
-            </div>
-            <p class="cheading">Introduction to Career Skills in Data Analytics
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jul 25, 2024</span>
-              <a href="https://drive.google.com/file/d/1bxB63QnXGI0-xWyxcmmeIMnh5125Q0Be/view?usp=drive_link"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/ibm.png" alt="IBM Logo">
-            </div>
-            <p class="cheading">Introduction to Cloud Computing
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Aug 9, 2024</span>
-              <a href="https://drive.google.com/file/d/1JzueOPJ2qFAgIq55GVm_wQv-9AW7bFPW/view?usp=drive_link"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/ibm.png" alt="IBM Logo">
-            </div>
-            <p class="cheading">Databases and SQL for Data Science with Python
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jul 12, 2024</span>
-              <a href="https://drive.google.com/file/d/18E8nKqDPORmTgBPbRP46lDessnCEElxF/view?usp=drive_link"
-                target=_blank aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/ibm.png" alt="IBM Logo">
-            </div>
-            <p class="cheading">Excel Basics for Data Analysis
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jul 1, 2024</span>
-              <a href="https://drive.google.com/file/d/17iwxB87QB7HQnKU67hILJQnrFEi1BtOS/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/meta-icon.png" alt="Meta Logo">
-            </div>
-            <p class="cheading">Introduction to Front-End Dev
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jun 5, 2024</span>
-              <a href="https://drive.google.com/file/d/1sxjevsxA26do5E7Y2pEiJzlNyLNY-QsO/view?usp=drive_link"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/meta-icon.png" alt="Meta Logo">
-            </div>
-            <p class="cheading">Programming with JavaScript
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jun 9, 2024</span>
-              <a href="https://drive.google.com/file/d/1Uq9LcOwo17lu22uBv5AbWgJFF6G7PEuB/view?usp=drive_link"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/meta-icon.png" alt="Meta Logo">
-            </div>
-            <p class="cheading">HTML & CSS in depth
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-
-            <p class="para para-sm">
-              <span class="date">Jun 13, 2024</span>
-              <a href="https://drive.google.com/file/d/1NfvMcu5pCWrxfnIM_UVzZUBsd3JWhRKT/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/cisco.png" alt="Cisco Logo">
-            </div>
-            <p class="cheading">Introduction to Cybersecurity
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Jun 7, 2024</span>
-              <a href="https://drive.google.com/file/d/1K_j2rVdij4XCw-XSMvhmNX_szqh6Nu0b/view?usp=drive_link"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/cisco.png" alt="Cisco Logo">
-            </div>
-            <p class="cheading">Python Essentials 1
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Mar 3, 2024</span>
-              <a href="https://drive.google.com/file/d/1cEEK8YOL6oMacC55Ix_W1_0ASVmOZSGj/view?usp=drive_linkk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/harckerrank3.webp" alt="Hackerrank Logo">
-            </div>
-            <p class="cheading">SQL (Basic)
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Apr 5, 2024</span>
-              <a href="https://drive.google.com/file/d/1q9eDArVtdKO2mWX8SML1cRarjEHR9bTp/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/harckerrank3.webp" alt="Hackerrank Logo">
-            </div>
-            <p class="cheading">Python (Basic)
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Apr 5, 2024</span>
-              <a href="https://drive.google.com/file/d/18QuV856jjT5BCqCgvv-zHvEoUdw6s5uw/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="content">
-            <div class="icon">
-              <img src="icons/harckerrank3.webp" alt="Hackerrank Logo">
-            </div>
-            <p class="cheading">Problem Solving (Intermediate)</p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
-            <p class="para para-sm">
-              <span class="date">Aug 27, 2023</span>
-              <a href="https://drive.google.com/file/d/1kIvi9OYvK0SrcfDcIlBNO2KChoN3eJ9M/view?usp=drivesdk"
-                target="_blank" aria-label="live preview">
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </p>
-          </div>
-        </div>
-
-
-
-
-      </div>
-    </section>
-
-
-
-    <!-- Education -->
-
-    <section class="section skills" id="education">
-      <h2 class="section__title">Education</h2>
-
-      <div class="timeline">
-        <div class="container left">
-          <div class="date">Sep 2021-Now</div>
-          <i class="icon fa fa-home"></i>
-          <div class="content">
-            <h2><strong>Kalinga Institute of Industrial Technology (KIIT) </strong></h2>
-            <p>
-              Bachelor of Technology in Computer Science <br> Bhubaneswar, Odisha
-            </p>
-            <p>
-              <strong> Courses: </strong> OOPS, Operating Systems, Data Structure and Algorithm, DBMS, Computer
-              Networks, Big Data, Artificial Intelligence, Cloud Computing, Software Engineering.
-            </p>
-          </div>
-        </div>
-        <div class="container right">
-          <div class="date">Jun 2019-May 2021</div>
-          <i class="icon fa fa-gift"></i>
-          <div class="content">
-            <h2><strong>Vivekananda Vidya Mandir</strong></h2>
-            <p>
-              AISSCE, CBSE, Science <br> Ranchi, Jharkhand
-            </p>
-          </div>
-        </div>
-        <div class="container left">
-          <div class="date">Mar 2008-Apr 2019</div>
-          <i class="icon fa fa-user"></i>
-          <div class="content">
-            <h2><strong>DAV Public School, Mathurapur</strong></h2>
-            <p>
-              AISSE, CBSE <br> Bhagalpur, Bihar
-            </p>
-          </div>
-        </div>
-
-        <!-- <div class="container right">
-          <div class="date">18 May</div>
-          <i class="icon fa fa-running"></i>
-          <div class="content">
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <p>
-              Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-            </p>
-          </div>
-        </div> -->
-
-      </div>
-
-    </section>
-
-
-
-
-
-
-    <!-- Contact -->
-    <section class="section contact center" id="contact">
-      <h2 class="section__title">Contact</h2>
-
-
-      <form action="https://formsubmit.co/work.rajaryan@gmail.com" method="POST" class="form">
-        <div class="title"></div>
-        <input type="email" name="email" placeholder="Your email" class="input" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      
-
-<br><br>
-
-      <div class="social-links">
-        <div id="github" class="social-btn flex-center">
-          <a href="https://github.com/anuragaryanyt" target="_blank">
-            <i class="fa-brands fa-github fa-lg"></i><span>anuragaryanyt</span>
-          </a>
-        </div>
-
-        <div id="instagram" class="social-btn flex-center">
-          <a href="https://instagram.com/rajxaryann" target="_blank">
-            <i class="fa-brands fa-instagram fa-lg"></i><span>rajxaryann</span>
-          </a>
-        </div>
-
-        <div id="twitter" class="social-btn flex-center">
-          <a href="https://twitter.com/anuragaryanyt" target="_blank">
-            <i class="fa-brands fa-twitter fa-lg"></i><span>anuragaryanyt</span>
-          </a>
-        </div>
-
-        <div id="linkedin" class="social-btn flex-center">
-          <a href="https://linkedin.com/in/anuragaryanyt" target="_blank">
-            <i class="fa-brands fa-linkedin fa-lg"></i><span>anuragaryanyt</span>
-          </a>
-        </div>
-
-        <!-- <div id="medium" class="social-btn flex-center">
-          <a href="https://anuragaryanyt.medium.com/" target="_blank">
-            <i class="fa-brands fa-medium fa-lg"></i><span>anuragaryanyt</span>
-          </a>
-        </div> -->
-
-        <!-- <div id="mailto" class="social-btn flex-center">
-          <a href="mailto:anuragraj718@gmail.com">
-            <i class="fa-solid fa-at fa-lg"></i><span>anuragraj718@gmail.com</span>
-          </a>
-        </div> -->
-      </div>
-
-
-
-    </section>
-
-
-  </main>
-
-
-
-  <footer class="footer">
-    <a href="https://bit.ly/Anuragaryanyt" target="_blank" class="link footer__link">
-      Created By Raj Aryan
-    </a>
-
-    <br><br>
-
-    <span class="last-updated">
-      <!-- hitwebcounter Code START -->
-
-      <img src="https://hitwebcounter.com/counter/counter.php?page=15688382&style=0008&nbdigits=5&type=ip&initCount=90"
-        title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>
-
-      Visitors
-
+      <a href="/portfolio.html" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target=" ">Portfolio</a>
       <br>
-      Last updated: May 10, 2024
+      <a href="https://instagram.com/rajxaryann" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target="_blank">Instagram</a>
+      <br>
+      <a href="https://github.com/anuragaryanyt" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target="_blank">Github</a>
+      <br>
+      <a href="https://linkedin.com/in/anuragaryanyt" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target="_blank">Linkedin</a>
+      <br>
+      <a href="https://x.com/anuragaryanyt" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target="_blank">Twitter</a>
+      <br>
+      <a href="https://facebook.com/anuragaryanyt" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target="_blank">Facebook</a>
+      <br>
 
-    </span>
-  </footer>
 
-  <div class="scroll-container">
-    <div class="scroll-top">
-      <a aria-label="Scroll up" href="#top">
-        <i aria-hidden="true" class="fas fa-arrow-up"></i>
-      </a>
+      <!-- add more links here -->
+
     </div>
+
+    <!-- Links section 2. Replace the # inside of the "" with your links. -->
+
+    <!-- <h4 class="margin-top-2" style="text-align: center;">MY CV</h4>
+    <div class="links-container">
+      <a href="https://drive.google.com/file/d/1-4-5yk00lAvxtUmE8Y9RInvwUym6ottX/view?usp=drive_link" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Resume</a>
+    </div> -->
+
+    <!-- Links section 3. Replace the # inside of the "" with your links. -->
+    <h4 class="margin-top-2" style="text-align: center;">MY BLOG</h4>
+    <div class="links-container">
+      <a href="https://anuragaryanyt.medium.com" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link"
+        target="_blank">Medium</a>
+    </div>
+
+    <!-- Links section 3. Replace the # inside of the "" with your links. -->
+    <!-- <h4 class="margin-top-2" style="text-align: center;">MY BUSINESS</h4>
+      <div class="links-container">
+        <a href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Business</a>
+      </div> -->
+
+    <!-- Bottom section 3 -->
+    <div class="bottom margin-top-2 w3-padding w3-round">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-heart">
+        <path
+          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+        </path>
+      </svg> -->
+      <span style="vertical-align: 6px;"> ©2025 - Raj Aryan</span>
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-heart">
+        <path
+          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+        </path>
+      </svg> -->
+      <br>
+
+      <span class="last-updated">
+        <!-- hitwebcounter Code START -->
+        <img
+          src="https://hitwebcounter.com/counter/counter.php?page=17769479&style=0008&nbdigits=5&type=ip&initCount=37"
+          title="Counter Widget" Alt="Number of unique visitors" border="0" /></a>
+
+        Visitors
+        <br>
+      </span>
+
+    </div>
+
+
+
   </div>
+  <script>
+    feather.replace()
 
-  <script src="/cssjs/script.js"></script>
+
+    // prevent shortcut keys 
+    document.addEventListener('keydown', function (e) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+      }
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+      }
+    });
+
+    // prevent right clicks
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+
+  </script>
 </body>
 
 </html>
