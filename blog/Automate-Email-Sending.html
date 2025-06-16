@@ -8,22 +8,24 @@
     <meta name="description" content="Portfolio" />
 
     <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
-     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
 
 
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <b:if cond='data:blog.url == data:blog.homepageUrl'>
-        <meta NAME="Description" CONTENT="anuragaryanyt portfolio " />
-    </b:if>
-    <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
-    <meta NAME="Author" CONTENT="Raj Aryan " />
-    <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
-    <meta NAME="Country" CONTENT="India" />
-    <meta NAME="Robots" CONTENT="All" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <meta name="description"
+        content="Learn how to automate email sending in Google Sheets using Google Apps Script. This tutorial by Raj Aryan (anuragaryanyt) walks you through creating scripts to send emails based on spreadsheet data—ideal for productivity, businesses, and coders." />
+    <meta name="keywords"
+        content="Google Apps Script, automate email Google Sheets, anuragaryanyt, Raj Aryan, rajaryan, rajxaryann, email automation script, Google Sheets email project, send email from spreadsheet, coding productivity, tech blog India, script for sending email, rajaryan.netlify.app, anuragaryanyt.site, Indian coder, Raj Aryan blog, Google Workspace automation, Gmail script automation" />
+
+
+    <meta name="author" content="Raj Aryan" />
+    <meta name="language" content="en, hi, bho" />
+    <meta name="country" content="IN" />
+    <meta name="robots" content="index, follow" />
 
     <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
@@ -44,7 +46,10 @@
         alt="Automate Email Sending in Google Sheets with Apps Script" />
 
     <p>
-        In this blog, I'll walk you through how I automated email sending using Google Sheets and Google Apps Script. This system allows you to compose, personalize, and send emails directly from your spreadsheet — without manually opening Gmail. It's ideal for reminders, newsletters, or any scenario where you need to reach multiple recipients efficiently.
+        In this blog, I'll walk you through how I automated email sending using Google Sheets and Google Apps Script.
+        This system allows you to compose, personalize, and send emails directly from your spreadsheet — without
+        manually opening Gmail. It's ideal for reminders, newsletters, or any scenario where you need to reach multiple
+        recipients efficiently.
 
     </p>
 
@@ -256,17 +261,18 @@ GmailApp.sendEmail(
         </code></pre>
 
         <strong>Tips:</strong>
- 
 
-<ul type="✅">
-    <li>Use placeholders like <span class="blockchar">${variable}</span> to dynamically insert data.</li>
-    <li>Add URLs or use HTML formatting for rich-text emails.</li>
-</ul>
+
+        <ul type="✅">
+            <li>Use placeholders like <span class="blockchar">${variable}</span> to dynamically insert data.</li>
+            <li>Add URLs or use HTML formatting for rich-text emails.</li>
+        </ul>
 
 
 
         <li>Add New Columns for More Context</li>
-        Currently, the script uses SNo, Name, Email, and Status. If you want to include Role, Company, or Phone Number, follow these steps:
+        Currently, the script uses SNo, Name, Email, and Status. If you want to include Role, Company, or Phone Number,
+        follow these steps:
 
         <ol type="i">
             <li>Add new columns in your Google Sheet (e.g., Role, Company).</li>
@@ -291,11 +297,11 @@ GmailApp.sendEmail(
         </ol>
 
 
-<strong>Tips:</strong>
-<ul type="✅">
-    <li>Ensure column names match exactly in the script.</li>
-    <li>Always check if the column exists using <span class="blockchar">indexOf</span></li>
-</ul>
+        <strong>Tips:</strong>
+        <ul type="✅">
+            <li>Ensure column names match exactly in the script.</li>
+            <li>Always check if the column exists using <span class="blockchar">indexOf</span></li>
+        </ul>
 
 
 
@@ -310,7 +316,7 @@ GmailApp.sendEmail(
         </ul>
         <br><br>
         Example: Skip Invalid Email Addresses
-<pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
+        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 if (!email || !email.includes('@')) {
   console.warn(`Skipping invalid email for ${name}`);
   continue;
@@ -340,13 +346,15 @@ GmailApp.sendEmail(email, 'Welcome Email', '', { htmlBody: emailBody });
 
     <h3>Final Thoughts on Customization</h3>
     <p>
-<ul>
-    <li><strong>Start Simple:</strong>e script working first.</li>
-    <li><strong>Add Complexity Gradually:</strong>om columns, and conditions step-by-step.</li>
-    <li><strong>Monitor and Optimize:</strong>Use logs (<span class="blockchar">Logger.log()</span>) to debug failures or inefficiencies.</li>
-</ul>
+    <ul>
+        <li><strong>Start Simple:</strong>e script working first.</li>
+        <li><strong>Add Complexity Gradually:</strong>om columns, and conditions step-by-step.</li>
+        <li><strong>Monitor and Optimize:</strong>Use logs (<span class="blockchar">Logger.log()</span>) to debug
+            failures or inefficiencies.</li>
+    </ul>
 
-With these customizations, you can automate newsletters, follow-ups, and custom alerts, making your workflow more efficient. 🚀
+    With these customizations, you can automate newsletters, follow-ups, and custom alerts, making your workflow more
+    efficient. 🚀
 
     </p>
 

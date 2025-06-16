@@ -8,21 +8,23 @@
     <meta name="description" content="Portfolio" />
 
     <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
-     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
-     
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
+
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <b:if cond='data:blog.url == data:blog.homepageUrl'>
-      <meta NAME="Description" CONTENT="anuragaryanyt portfolio " />
-    </b:if>
-    <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
-    <meta NAME="Author" CONTENT="Raj Aryan " />
-    <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
-    <meta NAME="Country" CONTENT="India" />
-    <meta NAME="Robots" CONTENT="All" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <meta name="description"
+        content="Explore the Bank Management System project by Raj Aryan (anuragaryanyt) - a Python-based application simulating core banking operations like account creation, deposit, withdrawal, and balance inquiry. A great project for Python beginners and developers." />
+    <meta name="keywords"
+        content="Bank Management System, Python bank project, anuragaryanyt, Raj Aryan, rajaryan, rajxaryann, anuragtiwary, Python project, beginner coding project, software engineer TCS, KIIT CSE, account management Python, banking system in Python, tech blog India, Bhagalpur, Bihar, rajaryan.netlify.app, anuragaryanyt.site, Indian coder, Python console apps, Raj Aryan blog" />
+
+    <meta name="author" content="Raj Aryan" />
+    <meta name="language" content="en, hi, bho" />
+    <meta name="country" content="IN" />
+    <meta name="robots" content="index, follow" />
+
 
     <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
@@ -35,41 +37,43 @@
 
 
     <h1>How I Built a <u>Bank Management System</u></h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank" style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: April 30, 2025</em></p>
+    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank"
+            style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: April 30, 2025</em></p>
 
     <!-- <img src="https://drive.google.com/thumbnail?id=1DjrkwyRxgmzm9tAXEOX5Mxnbso3nuqrh" alt="Bank Management System Screenshot" /> -->
     <img class="banner" src="/icons/pybankmanagement.jpg" alt="Bank Management System Screenshot" />
-    
+
 
     <p>
-        In this blog, I'll walk you through how I developed a <strong>Bank Management System</strong> using <span class="blockchar">Python</span>. This
+        In this blog, I'll walk you through how I developed a <strong>Bank Management System</strong> using <span
+            class="blockchar">Python</span>. This
         system supports basic banking functionalities like creating accounts, depositing money, and checking balances.
     </p>
 
     <h3>🔑 Key Features</h3>
 
-        <ul>
-            <li>Create and delete accounts</li>
-            <li>Deposit and withdraw money</li>
-            <li>Transaction history display</li>
-        </ul>
+    <ul>
+        <li>Create and delete accounts</li>
+        <li>Deposit and withdraw money</li>
+        <li>Transaction history display</li>
+    </ul>
 
 
-        <h3>🧾 Introduction</h3>
+    <h3>🧾 Introduction</h3>
 
-            <p>The bank management system presented here is implemented using Python. It provides functionalities such
-                as account creation, deposit, withdrawal, updating account details, and checking balances. Below, I
-                elaborate on the key points and provide detailed explanations of important code snippets and keywords.
-            </p>
-
-
-            <h3>📦 Importing Modules</h3>
-
-                <p>The program begins by importing several essential modules:
+    <p>The bank management system presented here is implemented using Python. It provides functionalities such
+        as account creation, deposit, withdrawal, updating account details, and checking balances. Below, I
+        elaborate on the key points and provide detailed explanations of important code snippets and keywords.
+    </p>
 
 
+    <h3>📦 Importing Modules</h3>
 
-<pre>
+    <p>The program begins by importing several essential modules:
+
+
+
+    <pre>
     <button class="copybtn" onclick="copyCode(this)">Copy</button>
     <code>
 import pickle
@@ -79,26 +83,27 @@ import random
     </code>
 </pre>
 
-                <ul>
-                    <li><strong>pickle: </strong> Used for serializing and deserializing Python object structures,
-                        enabling the storage and retrieval of account data to and from a file.</li>
-                    <li><strong>datetime: </strong>Provides functionalities to work with dates and times, useful for
-                        logging account creation times and other time-based operations. </li>
+    <ul>
+        <li><strong>pickle: </strong> Used for serializing and deserializing Python object structures,
+            enabling the storage and retrieval of account data to and from a file.</li>
+        <li><strong>datetime: </strong>Provides functionalities to work with dates and times, useful for
+            logging account creation times and other time-based operations. </li>
 
-                    <li><strong>os: </strong>Provides a way to interact with the operating system, enabling file
-                        operations like renaming and deleting files. </li>
+        <li><strong>os: </strong>Provides a way to interact with the operating system, enabling file
+            operations like renaming and deleting files. </li>
 
-                    <li><strong>random: </strong> Used for generating random numbers, essential for creating unique
-                        account numbers and OTPs.</li>
-                </ul>
-                </p>
+        <li><strong>random: </strong> Used for generating random numbers, essential for creating unique
+            account numbers and OTPs.</li>
+    </ul>
+    </p>
 
 
     <h3>🆕 Creating an Account</h3>
 
-    <p>The <span class="blockchar">create()</span> function allows users to create a new bank account.It ensures all necessary details are collected and validated before storing the account information.
+    <p>The <span class="blockchar">create()</span> function allows users to create a new bank account.It ensures all
+        necessary details are collected and validated before storing the account information.
 
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def create():
     f = open("bank.dat", "wb")
@@ -123,19 +128,25 @@ def create():
     </pre>
 
     <ul>
-        <li><strong>Account number Generation:</strong> A random 8-digit account number is generated using <span class="blockchar">random.randint()</span> , and  <span class="blockchar">acc_no()</span> checks for uniqueness.</li>
+        <li><strong>Account number Generation:</strong> A random 8-digit account number is generated using <span
+                class="blockchar">random.randint()</span> , and <span class="blockchar">acc_no()</span> checks for
+            uniqueness.</li>
 
-        <li><strong>validation:</strong> Ensures that phone number, email, date of birth, and initial deposit are valid.</li>
+        <li><strong>validation:</strong> Ensures that phone number, email, date of birth, and initial deposit are valid.
+        </li>
 
-        <li><strong>Data Storage:</strong> Uses <span class="blockchar">pickle.dump()</span> to store account data in <span class="blockchar">bank.dat</span></li>
-    </ul></p>
+        <li><strong>Data Storage:</strong> Uses <span class="blockchar">pickle.dump()</span> to store account data in
+            <span class="blockchar">bank.dat</span>
+        </li>
+    </ul>
+    </p>
 
 
 
     <h3>💳 Account Number Check</h3>
 
     <p>The <span class="blockchar">acc_no()</span> function checks if an account number already exists.
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
             <code>
 def acc_no(a):
     f = open("bank.dat", "rb")
@@ -151,20 +162,22 @@ def acc_no(a):
     f.close()
             </code>
         </pre>
-<ul>
-    <li><strong>Reading Data:</strong> Uses <span class="blockchar">pickle.load()</span> to read records from the file.</li>
+    <ul>
+        <li><strong>Reading Data:</strong> Uses <span class="blockchar">pickle.load()</span> to read records from the
+            file.</li>
 
-    <li><strong>Unique Check:</strong>Returns  <span class="blockchar">1</span> if the account number is unique.</li>
-</ul>
+        <li><strong>Unique Check:</strong>Returns <span class="blockchar">1</span> if the account number is unique.</li>
+    </ul>
 
 
     </p>
 
     <h3>🎂 Date of Birth Validation</h3>
-        <p>
-            The <span class="blockchar">birth(dob)</span> function ensures the provided date of birth is in the correct format and the user is at least 18 years old.
+    <p>
+        The <span class="blockchar">birth(dob)</span> function ensures the provided date of birth is in the correct
+        format and the user is at least 18 years old.
 
-            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
+    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
                 <code>
 def birth(dob):
     if dob[:4].isdigit() and dob[5:7].isdigit() and dob[8:10].isdigit() and dob[4] == '-' and dob[7] == '-':
@@ -176,16 +189,16 @@ def birth(dob):
                 </code>
             </pre>
 
-            <ul>
-                <li><strong>Format Check: </strong>Validates the format <span class="blockchar"> YYYY-MM-DD.</span></li>
-                <li><strong>Age Check: </strong>Ensures the user is at least 18 years old.</li>
-            </ul>
+    <ul>
+        <li><strong>Format Check: </strong>Validates the format <span class="blockchar"> YYYY-MM-DD.</span></li>
+        <li><strong>Age Check: </strong>Ensures the user is at least 18 years old.</li>
+    </ul>
 
 
-        </p>
+    </p>
 
-        <h3>📂 Displaying All Account Details</h3>
-<p>
+    <h3>📂 Displaying All Account Details</h3>
+    <p>
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def all_details():
@@ -198,11 +211,11 @@ def all_details():
         f.close()
         </code>
     </pre>
-</p>
+    </p>
 
-<h3>🔍 Viewing Specific A/c Details</h3>
-<p>
-    The <span class="blockchar">detail()</span> function shows the details of a specific account.
+    <h3>🔍 Viewing Specific A/c Details</h3>
+    <p>
+        The <span class="blockchar">detail()</span> function shows the details of a specific account.
 
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
@@ -222,11 +235,11 @@ def detail():
         </code>
     </pre>
     <strong>Authentication:</strong> Checks if the entered account number and password match.
-</p>
+    </p>
 
-<h3>🚮 Deleting an Account</h3>
-<p>
-    The <span class="blockchar">delete()</span> function removes an account from the database.
+    <h3>🚮 Deleting an Account</h3>
+    <p>
+        The <span class="blockchar">delete()</span> function removes an account from the database.
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def delete():
@@ -250,17 +263,18 @@ def delete():
     </pre>
 
     <ul>
-        <li><strong>Temporary File: </strong>Creates a temporary file to store all records except the one to be deleted.</li>
+        <li><strong>Temporary File: </strong>Creates a temporary file to store all records except the one to be deleted.
+        </li>
         <li><strong>File Replacement: </strong>Deletes the original file and renames the temporary file.</li>
     </ul>
 
-    
 
-</p>
 
-<h3>📝 Updating Account Details</h3>
+    </p>
+
+    <h3>📝 Updating Account Details</h3>
     <p>The <span class="blockchar">update()</span>function allows modification of account details.
-        <pre>
+    <pre>
             <button class="copybtn" onclick="copyCode(this)">Copy</button>
             <code>
 def update():
@@ -286,13 +300,14 @@ def update():
         print("Account not found")
     f.close()
         </code></pre>
-        <strong>Seek and Update: </strong>Uses <span class="blockchar">f.seek(pos)</span>to update the specific record in place.
+    <strong>Seek and Update: </strong>Uses <span class="blockchar">f.seek(pos)</span>to update the specific record in
+    place.
 
     </p>
 
     <h3>💰 Depositing Money</h3>
-<p>
-    The <span class="blockchar">deposit()</span> function adds money to an account.
+    <p>
+        The <span class="blockchar">deposit()</span> function adds money to an account.
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
         <code>
 def deposit():
@@ -313,11 +328,11 @@ def deposit():
         print("Account not found")
     f.close()
     </code></pre>
-</p>
+    </p>
 
-<h3>💵 Withdrawing Money</h3>
+    <h3>💵 Withdrawing Money</h3>
 
-<p><strong>OTP Verification:</strong> Ensures secure transactions using a randomly generated OTP.
+    <p><strong>OTP Verification:</strong> Ensures secure transactions using a randomly generated OTP.
 
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 def withdraw():
@@ -342,12 +357,12 @@ def withdraw():
     f.close()
     </code></pre>
 
-</p>
+    </p>
 
 
-<h3>🧾 Checking Balance</h3>
-<p>
-    The <span class="blockchar">balance()</span> function shows the balance of an account.
+    <h3>🧾 Checking Balance</h3>
+    <p>
+        The <span class="blockchar">balance()</span> function shows the balance of an account.
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 def balance():
     f = open("bank.dat", "rb")
@@ -363,11 +378,11 @@ def balance():
         print("Account not found")
     f.close()
     </code></pre>
-</p>
+    </p>
 
 
-<h3>📜 Main Menu</h3>
-<p>The main menu handles user interactions and directs them to the appropriate functions based on their choices.
+    <h3>📜 Main Menu</h3>
+    <p>The main menu handles user interactions and directs them to the appropriate functions based on their choices.
 
     <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
 ch = None
@@ -413,19 +428,24 @@ while True:
     </code></pre>
 
     <ul>
-        <li><strong>Users Choice: </strong>Directs users to account creation, management, and transaction functionalities.</li>
-        <li><strong>Password Protection: </strong>The banker-specific menu is protected by a hardcoded password (<span class="blockchar">key = 12345</span>).</li>
+        <li><strong>Users Choice: </strong>Directs users to account creation, management, and transaction
+            functionalities.</li>
+        <li><strong>Password Protection: </strong>The banker-specific menu is protected by a hardcoded password (<span
+                class="blockchar">key = 12345</span>).</li>
     </ul>
 
-</p>
-<h3>💡 Conclusion</h3>
-<p>
-    This bank management system covers all essential functionalities required for basic banking operations. It ensures data validation, security (through OTPs and password protection), and provides a user-friendly interface for managing accounts and transactions. The use of pickle for data storage makes it easy to serialize and deserialize account information efficiently.
-</p>
+    </p>
+    <h3>💡 Conclusion</h3>
+    <p>
+        This bank management system covers all essential functionalities required for basic banking operations. It
+        ensures data validation, security (through OTPs and password protection), and provides a user-friendly interface
+        for managing accounts and transactions. The use of pickle for data storage makes it easy to serialize and
+        deserialize account information efficiently.
+    </p>
 
-<br>
+    <br>
 
-<!-- <h3>Youtube Video</h3>
+    <!-- <h3>Youtube Video</h3>
 <div class="yt">
     <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
             frameborder="0" 
@@ -436,22 +456,26 @@ while True:
 <br>-->
 
 
-<p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/BankingSystemPY">GitHub</a></p>
+    <p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/BankingSystemPY">GitHub</a></p>
 
 
-<footer><div style="display: flex; justify-content: space-between; margin-top: 40px;">
-    <a href="blog.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr; Home</a>
+    <footer>
+        <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <a href="blog.html"
+                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr;
+                Home</a>
 
-    <a href="Number-plate-detection.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next &rarr;</a>
-</div>
-</footer>
+            <a href="Number-plate-detection.html"
+                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next
+                &rarr;</a>
+        </div>
+    </footer>
 
 
 
 
-<script src="/cssjs/copy.js"></script>
+    <script src="/cssjs/copy.js"></script>
 
 </body>
 
 </html>
-

@@ -8,21 +8,23 @@
     <meta name="description" content="Portfolio" />
 
     <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
-     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
-     
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
+
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <b:if cond='data:blog.url == data:blog.homepageUrl'>
-      <meta NAME="Description" CONTENT="anuragaryanyt portfolio " />
-    </b:if>
-    <meta NAME="Keywords" CONTENT="anuragaryanyt, rajxaryann, rajaryan, Raj Aryan, anuragtiwary" />
-    <meta NAME="Author" CONTENT="Raj Aryan " />
-    <meta NAME="Language" CONTENT="English, Hindi, bhojpuri " />
-    <meta NAME="Country" CONTENT="India" />
-    <meta NAME="Robots" CONTENT="All" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <meta name="description"
+        content="Dive into the Resume Screening & Placement Prediction project by Raj Aryan (anuragaryanyt) - a machine learning solution using Python, Tesseract OCR, and Scikit-learn. It screens resumes, extracts data, and predicts placement chances using KNN and Logistic Regression models." />
+    <meta name="keywords"
+        content="Resume Screening, Placement Prediction, machine learning, KNN, Logistic Regression, Tesseract OCR, Scikit-learn, NLP, Python ML project, anuragaryanyt, Raj Aryan, rajaryan, rajxaryann, resume parser, AI recruitment tool, job prediction model, resume analysis project, tech blog India, rajaryan.netlify.app, anuragaryanyt.site, Raj Aryan blog" />
+
+
+    <meta name="author" content="Raj Aryan" />
+    <meta name="language" content="en, hi, bho" />
+    <meta name="country" content="IN" />
+    <meta name="robots" content="index, follow" />
 
     <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
@@ -35,66 +37,92 @@
 
 
     <h1>How I Built a <u>Resume Screening & Placement Prediction Model</u></h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank" style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: May 12, 2025</em></p>
+    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank"
+            style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: May 12, 2025</em></p>
 
 
     <img class="banner" src="https://i.postimg.cc/gc1Bqyww/resumescreening.jpg" alt="" />
 
     <p>
-        In today's competitive job market and academic landscape, leveraging technology to streamline and enhance decision-making processes is crucial. This article explores a fascinating project that tackles two significant challenges: efficiently screening resumes and predicting student placement success. Developed using Python and a suite of powerful machine learning libraries, this project offers innovative solutions for HR departments and educational institutions alike.
+        In today's competitive job market and academic landscape, leveraging technology to streamline and enhance
+        decision-making processes is crucial. This article explores a fascinating project that tackles two significant
+        challenges: efficiently screening resumes and predicting student placement success. Developed using Python and a
+        suite of powerful machine learning libraries, this project offers innovative solutions for HR departments and
+        educational institutions alike.
 
     </p>
 
 
     <h2>Part 1: Smart Resume Screening</h2>
-    <p>The sheer volume of job applications can be overwhelming for recruiters. Manually sifting through hundreds, if not thousands, of resumes is time-consuming and prone to human bias. This project introduces an intelligent system to automate and optimize this process.
+    <p>The sheer volume of job applications can be overwhelming for recruiters. Manually sifting through hundreds, if
+        not thousands, of resumes is time-consuming and prone to human bias. This project introduces an intelligent
+        system to automate and optimize this process.
 
     </p>
 
     <h3>The Solution</h3>
-    <p>The resume screening component of this project aims to classify resumes into predefined job categories. It also provides an Applicant Tracking System (ATS) score by comparing resumes against job descriptions.</p>
+    <p>The resume screening component of this project aims to classify resumes into predefined job categories. It also
+        provides an Applicant Tracking System (ATS) score by comparing resumes against job descriptions.</p>
 
     <h3>Key Features & Working</h3>
     <p>
-        <ul>
-            <li><strong>Data Foundation:</strong> The system is trained on a dataset of resumes categorized by job roles <span class="blockchar">("UpdatedResumeDataSet.csv")</span>. </li>
+    <ul>
+        <li><strong>Data Foundation:</strong> The system is trained on a dataset of resumes categorized by job roles
+            <span class="blockchar">("UpdatedResumeDataSet.csv")</span>.
+        </li>
 
-            <li><strong>Data Cleaning:</strong> Resumes are meticulously cleaned to remove irrelevant information such as URLs, special characters, and extra whitespace, ensuring the model focuses on meaningful content.</li>
+        <li><strong>Data Cleaning:</strong> Resumes are meticulously cleaned to remove irrelevant information such as
+            URLs, special characters, and extra whitespace, ensuring the model focuses on meaningful content.</li>
 
-            <li><strong>Understanding the Data:</strong> Exploratory data analysis techniques, including visualizations like count plots and pie charts, are used to understand the distribution of resume categories. </li>
+        <li><strong>Understanding the Data:</strong> Exploratory data analysis techniques, including visualizations like
+            count plots and pie charts, are used to understand the distribution of resume categories. </li>
 
-            <li><strong>Transforming Text into Features:</strong>
+        <li><strong>Transforming Text into Features:</strong>
 
-                <ul>
-                    <li><strong>Label Encoding:</strong> Categorical job titles are converted into numerical representations for machine learning processing. </li>
-                    <li><strong>TF-IDF Vectorization:</strong> The textual content of the resumes is converted into numerical vectors using Term Frequency-Inverse Document Frequency (TF-IDF), which highlights the importance of different words in the resumes.</li>
+            <ul>
+                <li><strong>Label Encoding:</strong> Categorical job titles are converted into numerical representations
+                    for machine learning processing. </li>
+                <li><strong>TF-IDF Vectorization:</strong> The textual content of the resumes is converted into
+                    numerical vectors using Term Frequency-Inverse Document Frequency (TF-IDF), which highlights the
+                    importance of different words in the resumes.</li>
 
-                    <figure>
+                <figure>
                     <img src="https://i.postimg.cc/LXthC39H/image.png" alt="Details of Resume" class="pic">
-<figcaption>showing possible field</figcaption></figure>
+                    <figcaption>showing possible field</figcaption>
+                </figure>
 
-                </ul>
-            </li>
+            </ul>
+        </li>
 
-            <li><u>Building the Classifier:</u> A K-Nearest Neighbors (KNN) algorithm is trained to classify resumes based on their textual features. The model's performance is rigorously evaluated using metrics like accuracy and a detailed classification report.</li>
+        <li><u>Building the Classifier:</u> A K-Nearest Neighbors (KNN) algorithm is trained to classify resumes based
+            on their textual features. The model's performance is rigorously evaluated using metrics like accuracy and a
+            detailed classification report.</li>
 
-            <li><u>Handling PDF Resumes:</u> The system incorporates Optical Character Recognition (OCR) capabilities using <span class="blockchar">pytesseract</span> and <span class="blockchar">pdf2image</span> to extract text from resumes submitted in PDF format, broadening its applicability.</li>
+        <li><u>Handling PDF Resumes:</u> The system incorporates Optical Character Recognition (OCR) capabilities using
+            <span class="blockchar">pytesseract</span> and <span class="blockchar">pdf2image</span> to extract text from
+            resumes submitted in PDF format, broadening its applicability.
+        </li>
 
-            <li><u>ATS Scoring for Job Matching:</u> To further aid recruiters, the project calculates an ATS score using cosine similarity. This score measures the relevance of a resume to a given job description by comparing their keyword content. Suggestions are also provided to candidates on how to improve their resume based on missing keywords relevant to the job description.</li>
+        <li><u>ATS Scoring for Job Matching:</u> To further aid recruiters, the project calculates an ATS score using
+            cosine similarity. This score measures the relevance of a resume to a given job description by comparing
+            their keyword content. Suggestions are also provided to candidates on how to improve their resume based on
+            missing keywords relevant to the job description.</li>
 
-            
-        </ul>
 
-        <figure><img src="https://i.postimg.cc/7YyjrMqF/image.png" alt="Ats Score" class="pic">
+    </ul>
+
+    <figure><img src="https://i.postimg.cc/7YyjrMqF/image.png" alt="Ats Score" class="pic">
         <figcaption>ATS score</figcaption>
-        </figure>
+    </figure>
 
 
 
     </p>
 
     <h2>Part 2: Predicting Placement Success</h2>
-    <p>For educational institutions, understanding the factors that contribute to student placement and predicting outcomes can be invaluable. This part of the project focuses on building a model to forecast student placement likelihood.
+    <p>For educational institutions, understanding the factors that contribute to student placement and predicting
+        outcomes can be invaluable. This part of the project focuses on building a model to forecast student placement
+        likelihood.
 
     </p>
 
@@ -105,56 +133,79 @@
 
     <h3>Key Features & Working:</h3>
     <p>
-        <ul>
-            <li><strong>Data Source:</strong> The placement prediction model utilizes a dataset named "collegePlace.csv," containing student information such as age, gender, academic stream, internships, CGPA, hostel accommodation, and history of backlogs.</li>
+    <ul>
+        <li><strong>Data Source:</strong> The placement prediction model utilizes a dataset named "collegePlace.csv,"
+            containing student information such as age, gender, academic stream, internships, CGPA, hostel
+            accommodation, and history of backlogs.</li>
 
-            <li><strong>Data Preparation:</strong> The dataset undergoes preprocessing steps including the removal of duplicate entries and appropriate formatting of columns. </li>
+        <li><strong>Data Preparation:</strong> The dataset undergoes preprocessing steps including the removal of
+            duplicate entries and appropriate formatting of columns. </li>
 
-            <li><strong>Gaining Insights:</strong> Visualizations help in understanding the relationships between different student attributes and placement outcomes. This includes analyzing distributions by gender, academic stream, and correlations between numerical features. </li>
+        <li><strong>Gaining Insights:</strong> Visualizations help in understanding the relationships between different
+            student attributes and placement outcomes. This includes analyzing distributions by gender, academic stream,
+            and correlations between numerical features. </li>
 
-            <li><strong>Feature Engineering for Prediction:</strong> Categorical data like 'Gender' and 'Stream' are converted into numerical formats using Label Encoding and One-Hot Encoding to make them suitable for machine learning algorithms.</li>
+        <li><strong>Feature Engineering for Prediction:</strong> Categorical data like 'Gender' and 'Stream' are
+            converted into numerical formats using Label Encoding and One-Hot Encoding to make them suitable for machine
+            learning algorithms.</li>
 
-            <li><strong>Predictive Modeling:</strong> The project employs two popular classification algorithms:
+        <li><strong>Predictive Modeling:</strong> The project employs two popular classification algorithms:
 
-                <ul>
-                    <li><u>Logistic Regression:</u> A statistical model used to predict binary outcomes (Placed/Not Placed). </li>
-                    <li><u>Support Vector Classifier (SVC):</u> A powerful algorithm that finds an optimal hyperplane to separate data points into different classes.</li>
-                </ul>
-</li>
-            <li><strong>Evaluating Model Performance:</strong> The accuracy of these models is assessed using metrics like accuracy scores and confusion matrices, providing insights into their predictive power. The primary features used for training in the documented example are 'CGPA' and 'Internships'.</li>
-        </ul>
+            <ul>
+                <li><u>Logistic Regression:</u> A statistical model used to predict binary outcomes (Placed/Not Placed).
+                </li>
+                <li><u>Support Vector Classifier (SVC):</u> A powerful algorithm that finds an optimal hyperplane to
+                    separate data points into different classes.</li>
+            </ul>
+        </li>
+        <li><strong>Evaluating Model Performance:</strong> The accuracy of these models is assessed using metrics like
+            accuracy scores and confusion matrices, providing insights into their predictive power. The primary features
+            used for training in the documented example are 'CGPA' and 'Internships'.</li>
+    </ul>
 
-        <figure>
-            <img src="https://i.postimg.cc/N0ydH5g8/image.png" alt="" class="pic">
-                <figcaption>Likely to be placed or not</figcaption>
-            </img>
-        </figure>
+    <figure>
+        <img src="https://i.postimg.cc/N0ydH5g8/image.png" alt="" class="pic">
+        <figcaption>Likely to be placed or not</figcaption>
+        </img>
+    </figure>
 
     </p>
 
 
     <h3>Technologies Powering the Project</h3>
-    <p>This project leverages a robust stack of Python libraries, demonstrating a comprehensive approach to data science and machine learning:</p>
+    <p>This project leverages a robust stack of Python libraries, demonstrating a comprehensive approach to data science
+        and machine learning:</p>
 
     <p>
-<ul>
-    <li><strong>Data Manipulation & Analysis:</strong> Pandas, NumPy </li>
-    <li><strong>Data Visualization:</strong> Matplotlib, Seaborn </li>
-    <li><strong>Machine Learning:</strong> Scikit-learn (for TF-IDF, KNN, Logistic Regression, SVC, train-test split, evaluation metrics)  </li>
-    <li><strong>Natural Language Processing:</strong> Spacy  (though NLTK is also often used, Spacy is explicitly mentioned for keyword extraction )</li>
-    <li><strong>OCR:</strong> Pytesseract, pdf2image</li>
-    <li><strong>File Handling & Serialization:</strong> os, zipfile, pickle</li>
-</ul>
+    <ul>
+        <li><strong>Data Manipulation & Analysis:</strong> Pandas, NumPy </li>
+        <li><strong>Data Visualization:</strong> Matplotlib, Seaborn </li>
+        <li><strong>Machine Learning:</strong> Scikit-learn (for TF-IDF, KNN, Logistic Regression, SVC, train-test
+            split, evaluation metrics) </li>
+        <li><strong>Natural Language Processing:</strong> Spacy (though NLTK is also often used, Spacy is explicitly
+            mentioned for keyword extraction )</li>
+        <li><strong>OCR:</strong> Pytesseract, pdf2image</li>
+        <li><strong>File Handling & Serialization:</strong> os, zipfile, pickle</li>
+    </ul>
 
     </p>
 
     <h3>Conclusion</h3>
     <p>
-        This dual-purpose project showcases the transformative potential of machine learning in automating and enhancing critical aspects of career development and recruitment. The resume screening system offers a streamlined approach to identifying suitable candidates, saving time and reducing bias. Simultaneously, the placement prediction model provides educational institutions with valuable insights into student employability, enabling them to offer targeted support and guidance.
+        This dual-purpose project showcases the transformative potential of machine learning in automating and enhancing
+        critical aspects of career development and recruitment. The resume screening system offers a streamlined
+        approach to identifying suitable candidates, saving time and reducing bias. Simultaneously, the placement
+        prediction model provides educational institutions with valuable insights into student employability, enabling
+        them to offer targeted support and guidance.
         <br><br>
-        The meticulous data preprocessing, thoughtful feature engineering, and application of appropriate machine learning algorithms underscore the project's robust design. While the documented accuracy scores are promising (e.g., KNN for resume screening achieving high accuracy, and Logistic Regression for placement prediction showing good results), there's always room for further refinement, such as exploring more advanced models or incorporating larger and more diverse datasets.
+        The meticulous data preprocessing, thoughtful feature engineering, and application of appropriate machine
+        learning algorithms underscore the project's robust design. While the documented accuracy scores are promising
+        (e.g., KNN for resume screening achieving high accuracy, and Logistic Regression for placement prediction
+        showing good results), there's always room for further refinement, such as exploring more advanced models or
+        incorporating larger and more diverse datasets.
         <br><br>
-        Overall, this project serves as an excellent example of how AI can be practically applied to solve real-world challenges in the HR and education sectors, paving the way for more efficient and data-driven decision-making.
+        Overall, this project serves as an excellent example of how AI can be practically applied to solve real-world
+        challenges in the HR and education sectors, paving the way for more efficient and data-driven decision-making.
 
     </p>
 
@@ -166,9 +217,9 @@
 
 
 
-<br>
+    <br>
 
-<!-- <h3>Youtube Video</h3>
+    <!-- <h3>Youtube Video</h3>
 <div class="yt">
     <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
             frameborder="0" 
@@ -179,23 +230,28 @@
 <br>-->
 
 
-<p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/ResumeScreeningPlacementPrediciton">GitHub</a></p>
+    <p><strong>Full Code:</strong> <a
+            href="https://github.com/anuragaryanyt/ResumeScreeningPlacementPrediciton">GitHub</a></p>
 
 
-<footer><div style="display: flex; justify-content: space-between; margin-top: 40px;">
-    <a href="blog.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr; Home</a>
+    <footer>
+        <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+            <a href="blog.html"
+                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr;
+                Home</a>
 
-    <a href="Upi-fraud-detection.html" style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next &rarr;</a>
-</div>
-</footer>
+            <a href="Upi-fraud-detection.html"
+                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next
+                &rarr;</a>
+        </div>
+    </footer>
 
 
 
 
-<script src="/cssjs/copy.js"></script>
-<script src="/cssjs/imgzoom.js"></script>
+    <script src="/cssjs/copy.js"></script>
+    <script src="/cssjs/imgzoom.js"></script>
 
 </body>
 
 </html>
-
