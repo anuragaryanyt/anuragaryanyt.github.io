@@ -287,10 +287,13 @@
     </section>
 
 
-    <!-- certificates -->
+
+
     <section id="certificates" class="section certificates">
       <h2 class="section__title">Certificates</h2>
-      <div class="certificates__grid">
+      <div class="certificates__grid collapsed">
+        <!-- ...certificate cards as in your original code... -->
+
 
         <div class="card">
           <div class="content">
@@ -299,8 +302,6 @@
             </div>
             <p class="cheading">Technical Support Fundamentals
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <!-- <p class="para">
-            </p> -->
             <p class="para para-sm">
               <span class="date">Jun 12, 2024</span>
               <a href="https://drive.google.com/file/d/1MgeOE-RNrJddLDlSDos624o1RPisXOjL/view?usp=drivesdk"
@@ -320,8 +321,6 @@
             <p class="cheading">Microsoft Azure SQL
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </p>
-            <!-- <p class="para">
-            </p> -->
             <p class="para para-sm">
               <span class="date">Aug 15, 2024</span>
               <a href="https://drive.google.com/file/d/1FJYaYsEoRoSJ6PFWrvxrzc0aqmELvJPM/view?usp=drive_link"
@@ -341,9 +340,6 @@
             <p class="cheading">AWS Cloud Foundations
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </p>
-            <!-- <p class="para">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p> -->
             <p class="para para-sm">
               <span class="date">Mar 28, 2024</span>
               <a href="https://drive.google.com/file/d/1sS2TsMBCThAaxlkfC17JzQzv0ITCvSVH/view?usp=drivesdk"
@@ -418,7 +414,6 @@
         </div>
 
 
-
         <div class="card">
           <div class="content">
             <div class="icon">
@@ -438,6 +433,7 @@
             </p>
           </div>
         </div>
+
 
         <div class="card">
           <div class="content">
@@ -503,6 +499,7 @@
           </div>
         </div>
 
+
         <div class="card">
           <div class="content">
             <div class="icon">
@@ -543,6 +540,7 @@
             </p>
           </div>
         </div>
+
 
         <div class="card">
           <div class="content">
@@ -587,6 +585,7 @@
           </div>
         </div>
 
+
         <div class="card">
           <div class="content">
             <div class="icon">
@@ -607,6 +606,7 @@
             </p>
           </div>
         </div>
+
 
         <div class="card">
           <div class="content">
@@ -629,7 +629,13 @@
 
 
 
+  <!-- ADD Abhove this line to add more certificate cards -->
+        <!-- ...add all other certificate cards here as in your original code... -->
+        <!-- For brevity, not repeating all cards, but you should include all your certificate cards here -->
       </div>
+      <button id="toggle-certificates" class="btn btn--outline" style="margin: 20px auto; display: block;">
+        Show More
+      </button>
     </section>
 
 
@@ -774,6 +780,15 @@
   </div>
 
   <script src="/cssjs/script.js"></script>
+  <script>
+    const grid = document.querySelector('.certificates__grid');
+    const btn = document.getElementById('toggle-certificates');
+    btn.addEventListener('click', function () {
+      grid.classList.toggle('collapsed');
+      btn.textContent = grid.classList.contains('collapsed') ? 'Show More' : 'Show Less';
+    });
+  </script>
+
 </body>
 
 </html>
