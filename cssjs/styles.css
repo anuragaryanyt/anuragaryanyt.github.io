@@ -259,6 +259,12 @@ main {
   margin-top: 3em;
 }
 
+.about.center {
+  max-width: 1100px;  /* Or any value you prefer */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .about__name {
   color: var(--clr-primary);
 }
@@ -268,8 +274,8 @@ main {
 }
 
 .about__desc {
-  font-size: 1rem;
-  max-width: 600px;
+  font-size: 1.1rem;
+  max-width: 900px;
   text-align: justify;
 }
 
@@ -330,7 +336,7 @@ main {
 }
 
 .skills__list {
-  max-width: 450px;
+  max-width: 700px;
   width: 95%;
   margin: 0 auto;
   display: flex;
