@@ -72,7 +72,7 @@ def generate_index(folder_path, web_path):
     html_content = HTML_TEMPLATE.format(
         path=web_path,
         items="\n".join(items_html),
-        password=anurag718
+        password="anurag718"
     )
 
     index_file = os.path.join(folder_path, "index.html")
