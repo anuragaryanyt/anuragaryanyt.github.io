@@ -1,6 +1,7 @@
 import os
 
 BASE_DIR = "files"
+PASSWORD = "yourpassword"  # Change this to your password
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html>
@@ -14,13 +15,39 @@ ul {{ list-style-type: none; padding: 0; }}
 li {{ margin: 4px 0; }}
 a {{ text-decoration: none; color: blue; }}
 a:hover {{ text-decoration: underline; }}
+#files {{ display: none; }}
 </style>
 </head>
 <body>
-<h1>Index of {path}</h1>
-<ul>
-{items}
-</ul>
+<h1>Protected File Explorer - {path}</h1>
+
+<div id="login">
+  <p>Enter password to view files:</p>
+  <input type="password" id="password">
+  <button onclick="checkPassword()">Submit</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<div id="files">
+  <ul>
+  {items}
+  </ul>
+</div>
+
+<script>
+const correctPassword = "{password}";
+
+function checkPassword() {{
+  const input = document.getElementById("password").value;
+  if (input === correctPassword) {{
+    document.getElementById("login").style.display = "none";
+    document.getElementById("files").style.display = "block";
+  }} else {{
+    document.getElementById("error").innerText = "Incorrect password.";
+  }}
+}}
+</script>
+
 </body>
 </html>
 """
@@ -44,7 +71,8 @@ def generate_index(folder_path, web_path):
 
     html_content = HTML_TEMPLATE.format(
         path=web_path,
-        items="\n".join(items_html)
+        items="\n".join(items_html),
+        password=anurag718
     )
 
     index_file = os.path.join(folder_path, "index.html")
