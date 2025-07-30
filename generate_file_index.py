@@ -10,28 +10,28 @@ HTML_TEMPLATE = """
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Protected Files</title>
-  <style>
-    body {
+    <style>
+    body {{
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 20px;
       background: #f0f0f0;
       color: #222;
       max-width: 100%;
-    }
+    }}
 
-    h1 {
+    h1 {{
       font-size: 2rem;
       text-align: center;
       margin-bottom: 20px;
-    }
+    }}
 
-    #login {
+    #login {{
       text-align: center;
       padding: 10px;
-    }
+    }}
 
-    input[type="password"] {
+    input[type="password"] {{
       padding: 14px;
       width: 90%;
       max-width: 350px;
@@ -39,9 +39,9 @@ HTML_TEMPLATE = """
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
-    }
+    }}
 
-    button {
+    button {{
       padding: 14px 28px;
       font-size: 18px;
       background-color: #007BFF;
@@ -49,46 +49,46 @@ HTML_TEMPLATE = """
       border: none;
       border-radius: 5px;
       cursor: pointer;
-    }
+    }}
 
-    button:hover {
+    button:hover {{
       background-color: #0056b3;
-    }
+    }}
 
-    #error {
+    #error {{
       color: red;
       margin-top: 10px;
       font-size: 16px;
-    }
+    }}
 
-    #files {
+    #files {{
       display: none;
       margin-top: 20px;
-    }
+    }}
 
-    ul {
+    ul {{
       list-style-type: none;
       padding: 0;
-    }
+    }}
 
-    li {
+    li {{
       font-size: 1.2rem;
       margin: 12px 0;
       padding: 12px;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }}
 
-    a {
+    a {{
       color: #007BFF;
       text-decoration: none;
       word-wrap: break-word;
-    }
+    }}
 
-    a:hover {
+    a:hover {{
       text-decoration: underline;
-    }
+    }}
   </style>
 </head>
 <body>
