@@ -1,7 +1,7 @@
 import os
 
 BASE_DIR = "files"
-PASSWORD = "yourpassword"  # Change this to your password
+PASSWORD = "anurag718"  # Change this to your password
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
@@ -92,7 +92,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 
-<h1>🔐 Protected File Explorer</h1>
+<h1>🔐 Protected File Explorer - {path}</h1>
 
 <div id="login">
   <p style="font-size:18px;">Enter password to access files:</p>
@@ -110,31 +110,30 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <script>
 const correctPassword = "{password}";
 
-function checkPassword() {
+function checkPassword() {{
   const input = document.getElementById("password").value;
-  if (input === correctPassword) {
+  if (input === correctPassword) {{
     document.getElementById("login").style.display = "none";
     document.getElementById("files").style.display = "block";
-  } else {
+  }} else {{
     document.getElementById("error").innerText = "Incorrect password.";
-  }
-}
+  }}
+}}
 
-// Add support for Enter key
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {{
   const passwordInput = document.getElementById("password");
-  passwordInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
+  passwordInput.addEventListener("keypress", function (e) {{
+    if (e.key === "Enter") {{
       checkPassword();
-    }
-  });
-});
+    }}
+  }});
+}});
 </script>
-
 
 </body>
 </html>
 """
+
 
 
 
