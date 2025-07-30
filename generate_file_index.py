@@ -108,30 +108,61 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </div>
 
 <script>
-const correctPassword = "{password}";
+  const correctPassword = "{password}";
 
-function checkPassword() {{
-  const inputElem = document.getElementById("password");
-  const input = inputElem.value;
-  if (input === correctPassword) {{
-    document.getElementById("login").style.display = "none";
-    document.getElementById("files").style.display = "block";
-  }} else {{
-    document.getElementById("error").innerText = "Incorrect password.";
-    inputElem.value = "";  // Clear the password field
-    inputElem.focus();     // Optional: refocus the input box
-  }}
-}}
+  function checkPassword() {
+    const inputElem = document.getElementById("password");
+    const input = inputElem.value;
+    if (input === correctPassword) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("files").style.display = "block";
+    } else {
+      document.getElementById("error").innerText = "Incorrect password.";
+      inputElem.value = "";  // Clear the password field
+      inputElem.focus();     // Refocus the input box
+    }
+  }
 
-document.addEventListener("DOMContentLoaded", function () {{
-  const passwordInput = document.getElementById("password");
-  passwordInput.addEventListener("keypress", function (e) {{
-    if (e.key === "Enter") {{
-      checkPassword();
-    }}
-  }});
-}});
+  document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.getElementById("password");
+    passwordInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        checkPassword();
+      }
+    });
+  });
+
+  (function () {
+    // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable DevTools shortcuts
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) ||
+        (e.ctrlKey && e.key === 'U')
+      ) {
+        e.preventDefault();
+      }
+    });
+
+    // Detect DevTools usage using debugger timing
+    const threshold = 160;
+    setInterval(() => {
+      const t0 = performance.now();
+      debugger;
+      const t1 = performance.now();
+      if (t1 - t0 > threshold) {
+        alert("DevTools is disabled!");
+        location.reload();
+      }
+    }, 1000);
+  })();
 </script>
+
 
 </body>
 </html>
