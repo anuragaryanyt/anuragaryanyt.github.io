@@ -111,12 +111,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 const correctPassword = "{password}";
 
 function checkPassword() {{
-  const input = document.getElementById("password").value;
+  const inputElem = document.getElementById("password");
+  const input = inputElem.value;
   if (input === correctPassword) {{
     document.getElementById("login").style.display = "none";
     document.getElementById("files").style.display = "block";
   }} else {{
     document.getElementById("error").innerText = "Incorrect password.";
+    inputElem.value = "";  // Clear the password field
+    inputElem.focus();     // Optional: refocus the input box
   }}
 }}
 
@@ -133,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {{
 </body>
 </html>
 """
+
 
 
 
