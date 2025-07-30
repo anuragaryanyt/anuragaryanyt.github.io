@@ -3,14 +3,13 @@ import os
 BASE_DIR = "files"
 PASSWORD = "anurag718"  # Change this to your password
 
-HTML_TEMPLATE = """
-<!DOCTYPE html>
+HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Protected Files</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Explorer - {path}</title>
+  <style>
     body {{
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -93,79 +92,77 @@ HTML_TEMPLATE = """
 </head>
 <body>
 
+<h1>🔐 Protected File Explorer - {path}</h1>
+
 <div id="login">
-  <h2>Enter Password to Access Files</h2>
-  <input type="password" id="password" placeholder="Password" />
-  <button onclick="checkPassword()">Submit</button>
-  <p id="error" style="color:red;"></p>
+  <p style="font-size:18px;">Enter password to access files:</p>
+  <input type="password" id="password" placeholder="Enter password..."><br>
+  <button onclick="checkPassword()">Unlock</button>
+  <p id="error"></p>
 </div>
 
-<div id="files" style="display:none;">
-  <h2>Available Files</h2>
+<div id="files">
   <ul>
     {items}
   </ul>
 </div>
 
 <script>
-const correctPassword = "{password}";
+  const correctPassword = "{password}";
 
-function checkPassword() {{
-  const inputElem = document.getElementById("password");
-  const input = inputElem.value;
-  if (input === correctPassword) {{
-    document.getElementById("login").style.display = "none";
-    document.getElementById("files").style.display = "block";
-  }} else {{
-    document.getElementById("error").innerText = "Incorrect password.";
-    inputElem.value = "";
-    inputElem.focus();
+  function checkPassword() {{
+    const inputElem = document.getElementById("password");
+    const input = inputElem.value;
+    if (input === correctPassword) {{
+      document.getElementById("login").style.display = "none";
+      document.getElementById("files").style.display = "block";
+    }} else {{
+      document.getElementById("error").innerText = "Incorrect password.";
+      inputElem.value = "";
+      inputElem.focus();
+    }}
   }}
-}}
 
-document.addEventListener("DOMContentLoaded", function () {{
-  const passwordInput = document.getElementById("password");
-  passwordInput.addEventListener("keypress", function (e) {{
-    if (e.key === "Enter") {{
-      checkPassword();
-    }}
+  document.addEventListener("DOMContentLoaded", function () {{
+    const passwordInput = document.getElementById("password");
+    passwordInput.addEventListener("keypress", function (e) {{
+      if (e.key === "Enter") {{
+        checkPassword();
+      }}
+    }});
   }});
-}});
 
-(function() {{
-  document.addEventListener('contextmenu', e => e.preventDefault());
-
-  document.addEventListener('keydown', function(e) {{
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
-      (e.ctrlKey && e.key === 'U')
-    ) {{
+  (function () {{
+    document.addEventListener('contextmenu', function (e) {{
       e.preventDefault();
-    }}
-  }});
+    }});
 
-  const threshold = 160;
-  setInterval(() => {{
-    const t0 = performance.now();
-    debugger;
-    const t1 = performance.now();
-    if (t1 - t0 > threshold) {{
-      alert("DevTools is disabled!");
-      location.reload();
-    }}
-  }}, 1000);
-}})();
+    document.addEventListener('keydown', function (e) {{
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) ||
+        (e.ctrlKey && e.key === 'U')
+      ) {{
+        e.preventDefault();
+      }}
+    }});
+
+    const threshold = 160;
+    setInterval(() => {{
+      const t0 = performance.now();
+      debugger;
+      const t1 = performance.now();
+      if (t1 - t0 > threshold) {{
+        alert("DevTools is disabled!");
+        location.reload();
+      }}
+    }}, 1000);
+  }})();
 </script>
 
 </body>
 </html>
 """
-
-
-
-
-
 
 def generate_index(folder_path, web_path):
     items_html = []
@@ -198,7 +195,7 @@ def generate_index(folder_path, web_path):
 
 def main():
     if not os.path.exists(BASE_DIR):
-        print(f"Error: '{BASE_DIR}' directory not found.")
+        print(f"❌ Error: '{BASE_DIR}' directory not found.")
         return
     generate_index(BASE_DIR, BASE_DIR)
 
