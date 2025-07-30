@@ -1,31 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>File Explorer - files/Raj</title>
-<style>
-body { font-family: Arial, sans-serif; padding: 20px; }
-h1 { font-size: 22px; }
-ul { list-style-type: none; padding: 0; }
-li { margin: 4px 0; }
-a { text-decoration: none; color: blue; }
-a:hover { text-decoration: underline; }
-#files { display: none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Explorer - files/Raj</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+      color: #222;
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #login {
+      text-align: center;
+      padding: 10px;
+    }
+
+    input[type="password"] {
+      padding: 14px;
+      width: 90%;
+      max-width: 350px;
+      font-size: 18px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    #files {
+      display: none;
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 1.2rem;
+      margin: 12px 0;
+      padding: 12px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-<h1>Protected File Explorer - files/Raj</h1>
+
+<h1>🔐 Protected File Explorer</h1>
 
 <div id="login">
-  <p>Enter password to view files:</p>
-  <input type="password" id="password">
-  <button onclick="checkPassword()">Submit</button>
-  <p id="error" style="color:red;"></p>
+  <p style="font-size:18px;">Enter password to access files:</p>
+  <input type="password" id="password" placeholder="Enter password..."><br>
+  <button onclick="checkPassword()">Unlock</button>
+  <p id="error"></p>
 </div>
 
 <div id="files">
   <ul>
-  <li><a href="../">../ (Parent Directory)</a></li>
+    <li><a href="../">⬆️ ../ (Parent Directory)</a></li>
 <li>📄 <a href="Raj_AadhaarValidated_locked.pdf">Raj_AadhaarValidated_locked.pdf</a></li>
 <li>📄 <a href="Raj_BirthCertificate_locked.pdf">Raj_BirthCertificate_locked.pdf</a></li>
 <li>📄 <a href="Raj_DL_locked.pdf">Raj_DL_locked.pdf</a></li>
@@ -37,7 +110,7 @@ a:hover { text-decoration: underline; }
 </div>
 
 <script>
-const correctPassword = "anurag718";
+const correctPassword = "yourpassword";
 
 function checkPassword() {
   const input = document.getElementById("password").value;
