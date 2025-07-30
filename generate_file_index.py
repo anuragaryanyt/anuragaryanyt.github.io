@@ -108,7 +108,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </div>
 
 <script>
-  const correctPassword = "{password}";
+  const correctPassword = "{{password}}";
 
   function checkPassword() {
     const inputElem = document.getElementById("password");
