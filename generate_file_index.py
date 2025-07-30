@@ -10,42 +10,42 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🔐 Protected File Explorer - {path}</title>
 <style>
-  body {
+  body {{
     font-family: Arial, sans-serif;
     padding: 20px;
     background: #f2f2f2;
     margin: 0;
-  }
+  }}
 
-  h1 {
+  h1 {{
     font-size: 1.4rem;
     margin-bottom: 20px;
-  }
+  }}
 
-  #login {
+  #login {{
     max-width: 400px;
     margin: 0 auto;
     padding: 16px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
+  }}
 
-  #files {
+  #files {{
     display: none;
-  }
+  }}
 
-  .file-list {
+  .file-list {{
     max-width: 800px;
     margin: 0 auto;
-  }
+  }}
 
-  .file-list ul {
+  .file-list ul {{
     list-style-type: none;
     padding: 0;
-  }
+  }}
 
-  .file-list li {
+  .file-list li {{
     margin: 6px 0;
     background: white;
     border-radius: 6px;
@@ -55,28 +55,28 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     display: flex;
     align-items: center;
     gap: 8px;
-  }
+  }}
 
-  .file-list li a {
+  .file-list li a {{
     text-decoration: none;
     color: #0077cc;
     flex-grow: 1;
-  }
+  }}
 
-  .file-list li a:hover {
+  .file-list li a:hover {{
     text-decoration: underline;
-  }
+  }}
 
-  input[type="password"] {
+  input[type="password"] {{
     width: 100%;
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-  }
+  }}
 
-  button {
+  button {{
     width: 100%;
     padding: 10px;
     background-color: #0077cc;
@@ -85,26 +85,26 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-  }
+  }}
 
-  button:hover {
+  button:hover {{
     background-color: #005fa3;
-  }
+  }}
 
-  @media (max-width: 600px) {
-    h1 {
+  @media (max-width: 600px) {{
+    h1 {{
       font-size: 1.1rem;
-    }
+    }}
 
-    .file-list li {
+    .file-list li {{
       padding: 10px;
       font-size: 0.95rem;
-    }
+    }}
 
-    input, button {
+    input, button {{
       font-size: 0.95rem;
-    }
-  }
+    }}
+  }}
 </style>
 </head>
 <body>
@@ -129,22 +129,29 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <script>
 const correctPassword = "{password}";
 
-document.getElementById("password-form").addEventListener("submit", function(e) {
+document.getElementById("password-form").addEventListener("submit", function(e) {{
   e.preventDefault();
   const input = document.getElementById("password-input").value;
-  if (input === correctPassword) {
+  if (input === correctPassword) {{
     document.getElementById("login").style.display = "none";
     document.getElementById("files").style.display = "block";
-  } else {
+  }} else {{
     document.getElementById("error").innerText = "Incorrect password.";
-  }
-});
+  }}
+}});
+
+// Allow Enter key to submit
+document.getElementById("password-input").addEventListener("keyup", function(e) {{
+  if (e.key === "Enter") {{
+    document.getElementById("password-form").dispatchEvent(new Event('submit'));
+  }}
+}});
 </script>
 
 </body>
 </html>
-
 """
+
 
 
 def generate_index(folder_path, web_path):
