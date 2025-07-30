@@ -1,102 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>File Explorer - files</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Protected Files</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 20px;
-      background: #f0f0f0;
-      color: #222;
-      max-width: 100%;
+      padding: 0;
+      background-color: #f4f4f4;
     }
-
-    h1 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 20px;
+    #login, #files {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
     }
-
-    #login {
-      text-align: center;
+    input {
       padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
-
-    input[type="password"] {
-      padding: 14px;
-      width: 90%;
-      max-width: 350px;
-      font-size: 18px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
     button {
-      padding: 14px 28px;
-      font-size: 18px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
     }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    #error {
-      color: red;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    #files {
-      display: none;
-      margin-top: 20px;
-    }
-
-    ul {
+    #files ul {
       list-style-type: none;
       padding: 0;
     }
-
-    li {
-      font-size: 1.2rem;
-      margin: 12px 0;
-      padding: 12px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    a {
-      color: #007BFF;
-      text-decoration: none;
-      word-wrap: break-word;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    #files li {
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
 
-<h1>🔐 Protected File Explorer - files</h1>
-
 <div id="login">
-  <p style="font-size:18px;">Enter password to access files:</p>
-  <input type="password" id="password" placeholder="Enter password..."><br>
-  <button onclick="checkPassword()">Unlock</button>
-  <p id="error"></p>
+  <h2>Enter Password to Access Files</h2>
+  <input type="password" id="password" placeholder="Password" />
+  <button onclick="checkPassword()">Submit</button>
+  <p id="error" style="color:red;"></p>
 </div>
 
-<div id="files">
+<div id="files" style="display:none;">
+  <h2>Available Files</h2>
   <ul>
     <li>📁 <a href="Raj/">Raj/</a></li>
 <li>📁 <a href="RajKIIT/">RajKIIT/</a></li>
@@ -114,8 +66,8 @@ function checkPassword() {
     document.getElementById("files").style.display = "block";
   } else {
     document.getElementById("error").innerText = "Incorrect password.";
-    inputElem.value = "";  // Clear the password field
-    inputElem.focus();     // Optional: refocus the input box
+    inputElem.value = "";
+    inputElem.focus();
   }
 }
 
@@ -127,6 +79,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+(function() {
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  const threshold = 160;
+  setInterval(() => {
+    const t0 = performance.now();
+    debugger;
+    const t1 = performance.now();
+    if (t1 - t0 > threshold) {
+      alert("DevTools is disabled!");
+      location.reload();
+    }
+  }, 1000);
+})();
 </script>
 
 </body>
