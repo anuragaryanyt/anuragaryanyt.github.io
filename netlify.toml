@@ -1,3 +1,6 @@
 [build]
   command = "python3 generate_file_index.py"
   publish = "."
+
+[functions]
+directory = "netlify/functions"

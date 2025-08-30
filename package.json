@@ -1,0 +1,23 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "<img src=\"https://socialify.git.ci/anuragaryanyt/profile/image?description=1&font=Raleway&forks=1&language=1&name=1&owner=1&pattern=Brick%20Wall&stargazers=1&theme=Light\" alt=\"profile\" width=\"480\" height=\"240\" />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragaryanyt/profile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuragaryanyt/profile/issues"
+  },
+  "homepage": "https://github.com/anuragaryanyt/profile#readme",
+  "dependencies": {
+    "mongodb": "^6.19.0"
+  }
+}

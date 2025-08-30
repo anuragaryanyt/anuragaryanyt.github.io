@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netlify Function Data Fetch</title>
 </head>
+
 <body>
-<h3>Anurag Main 718</h3>
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th>S.No.</th>
-      <th>Code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Already Used</td></tr>
-    <tr><td>2</td><td>Already Used</td></tr>
-    <tr><td>3</td><td>Already Used</td></tr>
-    <tr><td>4</td><td>Already Used</td></tr>
-    <tr><td>5</td><td>Already Used</td></tr>
-    <tr><td>6</td><td>3444 3521</td></tr>
-    <tr><td>7</td><td>2900 1197</td></tr>
-    <tr><td>8</td><td>7490 1655</td></tr>
-    <tr><td>9</td><td>9885 9513</td></tr>
-    <tr><td>10</td><td>0268 3084</td></tr>
-  </tbody>
-</table>
+  <h1>Data from MongoDB (via Netlify Function)</h1>
+  <button id="loadData">Fetch Data</button>
+  <pre id="output"></pre>
 
+  <script>
+    document.getElementById("loadData").addEventListener("click", async () => {
+      try {
+        // call the Netlify function
+        const res = await fetch("/.netlify/functions/getData");
+        const data = await res.json();
 
+        // pretty print in <pre>
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("output").textContent = "Error: " + err.message;
+      }
+    });
+  </script>
 </body>
+
 </html>
