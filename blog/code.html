@@ -6,20 +6,10 @@
   <title>MongoDB Data Table</title>
 </head>
 <body>
-  <h3>Anurag Main 718</h3>
+  <h2>MongoDB Collections</h2>
   <button onclick="fetchData()">Fetch Data</button>
 
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-top:10px;">
-    <thead>
-      <tr>
-        <th>S.No.</th>
-        <th>Code</th>
-      </tr>
-    </thead>
-    <tbody id="table-body">
-      <!-- rows will load here -->
-    </tbody>
-  </table>
+  <div id="tables-container" style="margin-top:20px;"></div>
 
   <script>
     async function fetchData() {
@@ -27,16 +17,36 @@
         const response = await fetch("/.netlify/functions/getData");
         const data = await response.json();
 
-        const tbody = document.getElementById("table-body");
-        tbody.innerHTML = ""; // clear old rows
+        const container = document.getElementById("tables-container");
+        container.innerHTML = ""; // clear old tables
 
-        data.forEach(item => {
-          const row = `<tr>
-                        <td>${item.sno}</td>
-                        <td>${item.code}</td>
-                      </tr>`;
-          tbody.innerHTML += row;
-        });
+        // loop through each collection
+        for (const [collectionName, records] of Object.entries(data)) {
+          let tableHTML = `
+            <h3>${collectionName}</h3>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-bottom:20px;">
+              <thead>
+                <tr>
+                  <th>S.No.</th>
+                  <th>Code</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+
+          records.forEach(item => {
+            tableHTML += `
+              <tr>
+                <td>${item.sno}</td>
+                <td>${item.code}</td>
+              </tr>
+            `;
+          });
+
+          tableHTML += "</tbody></table>";
+          container.innerHTML += tableHTML;
+        }
+
       } catch (error) {
         alert("Error: " + error.message);
       }
@@ -44,7 +54,3 @@
   </script>
 </body>
 </html>
-
-
-
-

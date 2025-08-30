@@ -1,5 +1,3 @@
-
-
 const { MongoClient } = require("mongodb");
 
 let client = null;
@@ -16,13 +14,20 @@ exports.handler = async function (event, context) {
   try {
     const client = await getClient();
     const db = client.db("code");
-    const collection = db.collection("anurag718");
 
-    const result = await collection.find({}).toArray();
+    // 🔹 List all collections you want to fetch
+    const collections = ["anurag718", "anuragrajaryan718", "workrajaryan"];
+
+    // 🔹 Fetch data from each collection
+    const results = {};
+    for (const col of collections) {
+      const data = await db.collection(col).find({}).toArray();
+      results[col] = data;
+    }
 
     return {
       statusCode: 200,
-      body: JSON.stringify(result),  // ✅ use result, not undefined data
+      body: JSON.stringify(results), // ✅ returns an object with multiple collections
     };
   } catch (error) {
     return {
@@ -31,5 +36,3 @@ exports.handler = async function (event, context) {
     };
   }
 };
-
-
