@@ -1,6 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MongoDB Data Table</title>
+</head>
+<body>
+  <h3>Anurag Main 718</h3>
+  <button onclick="fetchData()">Fetch Data</button>
+
+  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; margin-top:10px;">
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- rows will load here -->
+    </tbody>
+  </table>
+
+  <script>
+    async function fetchData() {
+      try {
+        const response = await fetch("/.netlify/functions/getData");
+        const data = await response.json();
+
+        const tbody = document.getElementById("table-body");
+        tbody.innerHTML = ""; // clear old rows
+
+        data.forEach(item => {
+          const row = `<tr>
+                        <td>${item.sno}</td>
+                        <td>${item.code}</td>
+                      </tr>`;
+          tbody.innerHTML += row;
+        });
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MongoDB Data via Netlify Function</title>
@@ -29,4 +83,7 @@
     });
   </script>
 </body>
-</html>
+</html> -->
+
+
+
