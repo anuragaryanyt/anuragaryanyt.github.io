@@ -1,6 +1,7 @@
 /* Base Styles */
 body {
-  font-family: 'Poppins', sans-serif; /* Font Style */
+  font-family: 'Poppins', sans-serif;
+  /* Font Style */
   margin: 0 auto;
   padding: 20px;
   max-width: 1000px;
@@ -28,7 +29,7 @@ p {
 /* Image Banner */
 
 
-.banner{
+.banner {
   width: 90%;
   max-width: 600px;
   height: auto;
@@ -40,7 +41,8 @@ p {
 /* Your existing figcaption CSS */
 figcaption {
   text-align: center;
-  margin-top: 2px; /* Or even 0px or 2px if you want it very close */
+  margin-top: 2px;
+  /* Or even 0px or 2px if you want it very close */
   font-style: italic;
   color: #555;
 }
@@ -59,7 +61,8 @@ figcaption {
 
   /* Add transition for smooth effect */
   transition: transform 0.3s ease, max-width 0.3s ease, max-height 0.3s ease;
-  cursor: zoom-in; /* Indicate it's clickable */
+  cursor: zoom-in;
+  /* Indicate it's clickable */
 }
 
 .pic.zoomed {
@@ -68,12 +71,15 @@ figcaption {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  max-width: 95vw;   /* Responsive to viewport width */
-  max-height: 90vh;  /* Responsive to viewport height */
+  max-width: 95vw;
+  /* Responsive to viewport width */
+  max-height: 90vh;
+  /* Responsive to viewport height */
   width: auto;
   height: auto;
   cursor: zoom-out;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional for emphasis */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  /* Optional for emphasis */
 }
 
 
@@ -83,13 +89,19 @@ figcaption {
 /* YouTube Embed */
 .yt {
   position: relative;
-  width: 100%;                    /* Full width */
-  max-width: 900px;               /* Max width for larger screens, can be adjusted */
+  width: 100%;
+  /* Full width */
+  max-width: 900px;
+  /* Max width for larger screens, can be adjusted */
   height: 0;
-  padding-bottom: 56.25%;         /* 16:9 Aspect Ratio */
-  background-color: #000;         /* Background color in case of empty space */
-  margin: 20px auto;              /* Center horizontally and add space on top/bottom */
-  border-radius: 10px;            /* Optional: rounded corners */
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  background-color: #000;
+  /* Background color in case of empty space */
+  margin: 20px auto;
+  /* Center horizontally and add space on top/bottom */
+  border-radius: 10px;
+  /* Optional: rounded corners */
 }
 
 .yt iframe {
@@ -98,13 +110,15 @@ figcaption {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 10px;            /* Optional: rounded corners for the iframe */
+  border-radius: 10px;
+  /* Optional: rounded corners for the iframe */
 }
 
 /* Optional: Make the iframe behave well on extra-large screens (beyond 1200px) */
 @media (min-width: 1200px) {
   .yt {
-      max-width: 1000px;          /* Increase max width for larger screens */
+    max-width: 1000px;
+    /* Increase max width for larger screens */
   }
 }
 
@@ -142,7 +156,8 @@ code {
 }
 
 code .comment {
-  color: #4caf50;  /* Green color for comments */
+  color: #4caf50;
+  /* Green color for comments */
 }
 
 .blockchar {
@@ -162,6 +177,19 @@ a:hover {
 }
 
 
+
+a.btn {
+  text-decoration: none;   /* Removes underline */
+  color: inherit;          /* Keeps the same text color as before */
+}
+
+a.btn:focus,
+a.btn:active {
+  text-decoration: none;   /* Prevent underline on click */
+  outline: none;           /* Removes focus outline if not needed */
+}
+
+
 ul li,
 ol li {
   margin-bottom: 4px;
@@ -171,28 +199,51 @@ ol li {
 /* Responsive Design */
 @media screen and (max-width: 600px) {
   body {
-      padding: 15px;
-      font-size: 16px;
+    padding: 15px;
+    font-size: 16px;
   }
 
   h1 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   pre {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .copybtn {
-      font-size: 12px;
-      padding: 4px 8px;
+    font-size: 12px;
+    padding: 4px 8px;
   }
 
   .yt {
-      max-width: 100%;  /* Full width on smaller screens */
+    max-width: 100%;
+    /* Full width on smaller screens */
   }
+
   .scroll-container {
     display: none;
+  }
+
+  .nav {
+    /* Make nav take full width and remove side margins */
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    /* Counteract body padding */
+    border-radius: 0;
+    /* Remove radius for an edge-to-edge look */
+  }
+
+  .btn {
+    padding: 0.5em 1em;
+    /* Reduce horizontal padding on buttons */
+    font-size: 0.8rem;
+    /* Slightly smaller font for mobile */
+    flex-grow: 1;
+    /* Allow buttons to grow and fill space */
+    text-align: center;
+    /* Center text inside the button */
   }
 }
 
@@ -212,4 +263,55 @@ html {
   background-color: transparent;
   font-size: 1.8rem;
   transition: transform 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+/* From Uiverse.io by gohar_7145 - modified */
+
+.nav {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 60px;
+  border-radius: 5px;
+  margin: 20px auto;
+  /* Center the navigation bar */
+}
+
+
+.container:hover .outline .rect {
+  transition: 999999s;
+  /* Must specify these values here as something *different* just so that the transition works properly */
+  stroke-dashoffset: 1;
+  stroke-dasharray: 0;
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+  background: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: inherit;
+}
+
+.btn {
+  padding: 0.5em 1.5em;
+  color: #000;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.btn:hover {
+  background: #3498db;
+  color: #fff;
+  border-radius: 10px;
 }
