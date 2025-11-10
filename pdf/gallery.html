@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My PDF Notes – Gallery</title>
+  <style>
+    :root{
+      --bg:#0b0c10;   /* deep black-blue */
+      --panel:#111318;/* card bg */
+      --edge:#1f242d; /* subtle border */
+      --ink:#e9eef2;  /* main text */
+      --muted:#9aa3ad;/* secondary */
+      --accent:#4f8cff; /* optional accent */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; max-width:100%; overflow-x:hidden}
+    body{margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif}
+
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(1.1) blur(8px);
+      background:color-mix(in oklab, var(--bg) 88%, transparent);
+      border-bottom:1px solid var(--edge);
+    }
+    .wrap{width:min(100%,1100px); max-width:1100px; margin:0 auto; padding:12px 12px} 
+    .row{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+    h1{font-size:18px; margin:8px 12px 8px 0; font-weight:700}
+
+    .search{flex:1; display:flex; gap:8px}
+    .search input{
+      flex:1; padding:10px 12px; border-radius:12px; border:1px solid var(--edge);
+      background:#0f1116; color:var(--ink);
+    }
+
+    .btn{appearance:none; border:1px solid var(--edge); background:#0f1116; color:var(--ink);
+      padding:10px 12px; border-radius:12px; cursor:pointer; font-weight:600}
+    .btn:hover{border-color:#2a3240}
+
+    main{padding-block:16px 64px}
+
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); }
+
+    .card{background:var(--panel); border:1px solid var(--edge); border-radius:16px; overflow:hidden;
+      display:flex; flex-direction:column; min-height:260px; transition:transform .12s ease, box-shadow .12s ease, border-color .12s;
+    }
+    .card:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.35); border-color:#313846}
+    .thumb{aspect-ratio:1/1; display:block; width:100%; background:#0e1117; position:relative}
+    .thumb canvas{width:100%; height:100%; display:block} 
+    .badge{position:absolute; left:10px; top:10px; color:#fff; background:#000a; font-size:11px; padding:4px 8px; border-radius:999px}
+
+    .meta{padding:10px 12px; display:flex; gap:10px; align-items:flex-start}
+    .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); margin-top:7px}
+    .title{font-size:14px; font-weight:700; line-height:1.25}
+    .sub{font-size:12px; color:var(--muted)}
+
+    .empty{color:var(--muted); text-align:center; padding:32px; border:1px dashed var(--edge); border-radius:16px}
+
+    footer{position:fixed; right:16px; bottom:16px; display:flex; gap:10px}
+
+    @media (max-width:600px){ .title{font-size:13px} .wrap{padding-inline:10px} }
+    @media (max-width:420px){ .grid{grid-template-columns:1fr} }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap row">
+      <h1>My PDF Notes</h1>
+      <div class="search">
+        <input id="q" type="search" placeholder="Search notes… (name or tag)" />
+      </div>
+      <label class="btn" for="pick">Add PDFs</label>
+      <input id="pick" type="file" accept="application/pdf" multiple hidden>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" style="display:none">No PDFs yet. Add some with the button above.</div>
+  </main>
+
+  <footer>
+    <button id="toTop" class="btn">▲ Top</button>
+  </footer>
+
+  <script>
+    // ====== CONFIG ======
+    // If your PDFs are deployed on the same domain, list them here.
+    // Put paths relative to THIS file.
+    const PDFS = [
+      // Example entries – replace with yours
+      "SQLzerotohero.pdf",
+      "epfo.pdf",
+      "Invoice.pdf",
+      // "notes/DBMS-cheatsheet.pdf",
+    ];
+
+    // Where to open when a card is clicked. Point this to your existing viewer.
+    const VIEWER_PAGE = 'pdfasweb.html'; // will navigate to: pdfasweb.html?pdf=<encoded>
+
+    // PDF.js worker
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
+
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    const q = document.getElementById('q');
+    const fileInput = document.getElementById('pick');
+
+    /** Internal state of items we can render **/
+    const items = []; // {id, title, href, pages?, bytes?, local?:boolean}
+
+    function kebab(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,'-'); }
+    function humanSize(n){ if(!n) return ''; const units=['B','KB','MB','GB']; let i=0; while(n>=1024&&i<units.length-1){n/=1024;i++} return n.toFixed(n<10&&i?1:0)+' '+units[i]; }
+
+    function cardTemplate(item){
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.dataset.key = item.id;
+      el.innerHTML = `
+        <a class="thumb" href="#" data-open>
+          <span class="badge" data-badge>${item.pages ? item.pages+"p" : ''}</span>
+          <canvas></canvas>
+        </a>
+        <div class="meta">
+          <div class="dot"></div>
+          <div>
+            <div class="title" title="${item.title}">${item.title}</div>
+            <div class="sub" data-sub>${item.bytes?humanSize(item.bytes):''}${item.local? ' · local' : ''}</div>
+          </div>
+        </div>`;
+      // open handler
+      el.querySelector('[data-open]').addEventListener('click', (e)=>{
+        e.preventDefault();
+        // If local (object URL), we can still pass it to the viewer page.
+        const url = new URL(VIEWER_PAGE, location.href);
+        url.searchParams.set('pdf', item.href);
+        location.href = url.toString();
+      });
+      return el;
+    }
+
+    // Lazy thumbnail rendering using IntersectionObserver
+    const io = new IntersectionObserver((entries)=>{
+      for(const ent of entries){
+        if(ent.isIntersecting){
+          io.unobserve(ent.target);
+          const card = ent.target.closest('.card');
+          if(card) renderThumb(card.dataset.key, card.querySelector('canvas'), card.querySelector('[data-badge]'));
+        }
+      }
+    }, { rootMargin:'200px' });
+
+    async function renderThumb(id, canvas, badgeEl){
+      const item = items.find(x=>x.id===id);
+      if(!item) return;
+      try{
+        const task = pdfjsLib.getDocument(item.href);
+        const pdf = await task.promise;
+        const page = await pdf.getPage(1);
+        const natural = page.getViewport({ scale: 1 });
+
+        // Square thumbnail sizing
+        const parent = canvas.parentElement; // .thumb
+        const cssSize = Math.floor(parent.getBoundingClientRect().width || 220);
+        const dpr = window.devicePixelRatio || 1;
+        const pxSize = Math.max(160, cssSize) * dpr;
+
+        canvas.width = pxSize;
+        canvas.height = pxSize;
+        canvas.style.width = Math.floor(pxSize / dpr) + 'px';
+        canvas.style.height = Math.floor(pxSize / dpr) + 'px';
+
+        const maxDim = Math.max(natural.width, natural.height);
+        const s = pxSize / maxDim; // fit entire page into the square (no cropping)
+        const drawW = natural.width * s;
+        const drawH = natural.height * s;
+        const dx = (pxSize - drawW) / 2;
+        const dy = (pxSize - drawH) / 2;
+
+        const ctx = canvas.getContext('2d');
+        ctx.save();
+        ctx.fillStyle = '#0e1117';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.restore();
+
+        const vp = page.getViewport({ scale: s });
+        await page.render({ canvasContext: ctx, viewport: vp, transform: [1,0,0,1,dx,dy] }).promise;
+
+        badgeEl.textContent = pdf.numPages + 'p';
+        item.pages = pdf.numPages;
+      }catch(err){
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#0e1117'; ctx.fillRect(0,0,canvas.width=300, canvas.height=300);
+        ctx.fillStyle = '#fff'; ctx.font = '14px system-ui'; ctx.fillText('Preview failed', 16, 24);
+        badgeEl.textContent = '';
+      }
+    }
+
+    function addItem(title, href, bytes, local=false){
+      const id = kebab(title + ' ' + href);
+      const item = { id, title, href, bytes, local };
+      items.push(item);
+      const card = cardTemplate(item);
+      grid.appendChild(card);
+      io.observe(card.querySelector('.thumb'));
+    }
+
+    function refreshEmpty(){ empty.style.display = items.length ? 'none' : 'block'; }
+
+    // Seed with configured PDFS
+    PDFS.forEach(path=>{
+      const name = decodeURIComponent(path.split('/').pop()).replace(/\.pdf$/i,'');
+      addItem(name, path);
+    });
+
+    // Handle file picker (local previews)
+    fileInput.addEventListener('change', ()=>{
+      for(const f of fileInput.files){
+        const url = URL.createObjectURL(f);
+        const name = f.name.replace(/\.pdf$/i,'');
+        addItem(name, url, f.size, true);
+      }
+      refreshEmpty();
+    });
+
+    // Search filter
+    q.addEventListener('input', ()=>{
+      const term = q.value.trim().toLowerCase();
+      for(const card of grid.children){
+        const key = card.dataset.key;
+        const item = items.find(x=>x.id===key);
+        const hit = !term || item.title.toLowerCase().includes(term) || item.href.toLowerCase().includes(term);
+        card.style.display = hit ? '' : 'none';
+      }
+    });
+
+    document.getElementById('toTop').addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+
+    refreshEmpty();
+  </script>
+</body>
+</html>
+
