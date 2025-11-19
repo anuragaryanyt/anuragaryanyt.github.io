@@ -35,4 +35,4 @@ const newHtmlContent = htmlContent.replace(regex, `const PDFS = [\n${pdfFiles.ma
 // 5. Write the updated content back to the file
 fs.writeFileSync(galleryHtmlPath, newHtmlContent, 'utf8');
 
-console.log(`✅ Successfully updated ${path.basename(galleryHtmlPath)} with the new file list!`);
+console.log(`✅ Successfully updated file names ${path.basename(galleryHtmlPath)} with the new file list!`);
