@@ -7,17 +7,19 @@
 
     <meta name="description" content="Portfolio" />
 
-    <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
-
 
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
-    <meta name="description" content=" " />
-    <meta name="keywords" content=" " />
+    <meta name="description"
+        content="Learn how I built a custom PDF Notes Gallery System using HTML, JavaScript, PDF.js, and Node.js. A self-hosted solution for managing and viewing PDF collections with automatic thumbnail generation and a clean reading interface." />
+    <meta name="keywords"
+        content="PDF Gallery, PDF.js project, custom PDF reader, web development, JavaScript PDF viewer, Node.js automation, self-hosted PDF manager, Raj Aryan portfolio, tech blog, coding project" />
 
     <meta name="author" content="Raj Aryan" />
     <meta name="language" content="en, hi, bho" />
@@ -25,210 +27,189 @@
     <meta name="robots" content="index, follow" />
 
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
-    <title>Blog Post - </title>
-
-
+    <title>Blog Post - PDF Notes Gallery System</title>
 </head>
 
 <body>
+    <div class="scanline"></div>
+    <div class="overlay"></div>
 
-    <div class="nav">
-        <div class="container">
-            <a class="btn" href="/">Home</a>
-            <a class="btn" href="/blog/blog.html">Blog</a>
-            <a class="btn" href="/#projects">Project</a>
-            <a class="btn" href="/#contact">Contact</a>
+    <header>
+        <nav>
+            <div class="logo">[RAJ.ARYAN]</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">// HOME</a></li>
+                <li><a href="/blog.html">// BLOG</a></li>
+                <li><a href="/#projects">// PROJECT</a></li>
+                <li><a href="/#contact">// CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1>How I Built My Custom PDF Notes Gallery System</h1>
+            <p class="article-meta"><strong>Author:</strong> <a href="https://instagram.com/rajxaryann"
+                    target="_blank">Raj Aryan</a> | <em>Published: November 15, 2025</em></p>
+        </div>
+
+        <div class="article-content">
+            <img class="banner" src="https://i.postimg.cc/1tBWyhCB/pdfaswebsite.png"
+                alt="PDF as Hosted Website Banner" />
+
+            <p>
+                Managing a large set of PDFs becomes easier when the interface is clean, fast, and automated. I created
+                a custom PDF Notes Gallery using HTML, JavaScript, PDF.js, and a small Node.js script. Below is a clear
+                explanation of how each part works and how the whole system fits together.
+            </p>
+
+            <h3>PDF Gallery (gallery.html)</h3>
+            <p>This is the main page where all PDF notes are displayed in a grid layout.</p>
+
+            <figure>
+                <img src="https://i.postimg.cc/xdWTfhZm/PDFgallery.png" alt="PDF Gallery Screenshot" class="pic" />
+                <figcaption>Figure 1: PDF Gallery Layout with Thumbnails</figcaption>
+            </figure>
+
+            <p><strong>Key Features</strong></p>
+            <ul>
+                <li><strong>Automatic Thumbnail Generation:</strong> PDF.js renders the first page of each PDF into a
+                    square canvas preview.</li>
+                <li><strong>Page Count and File Size Display:</strong> Every card shows the number of pages and file
+                    size for quick reference.</li>
+                <li><strong>Responsive Card Layout:</strong> The grid adjusts automatically based on screen size, from
+                    desktop to mobile.</li>
+                <li><strong>Search Functionality:</strong> Users can filter PDFs by typing the name or tag in the search
+                    bar.</li>
+                <li><strong>Local File Upload Support:</strong> Clicking “Add PDFs” allows users to upload their own PDF
+                    files, which get instant previews.</li>
+                <li><strong>Smooth User Experience:</strong> Lazy loading ensures thumbnails are rendered only when they
+                    come into view, improving performance.</li>
+            </ul>
+
+            <p><strong>How it Works</strong></p>
+            <ul>
+                <li>A predefined array PDFS contains the list of stored PDF filenames.</li>
+                <li>Each file is turned into a card using JavaScript.</li>
+                <li>Clicking a card redirects the user to the PDF reader with the selected file passed via URL
+                    parameters.</li>
+                <li>PDF.js is used to decode and render the preview of page 1.</li>
+            </ul>
+
+            <h3>PDF Reader Page (pdfasweb.html)</h3>
+            <p>This page provides a clean and fullscreen reading experience for any selected PDF.</p>
+
+            <figure>
+                <img src="https://i.postimg.cc/6pcvQWVg/PDFas-WEB.png" alt="PDF Reader Screenshot" class="pic" />
+                <figcaption>Figure 2: PDF Reader Interface with Zoom and Page Numbering</figcaption>
+            </figure>
+
+            <p><strong>Key Features</strong></p>
+            <ul>
+                <li><strong>No Iframes:</strong> The PDF is rendered directly onto <span class="blockchar">canvas</span>
+                    elements using PDF.js, providing more control and better performance.</li>
+                <li><strong>Zoom Control (50-250):</strong> Users can adjust zoom levels through a slider.</li>
+                <li><strong>Fit-Width Button:</strong> Automatically scales the PDF to fit the container width
+                    perfectly.</li>
+                <li><strong>Lazy Page Rendering:</strong> The first page loads quickly, and remaining pages load
+                    gradually in the background.</li>
+                <li><strong>Dynamic Page Numbering:</strong> Each page canvas displays a small tag showing its page
+                    number.</li>
+                <li><strong>Auto Title Update:</strong> The tab title and header text change according to the PDF file
+                    name.</li>
+                <li><strong>Back to Top Shortcut:</strong> A fixed button helps the reader jump back instantly.</li>
+            </ul>
+
+            <p><strong>How it Works</strong></p>
+            <ul>
+                <li>The reader extracts <span class="blockchar">?pdf=filename</span> from the URL.</li>
+                <li>PDF.js loads the file, renders page 1, then progressively renders all other pages.</li>
+                <li>Zooming re-renders all pages for clarity.</li>
+                <li>Fit Width recalculates the scale based on container width.</li>
+            </ul>
+
+            <h3>Automatic PDF List Updater (update-gallery.js)</h3>
+            <p>
+                A Node.js script is provided to automate the updating of the PDF list used in the gallery.
+            </p>
+
+            <p><strong>Key Features</strong></p>
+            <ul>
+                <li><strong>Auto-Scan for PDF Files:</strong> It reads all the .pdf files present in the directory.</li>
+                <li><strong>Automatic Updating of gallery.html:</strong> The script reads gallery.html and replaces the
+                    old PDFS array with the new list.</li>
+                <li><strong>No Manual Editing Needed:</strong> Whenever new PDFs are added or deleted, running the
+                    script updates the gallery instantly.</li>
+                <li><strong>Simple and Efficient Workflow:</strong> No advanced configuration - just run the script and
+                    your gallery stays in sync.</li>
+            </ul>
+
+            <p><strong>How it Works</strong></p>
+            <ul>
+                <li>Uses Node's fs and path modules.</li>
+                <li>Searches the directory for PDF filenames.</li>
+                <li>Injects the updated list into the HTML using string replacement.</li>
+                <li>Saves the modified gallery file automatically.</li>
+            </ul>
+
+            <h3>Why This System Works Well</h3>
+            <ul>
+                <li>Fully self-hosted - no dependency on external viewers or iframes.</li>
+                <li>Fast performance due to lazy loading and direct canvas rendering.</li>
+                <li>Clean UI with a dark theme for better readability.</li>
+                <li>Works on any device thanks to a fully responsive layout.</li>
+                <li>Easy maintenance with the auto-update Node.js script.</li>
+            </ul>
+            <p>
+                This setup is ideal for storing interview notes, study materials, and technical PDF collections - all
+                organized neatly with thumbnails and a smooth PDF reader.
+            </p>
+
+            <h3>Demo Video</h3>
+            <div class="yt">
+                <video src="/icons/video.mp4" autoplay loop muted playsinline
+                    style="width:100%; aspect-ratio:16/9; display:block;">
+                </video>
+            </div>
+
+            <p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/PDF-Gallery-System">GitHub</a>
+            </p>
+
+            <footer>
+                <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                    <a href="javascript:history.back()">&larr; BACK</a>
+                    <a href="#">NEXT &rarr;</a>
+                </div>
+            </footer>
         </div>
     </div>
-
-
-
-
-    <h1>How I Built <u>My Custom PDF Notes Gallery System</u></h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank"
-            style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: November 15, 2025</em></p>
-
-
-    <img class="banner" src="https://i.postimg.cc/1tBWyhCB/pdfaswebsite.png" alt="PDF as Hosted Website Banner" />      
-
-    <p>
-        Managing a large set of PDFs becomes easier when the interface is clean, fast, and automated. I created a custom
-        PDF Notes Gallery using HTML, JavaScript, PDF.js, and a small Node.js script. Below is a clear explanation of
-        how each part works and how the whole system fits together.
-
-    </p>
-
-    <h3>PDF Gallery (gallery.html)</h3>
-    <p>This is the main page where all PDF notes are displayed in a grid layout.
-
-            <figure>
-        <img src="https://i.postimg.cc/xdWTfhZm/PDFgallery.png" alt="PDF Gallery Screenshot" class="pic"/>
-        <figcaption>Figure 1: PDF Gallery Layout with Thumbnails</figcaption>
-    </figure
-        <br>
-        <strong>Key Features</strong>
-    <ul>
-        <li><strong>Automatic Thumbnail Generation:</strong> PDF.js renders the first page of each PDF into a square
-            canvas preview.</li>
-        <li><strong>Page Count and File Size Display: </strong>Every card shows the number of pages and file size for
-            quick reference.</li>
-        <li><strong>Responsive Card Layout: </strong>The grid adjusts automatically based on screen size, from desktop
-            to mobile.</li>
-        <li><strong>Search Functionality: </strong>Users can filter PDFs by typing the name or tag in the search bar.
-        </li>
-        <li><strong>Local File Upload Support: </strong>Clicking “Add PDFs” allows users to upload their own PDF files,
-            which get instant previews.</li>
-        <li><strong>Smooth User Experience: </strong>Lazy loading ensures thumbnails are rendered only when they come
-            into view, improving performance.</li>
-    </ul>
-
-    <strong>How it Works</strong>
-    <ul>
-        <li>A predefined array PDFS contains the list of stored PDF filenames.</li>
-        <li>Each file is turned into a card using JavaScript.</li>
-        <li>Clicking a card redirects the user to the PDF reader with the selected file passed via URL parameters.</li>
-        <li>PDF.js is used to decode and render the preview of page 1.</li>
-
-    </ul>
-
-
-    </p>
-
-    <h3>PDF Reader Page (pdfasweb.html)</h3>
-    <p>
-        This page provides a clean and fullscreen reading experience for any selected PDF.
-
-            <figure>
-        <img src="https://i.postimg.cc/6pcvQWVg/PDFas-WEB.png" alt="PDF Reader Screenshot" class="pic"/>
-        <figcaption>Figure 2: PDF Reader Interface with Zoom and Page Numbering</figcaption>
-        </figure>
-        
-        <strong>Key Features</strong>
-    <ul>
-        <li><strong>No Iframes: </strong>The PDF is rendered directly onto <span class="blockchar">canvas</span>
-            elements using PDF.js, providing more control and better performance.</li>
-        <li><strong>Zoom Control (50-250): </strong>
-            Users can adjust zoom levels through a slider.</li>
-        <li><strong>Fit-Width Button: </strong>
-            Automatically scales the PDF to fit the container width perfectly.</li>
-        <li><strong>Lazy Page Rendering: </strong>
-            The first page loads quickly, and remaining pages load gradually in the background.</li>
-        <li><strong>Dynamic Page Numbering: </strong>
-            Each page canvas displays a small tag showing its page number.</li>
-        <li><strong>Auto Title Update: </strong>
-            The tab title and header text change according to the PDF file name.</li>
-        <li><strong>Back to Top Shortcut: </strong>
-            A fixed button helps the reader jump back instantly.</li>
-    </ul>
-
-    <strong>How it Works</strong>
-    <ul>
-        <li>The reader extracts <span class="blockchar">?pdf=filename</span> from the URL.</li>
-        <li>PDF.js loads the file, renders page 1, then progressively renders all other pages.</li>
-        <li>Zooming re-renders all pages for clarity.</li>
-        <li>Fit Width recalculates the scale based on container width.</li>
-    </ul>
-
-
-
-    </p>
-
-    <h3>Automatic PDF List Updater (update-gallery.js)</h3>
-    <p>
-        A Node.js script is provided to automate the updating of the PDF list used in the gallery.
-        <br><br>
-        <strong>Key Features</strong>
-
-<ul>
-    <li><strong>Auto-Scan for PDF Files:</strong> It reads all the .pdf files present in the directory.</li>
-    <li><strong>Automatic Updating of gallery.html:</strong> The script reads gallery.html and replaces the old PDFS array with the new list.</li>
-    <li><strong>No Manual Editing Needed:</strong> Whenever new PDFs are added or deleted, running the script updates the gallery instantly.</li>
-    <li><strong>Simple and Efficient Workflow:</strong> No advanced configuration - just run the script and your gallery stays in sync.</li>
-</ul>
-
-<strong>How it Works</strong>
-<ul>
-    <li>Uses Node's fs and path modules.</li>
-    <li>Searches the directory for PDF filenames.</li>
-    <li>Injects the updated list into the HTML using string replacement.</li>
-    <li>Saves the modified gallery file automatically.</li>
-</ul>
-
-    </p>
-
-    <h3>Why This System Works Well</h3>
-    <p>
-<ul>
-    <li>Fully self-hosted - no dependency on external viewers or iframes.</li>
-    <li>Fast performance due to lazy loading and direct canvas rendering.</li>
-    <li>Clean UI with a dark theme for better readability.</li>
-    <li>Works on any device thanks to a fully responsive layout.</li>
-    <li>Easy maintenance with the auto-update Node.js script.</li>
-</ul>
-This setup is ideal for storing interview notes, study materials, and technical PDF collections - all organized neatly with thumbnails and a smooth PDF reader.
-
-
-</p>
-
-
-
-    <br>
-    <h3>Demo Video</h3>
-<div style="
-    max-width:900px;
-    margin:0 auto;
-    padding:16px;">
-    
-    <video 
-        src="/icons/video.mp4"
-        autoplay 
-        loop 
-        muted 
-        playsinline 
-        style="
-            width:100%; 
-            aspect-ratio:16/9; 
-            border-radius:0px;
-            display:block;">
-    </video>
-
-</div>
-
-
-
-
-    <!-- <h3>Youtube Video</h3>
-<div class="yt">
-    <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-</div> 
-
-<br>-->
-
-
-    <p><strong>Full Code:</strong> <a href="">GitHub</a></p>
-
-
-    <footer>
-        <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-            <a href="javascript:history.back()"
-                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr;
-                Back</a>
-
-            <a href="numberplate.html"
-                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next
-                &rarr;</a>
-        </div>
-    </footer>
-
-
-
 
     <script src="/cssjs/copy.js"></script>
     <script src="/cssjs/imgzoom.js"></script>
 
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -7,160 +7,141 @@
 
     <meta name="description" content="Portfolio" />
 
-    <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
 
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
     <meta name="description"
         content="Discover the Number Plate Detection System project by Raj Aryan (anuragaryanyt) - a Python and OpenCV-based system that detects and extracts vehicle number plates from images or video feeds. Ideal for beginners in computer vision and machine learning." />
     <meta name="keywords"
         content="Number Plate Detection, license plate recognition, anuragaryanyt, Raj Aryan, rajaryan, rajxaryann, OpenCV project, Python computer vision, vehicle detection system, machine learning project, number plate reader, image processing, rajaryan.netlify.app, anuragaryanyt.site, Indian coder, Raj Aryan blog, CV2, vehicle surveillance, ALPR system" />
 
-
     <meta name="author" content="Raj Aryan" />
     <meta name="language" content="en, hi, bho" />
     <meta name="country" content="IN" />
     <meta name="robots" content="index, follow" />
 
-
-    <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
     <title>Blog Post - Number Plate Detection System</title>
-
-
 </head>
 
 <body>
+    <div class="scanline"></div>
+    <div class="overlay"></div>
 
+    <header>
+        <nav>
+            <div class="logo">[RAJ.ARYAN]</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">// HOME</a></li>
+                <li><a href="/blog.html">// BLOG</a></li>
+                <li><a href="/#projects">// PROJECT</a></li>
+                <li><a href="/#contact">// CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="nav">
-        <div class="container">
-            <a class="btn" href="/">Home</a>
-            <a class="btn" href="/blog/blog.html">Blog</a>
-            <a class="btn" href="/#projects">Project</a>
-            <a class="btn" href="/#contact">Contact</a>
-
+    <div class="article-container">
+        <div class="article-header">
+            <h1>How I Built a Number Plate Detection System</h1>
+            <p class="article-meta"><strong>Author:</strong> <a href="https://instagram.com/rajxaryann"
+                    target="_blank">Raj Aryan</a> | <em>Published: May 05, 2025</em></p>
         </div>
-    </div>
 
+        <div class="article-content">
+            <img class="banner" src="https://shorturl.at/TE6FE" alt="Number Plate Image" />
 
-    <h1>How I Built a <u>Number Plate Detection System</u></h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank"
-            style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: May 05, 2025</em></p>
+            <p>
+                In this blog, I'll walk you through how I developed a Number Plate Detection System using Python and
+                OpenCV. This system is capable of automatically detecting vehicle number plates from images or video
+                streams, extracting the plate region, and preparing it for further recognition or OCR processing.
+            </p>
 
+            <h3>🔑 Key Features</h3>
+            <ul>
+                <li>Detects number plates from static images.</li>
+                <li>Uses OpenCV for real-time image processing.</li>
+                <li>Highlights detected number plate region with bounding boxes.</li>
+                <li>Can be extended for video stream processing or integrated with OCR tools like Tesseract.</li>
+            </ul>
 
-    <img class="banner" src="https://shorturl.at/TE6FE" alt="Number Plate Iamge" />
+            <h3>Introduction</h3>
+            <p>
+                In recent years, the integration of computer vision technologies with everyday applications has led to
+                significant advancements in various fields, ranging from surveillance and security to transportation and
+                automation. One such application is the development of a Number Plate Recognition System, which employs
+                a combination of image processing techniques and optical character recognition (OCR) to automatically
+                identify and recognize number plates in real-time video streams. This system holds immense potential for
+                enhancing traffic management, law enforcement, and parking systems by providing efficient and accurate
+                vehicle identification capabilities.
+            </p>
+            <p>
+                Key components of the Number Plate Recognition System include a Haar cascade classifier for number plate
+                detection, Tesseract OCR for character recognition, and MongoDB for storing and managing vehicle
+                information. The system architecture is designed to facilitate real-time processing of video streams,
+                ensuring prompt identification of vehicles as they pass through the monitored area. Additionally, a
+                user-friendly web interface built with Flask framework allows for functionalities such as adding new
+                vehicles to the database and viewing recognized plate records.
+            </p>
+            <p>
+                This project aims to address several challenges associated with Number plate recognition, including
+                variations in plate appearance due to factors such as lighting conditions, viewing angle, and
+                occlusions.
+                Advanced image processing techniques are employed to enhance the robustness and accuracy of plate
+                detection and character recognition, thereby improving the overall performance of the system.
+                Furthermore, the integration of user authentication mechanisms ensures secure access to system
+                functionalities, preventing unauthorized users from tampering with the database or system settings.
+            </p>
 
-    <p>
-        In this blog, I'll walk you through how I developed a Number Plate Detection System using Python and OpenCV.
-        This system is capable of automatically detecting vehicle number plates from images or video streams, extracting
-        the plate region, and preparing it for further recognition or OCR processing.
+            <h3>System Components</h3>
+            <ul>
+                <li><strong>Python:</strong> Programming language used for system development. Provides flexibility,
+                    ease
+                    of use, and extensive libraries for image processing.</li>
+                <li><strong>OpenCV (Open Source Computer Vision Library):</strong> Integral for image and video
+                    processing tasks. Facilitates license plate detection and optical character recognition (OCR).</li>
+                <li><strong>Flask:</strong> Web framework for building the user interface. Enables communication between
+                    the backend and frontend components.</li>
+                <li><strong>MongoDB:</strong> NoSQL database used for storing recognized plate information. Provides
+                    scalability, flexibility, and compatibility with Python-based applications.</li>
+            </ul>
 
-    </p>
+            <h3>Work Flow</h3>
+            <img src="https://shorturl.at/TFNag" alt="Work Flow" class="pic">
 
-    <h3>🔑 Key Features</h3>
-    <p>
-    <ul class="circle-list">
-        <li>Detects number plates from static images.</li>
-        <li>Uses OpenCV for real-time image processing.</li>
-        <li>Highlights detected number plate region with bounding boxes.</li>
-        <li>Can be extended for video stream processing or integrated with OCR tools like Tesseract.</li>
-    </ul>
-    </p>
+            <h3>System Architecture</h3>
+            <img src="https://shorturl.at/D2r0x" alt="System Architecture" class="pic">
 
-    <h3>Introduction</h3>
-    <p>
-        In recent years, the integration of computer vision technologies with everyday applications has led to
-        significant advancements in various fields, ranging from surveillance and security to transportation and
-        automation. One such application is the development of a Number Plate Recognition System, which employs a
-        combination of image processing techniques and optical character recognition (OCR) to automatically identify and
-        recognize number plates in real-time video streams. This system holds immense potential for enhancing traffic
-        management, law enforcement, and parking systems by providing efficient and accurate vehicle identification
-        capabilities.
-        <br><br>
-        Key components of the Number Plate Recognition System include a Haar cascade classifier for number plate
-        detection, Tesseract OCR for character recognition, and MongoDB for storing and managing vehicle information.
-        The system architecture is designed to facilitate real-time processing of video streams, ensuring prompt
-        identification of vehicles as they pass through the monitored area. Additionally, a user-friendly web interface
-        built with Flask framework allows for functionalities such as adding new vehicles to the database and viewing
-        recognized plate records.
-        <br><br>
-        This project aims to address several challenges associated with Number plate recognition, including variations
-        in plate appearance due to factors such as lighting conditions, viewing angle, and occlusions. Advanced image
-        processing techniques are employed to enhance the robustness and accuracy of plate detection and character
-        recognition, thereby improving the overall performance of the system. Furthermore, the integration of user
-        authentication mechanisms ensures secure access to system functionalities, preventing unauthorized users from
-        tampering with the database or system settings.
+            <h3>Image Pre-Processing</h3>
+            <ul>
+                <li><strong>Edge Detection:</strong> Edge detection is indirectly utilized through the use of the
+                    pre-trained license plate detection cascade (plate_cascade). While the specific edge detection
+                    algorithm is not explicitly mentioned in the code, the detectMultiScale function of OpenCV's
+                    CascadeClassifier class detects objects based on edges in the input image. This method inherently
+                    involves edge detection techniques to identify regions of interest (license plates) based on edge
+                    features.</li>
+                <li><strong>Contour Tracing:</strong> Contour tracing is employed to highlight the boundaries of
+                    detected license plates. After detecting the regions of interest using the cascade classifier, the
+                    code draws rectangles around these regions, effectively outlining the contours of the license
+                    plates.</li>
+            </ul>
 
+            <img src="https://shorturl.at/PcVOW" alt="Image Pre-Processing" class="pic">
 
+            <h3>Libraries</h3>
+            <p>Install all the libraries and required dependencies.</p>
 
-    </p>
-
-    <h3>System Components</h3>
-    <p>
-    <ul>
-        <li><strong>Python:</strong> Programming language used for system development. Provides flexibility, ease of
-            use, and extensive libraries for image processing.</li>
-
-        <li><strong>OpenCV (Open Source Computer Vision Library):</strong> Integral for image and video processing
-            tasks. Facilitates license plate detection and optical character recognition (OCR).</li>
-
-        <li><strong>Flask:</strong> Web framework for building the user interface. Enables communication between the
-            backend and frontend components.</li>
-
-        <li><strong>MongoDB:</strong> NoSQL database used for storing recognized plate information. Provides
-            scalability, flexibility, and compatibility with Python-based applications.</li>
-    </ul>
-
-
-    </p>
-
-    <h3>Work Flow</h3>
-    <p>
-        <img src="https://shorturl.at/TFNag" alt="Work Flow" class="banner">
-
-
-    </p>
-
-    <h3>System Architecture</h3>
-    <p>
-        <img src="https://shorturl.at/D2r0x" alt="System arct" class="banner">
-
-
-    </p>
-
-
-    <h3>Image Pre-Processing</h3>
-
-    <p>
-    <ul>
-        <li><strong>Edge Detection:</strong> Edge detection is indirectly utilized through the use of the pre-trained
-            license plate detection cascade (plate_cascade). While the specific edge detection algorithm is not
-            explicitly mentioned in the code, the detectMultiScale function of OpenCV's CascadeClassifier class detects
-            objects based on edges in the input image. This method inherently involves edge detection techniques to
-            identify regions of interest (license plates) based on edge features.</li>
-
-        <li><strong>Contour Tracing:</strong> Contour tracing is employed to highlight the boundaries of detected
-            license plates. After detecting the regions of interest using the cascade classifier, the code draws
-            rectangles around these regions, effectively outlining the contours of the license plates.</li>
-
-    </ul>
-
-    <img src="https://shorturl.at/PcVOW" alt="Image Pre-Processing" class="banner">
-
-    </p>
-
-    <h3>Libraries</h3>
-    <p>
-        Install all the libraries and required dependencies.
-
-    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-            <code>
-import os
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>import os
 from unittest import result
 import cv2
 from datetime import datetime, timedelta, timezone
@@ -169,31 +150,21 @@ import requests
 from PIL import Image
 from flask import Flask, jsonify, redirect, render_template, Response, request, session, url_for
 import threading
-from pymongo import MongoClient
-        </code></pre>
-    </p>
+from pymongo import MongoClient</code></pre>
 
-    <h3>Database Connection</h3>
-    <p>
-        The application connects to a MongoDB database. MongoDB Atlas is used for cloud-hosted MongoDB, allowing easy
-        scaling and management.
+            <h3>Database Connection</h3>
+            <p>
+                The application connects to a MongoDB database. MongoDB Atlas is used for cloud-hosted MongoDB, allowing
+                easy scaling and management.
+            </p>
 
-    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-            <code>
-client = MongoClient("&lt;mongodb server url&gt;")
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>client = MongoClient("&lt;mongodb server url&gt;")
 db = client['vehicle_database']
 vehicles_collection = db['vehicle']
-history_collection = db['history']
-            </code></pre>
+history_collection = db['history']</code></pre>
 
-
-    </p>
-
-    <h3>Loading Vehicle Database</h3>
-    <p>
-    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-def load_vehicle_database():
+            <h3>Loading Vehicle Database</h3>
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>def load_vehicle_database():
     database = {}
     vehicles_collection = db['vehicle']
     for vehicle in vehicles_collection.find():
@@ -207,48 +178,47 @@ def load_vehicle_database():
     print("Vehicle database loaded successfully.")
     return database
 
-vehicle_database = load_vehicle_database()             
-</code></pre>
-    This function queries all vehicle records from MongoDB and stores them in a dictionary where the plate number is the
-    key.
-    </p>
+vehicle_database = load_vehicle_database()</code></pre>
 
-    <h3>Video Processing</h3>
-    <p>
-        The <span class="blockchar">process_video</span>function captures video frames from the camera, detects license
-        plates using OpenCV, and performs OCR using Tesseract to recognize the plate numbers.
+            <p>This function queries all vehicle records from MongoDB and stores them in a dictionary where the plate
+                number is the key.</p>
 
-    <ol type="i">
-        <li><strong>Load Cascade for Plate Detection:</strong> The Haar Cascade classifier is pre-trained to detect
-            license plates.</li>
+            <h3>Video Processing</h3>
+            <p>
+                The <span class="blockchar">process_video</span> function captures video frames from the camera, detects
+                license plates using OpenCV, and performs OCR using Tesseract to recognize the plate numbers.
+            </p>
 
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-                <code>
-plate_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_russian_plate_number.xml')
-                </code></pre>
+            <ol type="i">
+                <li><strong>Load Cascade for Plate Detection:</strong> The Haar Cascade classifier is pre-trained to
+                    detect license plates.</li>
+            </ol>
 
-        <li><strong>Configure Tesseract OCR:</strong> Specifies the path to the Tesseract executable.</li>
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-<span class="comment"># for ubuntu</span>
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>plate_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_russian_plate_number.xml')</code></pre>
+
+            <ol type="i" start="2">
+                <li><strong>Configure Tesseract OCR:</strong> Specifies the path to the Tesseract executable.</li>
+            </ol>
+
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code><span class="comment"># for ubuntu</span>
 pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
-    
-<span class="comment"># for windows paste the path where it is installed</span>
-</code></pre>
 
-        <li><strong>Define OCR Function:</strong></li>
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
-def perform_ocr(img):
+<span class="comment"># for windows paste the path where it is installed</span></code></pre>
+
+            <ol type="i" start="3">
+                <li><strong>Define OCR Function:</strong></li>
+            </ol>
+
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>def perform_ocr(img):
     custom_config = r'--oem 3 --psm 6'
     plate_number = pytesseract.image_to_string(img, config=custom_config)
-    return plate_number.strip()
-</code></pre>
+    return plate_number.strip()</code></pre>
 
-        <li>
-            <trong>Process Video Frames:</trong>
-        </li>
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
-def process_video():
+            <ol type="i" start="4">
+                <li><strong>Process Video Frames:</strong></li>
+            </ol>
+
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>def process_video():
     cap = cv2.VideoCapture(-1)
     while True:
         ret, frame = cap.read()
@@ -287,105 +257,84 @@ def process_video():
         frame_bytes = jpeg.tobytes()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n\r\n')
-    cap.release()
+    cap.release()</code></pre>
 
-</code></pre>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*QehCHub_uFteF51ikufVng.png"
+                alt="Number Scanning" class="pic">
 
-        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*QehCHub_uFteF51ikufVng.png"
-            alt="Number Scanning" class="banner">
+            <ul>
+                <li>Captures video frames and converts them to grayscale.</li>
+                <li>Detects license plates in the frame using the Haar Cascade classifier.</li>
+                <li>Extracts the region of interest (ROI) and performs OCR to get the plate number.</li>
+                <li>Matches the recognized plate number with the database and logs the information if it's a new
+                    recognition.</li>
+                <li>Annotates the frame with vehicle information and the detected plate.</li>
+            </ul>
 
-        <ul type="disc">
-            <li>Captures video frames and converts them to grayscale.</li>
-            <li>Detects license plates in the frame using the Haar Cascade classifier.</li>
-            <li>Extracts the region of interest (ROI) and performs OCR to get the plate number.</li>
-            <li>Matches the recognized plate number with the database and logs the information if it's a new
-                recognition.</li>
-            <li>Annotates the frame with vehicle information and the detected plate.</li>
-        </ul>
-    </ol>
-    </p>
-
-    <h3>Video Streaming</h3>
-    <p>
-    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-@app.route('/video_feed')
+            <h3>Video Streaming</h3>
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>@app.route('/video_feed')
 def video_feed():
-    return Response(process_video(), mimetype='multipart/x-mixed-replace; boundary=frame')
-</code></pre>
+    return Response(process_video(), mimetype='multipart/x-mixed-replace; boundary=frame')</code></pre>
 
-    The <span class="blockchar">video_feed</span> route returns a video stream using the process_video generator
-    function.
+            <p>The <span class="blockchar">video_feed</span> route returns a video stream using the process_video
+                generator function.</p>
 
-    </p>
+            <h3>User Authentication</h3>
+            <p>
+                Basic user authentication is implemented to restrict access to certain routes. The login system uses
+                Flask's session management to keep track of logged-in users.
+            </p>
+            <ol type="1">
+                <li>Define Admin Credentials</li>
+                <li>Login Route</li>
+                <li>Logout Route</li>
+            </ol>
 
-    <h3>User Authentication</h3>
-    <p>
-        Basic user authentication is implemented to restrict access to certain routes. The login system uses Flask's
-        session management to keep track of logged-in users.
-    <ol type="1">
-        <li>Define Admin Credentials</li>
-        <li>Login Route</li>
-        <li>Logout Route</li>
-    </ol>
+            <h3>Vehicle Record Management</h3>
+            <ol type="1">
+                <li><strong>Add Vehicle Route:</strong></li>
+            </ol>
 
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>@app.route('/add_vehicle', methods=['POST'])
+def add_vehicle():
+    if 'logged_in' not in session:
+        return redirect(url_for('login'))
+    plate_number = request.form['plate_number']
+    owner_name = request.form['owner_name']
+    make = request.form['make']
+    model = request.form['model']
+    color = request.form['color']
+    vehicles_collection.insert_one({
+        "plate_number": plate_number,
+        "owner_name": owner_name,
+        "make": make,
+        "model": model,
+        "color": color
+    })
+    return redirect(url_for('index'))</code></pre>
 
-    </p>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*fgRKpWZ2c5lZW4fSEhYamw.png"
+                alt="Add New Vehicle Record" class="pic">
 
-    <h3>Vehicle Record Management</h3>
-    <p>
-    <ol type="1">
-        <li>Add Vehicle Route:</li>
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-@app.route('/add_vehicle', methods=['POST'])
-    def add_vehicle():
-        if 'logged_in' not in session:
-            return redirect(url_for('login'))
-        plate_number = request.form['plate_number']
-        owner_name = request.form['owner_name']
-        make = request.form['make']
-        model = request.form['model']
-        color = request.form['color']
-        vehicles_collection.insert_one({
-            "plate_number": plate_number,
-            "owner_name": owner_name,
-            "make": make,
-            "model": model,
-            "color": color
-        })
-        return redirect(url_for('index'))
-</code></pre>
+            <ol type="1" start="2">
+                <li><strong>Recognized Plates Route:</strong></li>
+            </ol>
 
-        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*fgRKpWZ2c5lZW4fSEhYamw.png"
-            alt="Add New Vehicle Record" class="banner">
-
-
-
-
-        <li>Recognized Plates Route:</li>
-
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-app.route('/recognized_plates')
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>app.route('/recognized_plates')
 def recognized_plates_page():
-    return render_template('recognized_plates.html', recognized_plates=recognized_plates)
-</code></pre>
+    return render_template('recognized_plates.html', recognized_plates=recognized_plates)</code></pre>
 
-        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*7l_bD-4Ab4zKi_VF07G9fA.png"
-            alt="Recognised Plate" class="banner">
-    </ol>
-    </p>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*7l_bD-4Ab4zKi_VF07G9fA.png"
+                alt="Recognised Plate" class="pic">
 
-    <h3>Displaying Data</h3>
-    <p>
-        The application provides a dashboard to display recognized plates and vehicle records.
+            <h3>Displaying Data</h3>
+            <p>The application provides a dashboard to display recognized plates and vehicle records.</p>
 
-    <ol type="1">
-        <li>Index Route:</li>
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-@app.route('/index')
+            <ol type="1">
+                <li><strong>Index Route:</strong></li>
+            </ol>
+
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>@app.route('/index')
 def index():
     try:
         past_24_hours = datetime.now() - timedelta(hours=24)
@@ -393,14 +342,13 @@ def index():
         return render_template('index.html', data=data)
     except Exception as e:
         app.logger.error(f"An error occurred while fetching data from the database: {e}")
-        return "An error occurred while fetching data from the database. Please check the logsfor more information."
-</code></pre>
+        return "An error occurred while fetching data from the database. Please check the logs for more information."</code></pre>
 
+            <ol type="1" start="2">
+                <li><strong>Records Route:</strong></li>
+            </ol>
 
-        <li>Records Route:</li>
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-@app.route('/records')
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>@app.route('/records')
 def records():
     try:
         database = {}
@@ -410,90 +358,79 @@ def records():
         return render_template('records.html', rec=database)
     except Exception as e:
         app.logger.error(f"An error occurred while fetching records from the database: {e}")
-        return "An error occurred while fetching records from the database. Please check the logs for more information."
-</code></pre>
-    </ol>
+        return "An error occurred while fetching records from the database. Please check the logs for more information."</code></pre>
 
-    The <span class="blockchar">index</span> route displays recognized plates within the past 24 hours, while the <span
-        class="blockchar">records</span> route displays all vehicle records.
+            <p>The <span class="blockchar">index</span> route displays recognized plates within the past 24 hours, while
+                the <span class="blockchar">records</span> route displays all vehicle records.</p>
 
-    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*WB1Jw8rpAjkPXOF1hmtFQw.png"
-        alt="History of previous 24 hrs" class="banner">
-    </p>
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*WB1Jw8rpAjkPXOF1hmtFQw.png"
+                alt="History of previous 24 hrs" class="pic">
 
-    <h3>Running the Application</h3>
-    <p>
-        The Flask application is started, and video processing is run in a separate thread to avoid blocking the main
-        thread.
+            <h3>Running the Application</h3>
+            <p>
+                The Flask application is started, and video processing is run in a separate thread to avoid blocking the
+                main thread.
+            </p>
 
-    <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-def run_video_processing():
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>def run_video_processing():
     with app.app_context():
         app.video_thread = threading.Thread(target=process_video)
         app.video_thread.start()
 
 if __name__ == '__main__':
     run_video_processing()
-    app.run(debug=True)
-</code></pre>
+    app.run(debug=True)</code></pre>
 
-    The <span class="blockchar">run_video_processing</span> function initializes and starts the video processing thread,
-    ensuring the application remains responsive while processing video frames.
+            <p>The <span class="blockchar">run_video_processing</span> function initializes and starts the video
+                processing thread, ensuring the application remains responsive while processing video frames.</p>
 
+            <h3>Conclusion</h3>
+            <p>
+                This number plate detection system integrates real-time video processing with a web-based interface,
+                leveraging OpenCV, Tesseract OCR, and MongoDB. It demonstrates the practical application of computer
+                vision and web technologies for automated license plate recognition and vehicle management.
+            </p>
 
-    </p>
+            <h3>Youtube Video</h3>
+            <div class="yt">
+                <iframe src="https://www.youtube.com/embed/4vHkx57PJ7c" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
 
+            <p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/number_plate_detection">GitHub</a>
+            </p>
 
-    <h3>Conclusion</h3>
-    <p>
-        This number plate detection system integrates real-time video processing with a web-based interface, leveraging
-        OpenCV, Tesseract OCR, and MongoDB. It demonstrates the practical application of computer vision and web
-        technologies for automated license plate recognition and vehicle management.
-    </p>
-
-
-
-
-
-
-
-
-
-
-    <br>
-
-    <h3>Youtube Video</h3>
-<div class="yt">
-    <iframe src="https://www.youtube.com/embed/4vHkx57PJ7c" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-</div> 
-
-<br>
-
-
-    <p><strong>Full Code:</strong> <a href="https://github.com/anuragaryanyt/number_plate_detection">GitHub</a></p>
-
-
-    <footer>
-        <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-            <a href="javascript:history.back()"
-            style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr;
-            Back</a>
-
-            <a href="Automate-Email-Sending.html"
-                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next
-                &rarr;</a>
+            <footer>
+                <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                    <a href="javascript:history.back()">&larr; BACK</a>
+                    <a href="Automate-Email-Sending.html">NEXT &rarr;</a>
+                </div>
+            </footer>
         </div>
-    </footer>
-
-
-
+    </div>
 
     <script src="/cssjs/copy.js"></script>
+    <script src="/cssjs/imgzoom.js"></script>
 
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

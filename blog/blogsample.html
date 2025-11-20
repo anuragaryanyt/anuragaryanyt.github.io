@@ -7,14 +7,14 @@
 
     <meta name="description" content="Portfolio" />
 
-    <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
-
 
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
     <meta name="description" content=" " />
     <meta name="keywords" content=" " />
@@ -25,70 +25,111 @@
     <meta name="robots" content="index, follow" />
 
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
-    <title>Blog Post - </title>
-
-
+    <title>Blog Post - Title Here</title>
 </head>
 
 <body>
+    <div class="scanline"></div>
+    <div class="overlay"></div>
 
-    <div class="nav">
-        <div class="container">
-            <a class="btn" href="/">Home</a>
-            <a class="btn" href="/blog/blog.html">Blog</a>
-            <a class="btn" href="/#projects">Project</a>
-            <a class="btn" href="/#contact">Contact</a>
+    <header>
+        <nav>
+            <div class="logo">[RAJ.ARYAN]</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">// HOME</a></li>
+                <li><a href="/blog.html">// BLOG</a></li>
+                <li><a href="/#projects">// PROJECT</a></li>
+                <li><a href="/#contact">// CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1>Blog Post Title Here</h1>
+            <p class="article-meta"><strong>Author:</strong> <a href="https://instagram.com/rajxaryann"
+                    target="_blank">Raj Aryan</a> | <em>Published: Date Here</em></p>
+        </div>
+
+        <div class="article-content">
+            <img class="banner" src="" alt="Banner Image" />
+
+            <p>
+                Introduction paragraph goes here...
+            </p>
+
+            <h3>Section Title</h3>
+            <p>
+                Content goes here...
+            </p>
+
+            <!-- Example Code Block -->
+            <!-- 
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
+def example_function():
+    print("Hello World")
+            </code></pre> 
+            -->
+
+            <!-- Example Image (Zoomable) -->
+            <!-- <img src="image_url.png" alt="Description" class="pic"> -->
+
+            <!-- Example List -->
+            <!-- 
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul> 
+            -->
+
+            <!-- YouTube Video Embed -->
+            <!-- 
+            <h3>Youtube Video</h3>
+            <div class="yt">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div> 
+            -->
+
+            <p><strong>Full Code:</strong> <a href="">GitHub</a></p>
+
+            <footer>
+                <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                    <a href="javascript:history.back()">&larr; BACK</a>
+                    <a href="#">NEXT &rarr;</a>
+                </div>
+            </footer>
         </div>
     </div>
 
-
-
-
-    <h1>How I Built a <u>Bank Management System</u></h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank"
-            style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: April 30, 2025</em></p>
-
-
-    <img class="banner" src="" alt="" />
-
-    <p>
-
-    </p>
-
-
-    <br>
-
-    <!-- <h3>Youtube Video</h3>
-<div class="yt">
-    <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-</div> 
-
-<br>-->
-
-
-    <p><strong>Full Code:</strong> <a href="">GitHub</a></p>
-
-
-    <footer>
-        <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-            <a href="javascript:history.back()"
-                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr;
-                Back</a>
-
-            <a href="numberplate.html"
-                style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next
-                &rarr;</a>
-        </div>
-    </footer>
-
-
-
-
     <script src="/cssjs/copy.js"></script>
+    <script src="/cssjs/imgzoom.js"></script>
 
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

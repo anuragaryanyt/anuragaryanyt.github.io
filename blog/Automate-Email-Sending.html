@@ -7,439 +7,396 @@
 
     <meta name="description" content="Portfolio" />
 
-    <!-- <link rel="icon" type="image/x-icon" href="/icons/Screenshot 2024-07-24 113355.png"> -->
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
-
 
     <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
     <meta name="description"
         content="Learn how to automate email sending in Google Sheets using Google Apps Script. This tutorial by Raj Aryan (anuragaryanyt) walks you through creating scripts to send emails based on spreadsheet data—ideal for productivity, businesses, and coders." />
     <meta name="keywords"
         content="Google Apps Script, automate email Google Sheets, anuragaryanyt, Raj Aryan, rajaryan, rajxaryann, email automation script, Google Sheets email project, send email from spreadsheet, coding productivity, tech blog India, script for sending email, rajaryan.netlify.app, anuragaryanyt.site, Indian coder, Raj Aryan blog, Google Workspace automation, Gmail script automation" />
 
-
     <meta name="author" content="Raj Aryan" />
     <meta name="language" content="en, hi, bho" />
     <meta name="country" content="IN" />
     <meta name="robots" content="index, follow" />
 
-    <!-- <link rel="stylesheet" href="/blog/test.css" /> -->
     <link rel="stylesheet" href="/cssjs/blogarticle.css" />
     <title>Blog Post - Automate Email Sending in Google Sheets with Apps Script</title>
-
-
 </head>
 
 <body>
+    <div class="scanline"></div>
+    <div class="overlay"></div>
 
-
-    <div class="nav">
-        <div class="container">
-            <a class="btn" href="/">Home</a>
-            <a class="btn" href="/blog/blog.html">Blog</a>
-            <a class="btn" href="/#projects">Project</a>
-            <a class="btn" href="/#contact">Contact</a>
-
-        </div>
-    </div>
-
-
-    <h1>Automate Email Sending in Google Sheets with Apps Script</h1>
-    <p><strong>Author:</strong> <a href="https://instagram.com/rajxaryann" target="_blank"
-                style="color: black; text-decoration: none;">Raj Aryan</a> | <em>Published: May 07, 2025</em></p>
-
-
-        <img class="banner" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*sFuWmSIRsuDTQfO43NkI3Q.png"
-            alt="Automate Email Sending in Google Sheets with Apps Script" />
-
-        <p>
-            In this blog, I'll walk you through how I automated email sending using Google Sheets and Google Apps
-            Script.
-            This system allows you to compose, personalize, and send emails directly from your spreadsheet — without
-            manually opening Gmail. It's ideal for reminders, newsletters, or any scenario where you need to reach
-            multiple
-            recipients efficiently.
-
-        </p>
-
-
-        <h3>Introduction</h3>
-        <p>
-            Automating email sending in Google Sheets with Apps Script allows you to streamline communication by sending
-            personalized emails directly from your spreadsheet. With a few lines of code, you can automate tasks like
-            sending reports, reminders, or notifications based on sheet data. This eliminates manual effort, improving
-            efficiency and accuracy. While this feature mostly works with Google Workspace accounts, some
-            functionalities
-            may be limited for personal Gmail users. In this guide, we'll explore how to set up and use Google Apps
-            Script
-            for automated email workflows.
-        </p>
-
-        <h3>Project Setup</h3>
-        <p>
-            For this tutorial, we will set up a simple Google Sheet with dummy data. Ensure that the email addresses you
-            enter are valid to avoid errors during execution.
-            <br>
-            <strong>Steps to Set Up Google Sheets:</strong>
-        <ol type="1">
-            <li>Open Google Sheets.</li>
-            <li>Create column headers in the first row.</li>
-            <li>Enter sample data below these headers, ensuring each row contains a unique email.</li>
-            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-    SNo  |  Name  |  Email                |  Status  
-    -----------------------------------------------------
-    1    |  Alice |  alice@example.com    |  
-    2    |  Bob   |  bob@example.com      |  
-</code></pre>
-
-
-            <li>Open Google Apps Script:</li>
-            <ul>
-                <li>Navigate to Extensions > Apps Script.</li>
-                <li>This will open the script editor, where we will write code to automate email sending.</li>
+    <header>
+        <nav>
+            <div class="logo">[RAJ.ARYAN]</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/">// HOME</a></li>
+                <li><a href="/blog.html">// BLOG</a></li>
+                <li><a href="/#projects">// PROJECT</a></li>
+                <li><a href="/#contact">// CONTACT</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <div class="article-header">
+            <h1>Automate Email Sending in Google Sheets with Apps Script</h1>
+            <p class="article-meta"><strong>Author:</strong> <a href="https://instagram.com/rajxaryann"
+                    target="_blank">Raj Aryan</a> | <em>Published: May 07, 2025</em></p>
+        </div>
+
+        <div class="article-content">
+            <img class="banner" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*sFuWmSIRsuDTQfO43NkI3Q.png"
+                alt="Automate Email Sending in Google Sheets with Apps Script" />
+
+            <p>
+                In this blog, I'll walk you through how I automated email sending using Google Sheets and Google Apps
+                Script.
+                This system allows you to compose, personalize, and send emails directly from your spreadsheet — without
+                manually opening Gmail. It's ideal for reminders, newsletters, or any scenario where you need to reach
+                multiple
+                recipients efficiently.
+            </p>
+
+            <h3>Introduction</h3>
+            <p>
+                Automating email sending in Google Sheets with Apps Script allows you to streamline communication by
+                sending
+                personalized emails directly from your spreadsheet. With a few lines of code, you can automate tasks
+                like
+                sending reports, reminders, or notifications based on sheet data. This eliminates manual effort,
+                improving
+                efficiency and accuracy. While this feature mostly works with Google Workspace accounts, some
+                functionalities
+                may be limited for personal Gmail users. In this guide, we'll explore how to set up and use Google Apps
+                Script
+                for automated email workflows.
+            </p>
+
+            <h3>Project Setup</h3>
+            <p>
+                For this tutorial, we will set up a simple Google Sheet with dummy data. Ensure that the email addresses
+                you
+                enter are valid to avoid errors during execution.
+                <br><br>
+                <strong>Steps to Set Up Google Sheets:</strong>
+            </p>
+            <ol type="1">
+                <li>Open Google Sheets.</li>
+                <li>Create column headers in the first row.</li>
+                <li>Enter sample data below these headers, ensuring each row contains a unique email.</li>
+            </ol>
+
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>SNo  |  Name  |  Email                |  Status  
+-----------------------------------------------------
+1    |  Alice |  alice@example.com    |  
+2    |  Bob   |  bob@example.com      |  </code></pre>
+
+            <ol type="1" start="4">
+                <li>Open Google Apps Script:</li>
+                <ul>
+                    <li>Navigate to Extensions > Apps Script.</li>
+                    <li>This will open the script editor, where we will write code to automate email sending.</li>
+                </ul>
+            </ol>
+
             <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*wjEaYqM79-vF0VO1zYPfZg.png"
                 alt="Extensions > Apps Script" class="pic">
 
-        </ol>
+            <h3>Apps Script</h3>
+            <p>
+                On the Apps Script page remove any existing code and paste the following script:
+            </p>
 
-        </p>
-
-
-        <h3>Apps Script</h3>
-        <p>
-            On the Apps Script page remove any existing code and paste the following script:
-
-        <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-function onOpen() {
-        const ui = SpreadsheetApp.getUi();
-        ui.createMenu('Custom Actions')
-          .addItem('Send Emails', 'sendEmails')
-          .addToUi();
-      }
-      
-      function sendEmails() {
-        <span class="comment">// Get active spreadsheet and data</span>
-        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-        const data = sheet.getDataRange().getValues();
-        
-        <span class="comment">// Find column indexes</span>
-        <span class="comment">// change these according to your headers</span>
-        const headers = data[0];
-        const SNO_INDEX = headers.indexOf('SNo');
-        const NAME_INDEX = headers.indexOf('Name');
-        const EMAIL_INDEX = headers.indexOf('Email');
-        const STATUS_INDEX = headers.indexOf('Status');
-        
-        if (SNO_INDEX === -1 || NAME_INDEX === -1 || EMAIL_INDEX === -1 || STATUS_INDEX === -1) {
-          throw new Error('Required columns (SNo, Name, Email, Status) are missing!');
-        }
-        
-        <span class="comment">// Loop through each row</span>
-        for (let i = 1; i < data.length; i++) {
-          const row = data[i];
-          const name = row[NAME_INDEX];
-          const email = row[EMAIL_INDEX];
-          const status = row[STATUS_INDEX];
-          
-          <span class="comment">// Skip if email is already sent</span>
-          if (status === 'Email Sent') {
-            continue;
-          }
-          
-          <span class="comment">// Send email</span>
-          try {
-            GmailApp.sendEmail(
-              email, 
-              'Custom Email Subject', 
-              `Hello ${name},\n\nThis is an automated email from Google Sheets.\n\nBest regards,\n Raj!`
-            );
-            
-            <span class="comment">// Update status column</span>
-            sheet.getRange(i + 1, STATUS_INDEX + 1).setValue('Email Sent');
-          } catch (error) {
-            console.error(`Failed to send email to ${email}: ${error.message}`);
-          }
-        }
-        
-        SpreadsheetApp.flush();
-        SpreadsheetApp.getUi().alert('Emails have been sent successfully!');
+            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>function onOpen() {
+  const ui = SpreadsheetApp.getUi();
+  ui.createMenu('Custom Actions')
+    .addItem('Send Emails', 'sendEmails')
+    .addToUi();
 }
-</code></pre>
 
-        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*IOiMACyq1MbzpV-nfPRrzw.png" alt="script img"
-            class="pic">
+function sendEmails() {
+  <span class="comment">// Get active spreadsheet and data</span>
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const data = sheet.getDataRange().getValues();
+  
+  <span class="comment">// Find column indexes</span>
+  <span class="comment">// change these according to your headers</span>
+  const headers = data[0];
+  const SNO_INDEX = headers.indexOf('SNo');
+  const NAME_INDEX = headers.indexOf('Name');
+  const EMAIL_INDEX = headers.indexOf('Email');
+  const STATUS_INDEX = headers.indexOf('Status');
+  
+  if (SNO_INDEX === -1 || NAME_INDEX === -1 || EMAIL_INDEX === -1 || STATUS_INDEX === -1) {
+    throw new Error('Required columns (SNo, Name, Email, Status) are missing!');
+  }
+  
+  <span class="comment">// Loop through each row</span>
+  for (let i = 1; i < data.length; i++) {
+    const row = data[i];
+    const name = row[NAME_INDEX];
+    const email = row[EMAIL_INDEX];
+    const status = row[STATUS_INDEX];
+    
+    <span class="comment">// Skip if email is already sent</span>
+    if (status === 'Email Sent') {
+      continue;
+    }
+    
+    <span class="comment">// Send email</span>
+    try {
+      GmailApp.sendEmail(
+        email, 
+        'Custom Email Subject', 
+        `Hello ${name},\n\nThis is an automated email from Google Sheets.\n\nBest regards,\n Raj!`
+      );
+      
+      <span class="comment">// Update status column</span>
+      sheet.getRange(i + 1, STATUS_INDEX + 1).setValue('Email Sent');
+    } catch (error) {
+      console.error(`Failed to send email to ${email}: ${error.message}`);
+    }
+  }
+  
+  SpreadsheetApp.flush();
+  SpreadsheetApp.getUi().alert('Emails have been sent successfully!');
+}</code></pre>
 
-        The following code will add a Custom Actions button to the current Google Sheet. This button will contain a
-        “Send
-        Emails” option in a dropdown menu, allowing you to trigger the email-sending function.
-        <br>
-        Once an email is sent, the corresponding row in the Status column will be updated to “Email Sent” to prevent
-        duplicate emails when the script runs again with new data. <br>
-        This ensures that only new recipients receive emails, making the process efficient and error-free. Now, let's
-        proceed with adding this functionality using Google Apps Script.
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*IOiMACyq1MbzpV-nfPRrzw.png"
+                alt="script img" class="pic">
 
-        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*-MylF88gEMLjSdDoQ1elEw.png"
-            alt="custom apps script button" class="pic">
+            <p>
+                The following code will add a Custom Actions button to the current Google Sheet. This button will
+                contain a
+                "Send Emails" option in a dropdown menu, allowing you to trigger the email-sending function.
+                <br><br>
+                Once an email is sent, the corresponding row in the Status column will be updated to "Email Sent" to
+                prevent
+                duplicate emails when the script runs again with new data. <br>
+                This ensures that only new recipients receive emails, making the process efficient and error-free. Now,
+                let's
+                proceed with adding this functionality using Google Apps Script.
+            </p>
 
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*-MylF88gEMLjSdDoQ1elEw.png"
+                alt="custom apps script button" class="pic">
 
-        </p>
+            <h3>Usage</h3>
+            <p>
+                <strong>Using the Script</strong><br>
+                Using the email automation script is straightforward. <br>
+                Follow these steps:
+            </p>
+            <ol type="1">
+                <li><span class="blockchar">Save the script</span> in the Apps Script editor.</li>
+                <li><span class="blockchar">Refresh the Google Sheet</span> to load the custom menu.</li>
+                <li>Go to <span class="blockchar">Custom Actions > Send Emails</span> to trigger the script.</li>
+            </ol>
 
+            <p>
+                <strong>First-Time Use Issues</strong><br>
+                The first time you run the script, Google will prompt you to grant permission since it accesses Gmail
+                and Google
+                Sheets.
+            </p>
 
-        <h3>Usage</h3>
-        <p>
-            <strong>Using the Script</strong><br>
-            Using the email automation script is straightforward. <br>
-            Follow these steps:
-        <ol type="1">
-            <li><span class="blockchar">Save the script</span> in the Apps Script editor.</li>
-            <li><span class="blockchar">Refresh the Google Sheet</span> to load the custom menu.</li>
-            <li>Go to <span class="blockchar">Custom Actions > Send Emails</span> to trigger the script.</li>
-        </ol>
+            <ol type="1">
+                <li>A warning will appear stating the script is "unsafe" because it is not verified by Google.</li>
+            </ol>
 
-
-        <strong>First-Time Use Issues</strong><br>
-        The first time you run the script, Google will prompt you to grant permission since it accesses Gmail and Google
-        Sheets.
-        <br>
-
-
-        <ol type="1">
-
-            <li>A warning will appear stating the script is “unsafe” because it is not verified by Google.</li>
             <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*SWIUp5X12Sy4bG6H.png" alt="" class="pic">
 
-            <li>Click “Go to [Your Project Name] (unsafe)” to proceed.</li>
-            <li>Allow the script to access the required Google services (Gmail & Sheets).</li>
+            <ol type="1" start="2">
+                <li>Click "Go to [Your Project Name] (unsafe)" to proceed.</li>
+                <li>Allow the script to access the required Google services (Gmail & Sheets).</li>
+            </ol>
 
             <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*-DfcSY9T2Rfz-E-VxBzwHg.png" alt=""
                 class="pic">
-        </ol>
 
+            <p>
+                Once permissions are granted, the script will function smoothly, sending emails whenever triggered
+                without any
+                further prompts.
+            </p>
 
-        Once permissions are granted, the script will function smoothly, sending emails whenever triggered without any
-        further prompts.
-
-
-        </p>
-
-
-
-        <h3>Unsuccessful Delivery</h3>
-        <p>
-            In case of any unsuccessful delivery, you will automatically receive an error mail in your mailbox
-            explaining
-            the issues.
+            <h3>Unsuccessful Delivery</h3>
+            <p>
+                In case of any unsuccessful delivery, you will automatically receive an error mail in your mailbox
+                explaining
+                the issues.
+            </p>
 
             <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*dbrIhsCO1PAcf_F9-2VkRg.jpeg" alt=""
                 class="pic">
 
+            <h3>Customization Guide: Make the Script Fit Your Needs</h3>
+            <p>
+                Google Apps Script offers great flexibility, allowing you to tailor the script for different use cases.
+                Below
+                are some common customizations to enhance your automated email system.
+            </p>
 
+            <ol type="1">
+                <li><strong>Change Email Subject and Body</strong></li>
+                <p>By default, the script sends a simple email:</p>
 
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>GmailApp.sendEmail(
+  email, 
+  'Custom Email Subject', 
+  `Hello ${name},\n\nThis is an automated email from Google Sheets.\n\nBest regards,\nYour Name`
+);</code></pre>
 
-        </p>
+                <p><strong>Add More Personalization.</strong><br>
+                    If your sheet includes a <span class="blockchar">Company</span> column, you can include it in the
+                    email:
+                </p>
 
-        <h3>Customization Guide: Make the Script Fit Your Needs</h3>
-        <p>
-            Google Apps Script offers great flexibility, allowing you to tailor the script for different use cases.
-            Below
-            are some common customizations to enhance your automated email system.
-
-        <ol type="1">
-            <li>Change Email Subject and Body</li>
-            By default, the script sends a simple email:
-            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-GmailApp.sendEmail(
-    email, 
-    'Custom Email Subject', 
-    `Hello ${name},\n\nThis is an automated email from Google Sheets.\n\nBest regards,\nYour Name`
-    );
-</code></pre>
-
-            <strong>Add More Personalization.</strong><br>
-            If your sheet includes a <span class="bloackchar">Company</span> column, you can include it in the email:
-
-            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-    <code>
-const COMPANY_INDEX = headers.indexOf('Company');
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>const COMPANY_INDEX = headers.indexOf('Company');
 const company = row[COMPANY_INDEX];
-        
+
 GmailApp.sendEmail(
-    email, 
-    `Hello ${name} from ${company}!`, 
-    `Hi ${name},\n\nWe are excited to connect with someone from ${company}.\n\nBest regard\nYour Team`
-);
-        </code></pre>
+  email, 
+  `Hello ${name} from ${company}!`, 
+  `Hi ${name},\n\nWe are excited to connect with someone from ${company}.\n\nBest regards,\nYour Team`
+);</code></pre>
 
-            <strong>Tips:</strong>
+                <p><strong>Tips:</strong></p>
+                <ul type="✅">
+                    <li>Use placeholders like <span class="blockchar">${variable}</span> to dynamically insert data.
+                    </li>
+                    <li>Add URLs or use HTML formatting for rich-text emails.</li>
+                </ul>
 
+                <li><strong>Add New Columns for More Context</strong></li>
+                <p>
+                    Currently, the script uses SNo, Name, Email, and Status. If you want to include Role, Company, or
+                    Phone
+                    Number,
+                    follow these steps:
+                </p>
 
-            <ul type="✅">
-                <li>Use placeholders like <span class="blockchar">${variable}</span> to dynamically insert data.</li>
-                <li>Add URLs or use HTML formatting for rich-text emails.</li>
-            </ul>
+                <ol type="i">
+                    <li>Add new columns in your Google Sheet (e.g., Role, Company).</li>
+                    <li>Retrieve the data in the script:</li>
+                </ol>
 
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>const ROLE_INDEX = headers.indexOf('Role');
+const role = row[ROLE_INDEX];</code></pre>
 
+                <ol type="i" start="3">
+                    <li>Include them in your email:</li>
+                </ol>
 
-            <li>Add New Columns for More Context</li>
-            Currently, the script uses SNo, Name, Email, and Status. If you want to include Role, Company, or Phone
-            Number,
-            follow these steps:
-
-            <ol type="i">
-                <li>Add new columns in your Google Sheet (e.g., Role, Company).</li>
-                <li>Retrieve the data in the script:</li>
-                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button>
-<code>
-const ROLE_INDEX = headers.indexOf('Role');
-const role = row[ROLE_INDEX];   
-</code></pre>
-
-
-                <li>Include them in your email:</li>
-                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
-GmailApp.sendEmail(
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>GmailApp.sendEmail(
   email, 
   `Hello ${name}, our esteemed ${role}`, 
   `Hi ${name},\n\nWe noticed you're a ${role} at ${company}.\nLooking forward to collaborating!\n\nBest regards,\nYour Team`
-);
-            </code></pre>
+);</code></pre>
 
+                <p><strong>Tips:</strong></p>
+                <ul type="✅">
+                    <li>Ensure column names match exactly in the script.</li>
+                    <li>Always check if the column exists using <span class="blockchar">indexOf</span></li>
+                </ul>
 
-            </ol>
+                <li><strong>Filter Rows Based on Conditions</strong></li>
+                <p>Send Emails to Specific Recipients</p>
+                <ul>
+                    <li>Only send emails to people from a specific company.</li>
+                    <li>Skip recipients without a valid email address.</li>
+                </ul>
 
+                <p>Example: Skip Invalid Email Addresses</p>
 
-            <strong>Tips:</strong>
-            <ul type="✅">
-                <li>Ensure column names match exactly in the script.</li>
-                <li>Always check if the column exists using <span class="blockchar">indexOf</span></li>
-            </ul>
-
-
-
-
-
-
-            <li>Filter Rows Based on Conditions</li>
-            Send Emails to Specific Recipients
-            <ul>
-                <li>Only send emails to people from a specific company.</li>
-                <li>Skip recipients without a valid email address.</li>
-            </ul>
-            <br><br>
-            Example: Skip Invalid Email Addresses
-            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
-if (!email || !email.includes('@')) {
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>if (!email || !email.includes('@')) {
   console.warn(`Skipping invalid email for ${name}`);
   continue;
-}
-</code></pre>
+}</code></pre>
 
+                <li><strong>Send Rich-Text Emails (HTML Formatting)</strong></li>
+                <p>You can send emails with HTML formatting using <span class="blockchar">htmlBody</span>.</p>
 
+                <p>Example: HTML Email Body</p>
 
-
-            <li>Send Rich-Text Emails (HTML Formatting)</li>
-            You can send emails with HTML formatting using <span class="blockchar">htmlBody</span>. <br>
-
-            Example: HTML Email Body
-
-            <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>
-const emailBody = `
+                <pre><button class="copybtn" onclick="copyCode(this)">Copy</button><code>const emailBody = `
   &lt;h2&gt;Hello ${name},&lt;/h2&gt;
   &lt;p&gt;We are excited to have you onboard!&lt;/p&gt;
   &lt;p&gt;Best regards,&lt;br&gt;&lt;strong&gt;Your Team&lt;/strong&gt;&lt;/p&gt;
 `;
 
-GmailApp.sendEmail(email, 'Welcome Email', '', { htmlBody: emailBody });
-        </code></pre>
+GmailApp.sendEmail(email, 'Welcome Email', '', { htmlBody: emailBody });</code></pre>
+            </ol>
 
-        </ol>
-        </p>
+            <h3>Final Thoughts on Customization</h3>
+            <ul>
+                <li><strong>Start Simple:</strong> Get the script working first.</li>
+                <li><strong>Add Complexity Gradually:</strong> Add custom columns, and conditions step-by-step.</li>
+                <li><strong>Monitor and Optimize:</strong> Use logs (<span class="blockchar">Logger.log()</span>) to
+                    debug
+                    failures or inefficiencies.</li>
+            </ul>
 
-        <h3>Final Thoughts on Customization</h3>
-        <p>
-        <ul>
-            <li><strong>Start Simple:</strong>e script working first.</li>
-            <li><strong>Add Complexity Gradually:</strong>om columns, and conditions step-by-step.</li>
-            <li><strong>Monitor and Optimize:</strong>Use logs (<span class="blockchar">Logger.log()</span>) to debug
-                failures or inefficiencies.</li>
-        </ul>
+            <p>
+                With these customizations, you can automate newsletters, follow-ups, and custom alerts, making your
+                workflow
+                more efficient. 🚀
+            </p>
 
-        With these customizations, you can automate newsletters, follow-ups, and custom alerts, making your workflow
-        more
-        efficient. 🚀
+            <!-- <h3>Youtube Video</h3>
+            <div class="yt">
+                <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div> -->
 
-        </p>
+            <!-- <p><strong>Full Code:</strong> <a href="">GitHub</a></p> -->
 
+            <footer>
+                <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                    <a href="javascript:history.back()">&larr; BACK</a>
+                    <a href="Resume-screening-placement-prediction.html">NEXT &rarr;</a>
+                </div>
+            </footer>
+        </div>
+    </div>
 
+    <script src="/cssjs/copy.js"></script>
+    <script src="/cssjs/imgzoom.js"></script>
 
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
 
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <br>
-
-        <!-- <h3>Youtube Video</h3>
-<div class="yt">
-    <iframe src="https://www.youtube.com/embed/7bQwA4Ntvqk" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-</div> 
-
-<br>-->
-
-
-        <!-- <p><strong>Full Code:</strong> <a href="">GitHub</a></p> -->
-        
-
-        <footer>
-            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-                <a href="javascript:history.back()"
-            style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">&larr;
-            Back</a>
-
-                <a href="Resume-screening-placement-prediction.html"
-                    style="padding: 10px 20px; background-color: #eee; color: black; text-decoration: none; border-radius: 5px;">Next
-                    &rarr;</a>
-            </div>
-        </footer>
-
-
-
-
-        <script src="/cssjs/copy.js"></script>
-        <script src="/cssjs/imgzoom.js"></script>
-
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

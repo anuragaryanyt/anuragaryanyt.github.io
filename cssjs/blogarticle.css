@@ -1,317 +1,465 @@
-/* Base Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  /* Font Style */
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1000px;
-
+:root {
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --accent-cyan: #00FFFF;
+    --accent-orange: #FFAA00;
+    --accent-green: #00FF00;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(0, 255, 255, 0.2);
+    --font-mono: 'Fira Code', monospace;
+    --font-heading: 'Orbitron', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Headings */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    line-height: 1.8;
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* Radial gradient grid pattern */
+    background-image:
+        radial-gradient(circle, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px, 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+/* Scanline effect */
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 998;
+}
+
+/* Typography */
 h1,
 h2,
-h3 {
-  color: #2c3e50;
-  padding: 10px;
+h3,
+h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-cyan);
 }
 
-h3 {
-  border-left: 4px solid #3498db;
-}
-
-p {
-  text-align: justify;
-}
-
-
-/* Image Banner */
-
-
-.banner {
-  width: 90%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
-}
-
-/* Your existing figcaption CSS */
-figcaption {
-  text-align: center;
-  margin-top: 2px;
-  /* Or even 0px or 2px if you want it very close */
-  font-style: italic;
-  color: #555;
-}
-
-.pic {
-  /* Your existing styles */
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 2px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-
-  /* Add transition for smooth effect */
-  transition: transform 0.3s ease, max-width 0.3s ease, max-height 0.3s ease;
-  cursor: zoom-in;
-  /* Indicate it's clickable */
-}
-
-.pic.zoomed {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  max-width: 95vw;
-  /* Responsive to viewport width */
-  max-height: 90vh;
-  /* Responsive to viewport height */
-  width: auto;
-  height: auto;
-  cursor: zoom-out;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  /* Optional for emphasis */
-}
-
-
-
-
-
-/* YouTube Embed */
-.yt {
-  position: relative;
-  width: 100%;
-  /* Full width */
-  max-width: 900px;
-  /* Max width for larger screens, can be adjusted */
-  height: 0;
-  padding-bottom: 56.25%;
-  /* 16:9 Aspect Ratio */
-  background-color: #000;
-  /* Background color in case of empty space */
-  margin: 20px auto;
-  /* Center horizontally and add space on top/bottom */
-  border-radius: 10px;
-  /* Optional: rounded corners */
-}
-
-.yt iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  /* Optional: rounded corners for the iframe */
-}
-
-/* Optional: Make the iframe behave well on extra-large screens (beyond 1200px) */
-@media (min-width: 1200px) {
-  .yt {
-    max-width: 1000px;
-    /* Increase max width for larger screens */
-  }
-}
-
-
-/* Code Blocks */
-pre {
-  position: relative;
-  background-color: #f3f3f3;
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  overflow-x: auto;
-}
-
-.copybtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 4px 8px;
-  font-size: 12px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.copybtn:hover {
-  background-color: #3784d7;
-}
-
-code {
-  font-family: Consolas, monospace;
-  font-size: 15px;
-}
-
-code .comment {
-  color: #4caf50;
-  /* Green color for comments */
-}
-
-.blockchar {
-  font-family: monospace;
-  background-color: #f5f5f5;
-  padding: 2px 5px;
-}
-
-/* Links */
 a {
-  color: #3498db;
-  text-decoration: none;
+    text-decoration: none;
+    color: var(--accent-cyan);
+    transition: all 0.3s;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-shadow: 0 0 5px var(--accent-cyan);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin-left: auto;
+}
+
+nav a {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 5px var(--accent-cyan);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--accent-cyan);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px var(--accent-cyan);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Article Container */
+.article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+}
+
+/* Article Header */
+.article-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 30px;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-shadow: 2px 2px 0px var(--accent-cyan);
+}
+
+.article-meta {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.article-meta strong {
+    color: var(--accent-orange);
+}
+
+.article-meta a {
+    color: var(--accent-cyan);
+}
+
+.article-meta em {
+    color: var(--accent-green);
+}
+
+/* Banner Image */
+.banner {
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    position: relative;
+    z-index: 1000;
+    background: var(--bg-color);
 }
 
 
-
-a.btn {
-  text-decoration: none;   /* Removes underline */
-  color: inherit;          /* Keeps the same text color as before */
+/* Article Content */
+.article-content p {
+    margin-bottom: 20px;
+    color: #ddd;
+    line-height: 1.8;
 }
 
-a.btn:focus,
-a.btn:active {
-  text-decoration: none;   /* Prevent underline on click */
-  outline: none;           /* Removes focus outline if not needed */
+.article-content h3 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--accent-orange);
+    border-left: 3px solid var(--accent-cyan);
+    padding-left: 15px;
+}
+
+.article-content strong {
+    color: var(--accent-cyan);
+}
+
+/* Lists */
+.article-content ol,
+.article-content ul {
+    margin: 20px 0 20px 40px;
+    color: #ddd;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.article-content ol li {
+    padding-left: 10px;
+}
+
+.article-content ul[type="✅"] li::marker {
+    content: "✅ ";
+}
+
+/* Code Blocks */
+pre {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--glass-border);
+    border-left: 3px solid var(--accent-cyan);
+    padding: 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+    position: relative;
+    border-radius: 4px;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--accent-green);
+    line-height: 1.6;
+    display: block;
+    white-space: pre;
+}
+
+.comment {
+    color: #666;
+    font-style: italic;
+}
+
+.blockchar {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--accent-cyan);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--accent-cyan);
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+/* Copy Button */
+.copybtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-cyan);
+    color: #000;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.copybtn:hover {
+    background: var(--accent-orange);
+    box-shadow: 0 0 10px var(--accent-orange);
+}
+
+/* Images */
+.pic {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    margin: 20px 0;
+    border: 1px solid var(--glass-border);
+    display: block;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    position: relative;
+    z-index: 1000;
+    background: #ffffff;
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+}
+
+.pic:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+.pic.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 95vw;
+    max-height: 95vh;
+    width: auto;
+    height: auto;
+    z-index: 10000;
+    cursor: zoom-out;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
 }
 
 
-ul li,
-ol li {
-  margin-bottom: 4px;
-  text-align: justify;
+/* YouTube Video Container */
+.yt {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 30px 0;
+    border: 1px solid var(--glass-border);
+    z-index: 1000;
+    background: var(--bg-color);
+}
+
+.yt iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+}
+
+/* Footer Navigation */
+footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--glass-border);
+}
+
+footer a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+footer a:hover {
+    background: var(--accent-cyan);
+    color: #000;
+    box-shadow: 0 0 20px var(--accent-cyan);
 }
 
 /* Responsive Design */
-@media screen and (max-width: 600px) {
-  body {
-    padding: 15px;
-    font-size: 16px;
-  }
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+    }
 
-  h1 {
-    font-size: 24px;
-  }
+    .hamburger {
+        display: flex;
+    }
 
-  pre {
-    font-size: 14px;
-  }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(5, 5, 5, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 255, 255, 0.1);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 20px 0;
+        gap: 0;
+    }
 
-  .copybtn {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
+    .nav-menu.active {
+        left: 0;
+    }
 
-  .yt {
-    max-width: 100%;
-    /* Full width on smaller screens */
-  }
+    .nav-menu li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.05);
+    }
 
-  .scroll-container {
-    display: none;
-  }
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
 
-  .nav {
-    /* Make nav take full width and remove side margins */
-    margin-left: -15px;
-    margin-right: -15px;
-    width: calc(100% + 30px);
-    /* Counteract body padding */
-    border-radius: 0;
-    /* Remove radius for an edge-to-edge look */
-  }
+    .article-container {
+        padding-top: 100px;
+    }
 
-  .btn {
-    padding: 0.5em 1em;
-    /* Reduce horizontal padding on buttons */
-    font-size: 0.8rem;
-    /* Slightly smaller font for mobile */
-    flex-grow: 1;
-    /* Allow buttons to grow and fill space */
-    text-align: center;
-    /* Center text inside the button */
-  }
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .article-content h3 {
+        font-size: 1.2rem;
+    }
+
+    code {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer a {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Blink Animation */
+.blink {
+    animation: blink 1s infinite;
 }
 
+@keyframes blink {
 
+    0%,
+    100% {
+        opacity: 1;
+    }
 
-
-
-.scroll-top {
-  display: none;
-  position: fixed;
-  bottom: 1em;
-  right: 2em;
-  background-color: transparent;
-  font-size: 1.8rem;
-  transition: transform 0.2s ease-in-out;
-}
-
-
-
-
-
-
-
-/* From Uiverse.io by gohar_7145 - modified */
-
-.nav {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 60px;
-  border-radius: 5px;
-  margin: 20px auto;
-  /* Center the navigation bar */
-}
-
-
-.container:hover .outline .rect {
-  transition: 999999s;
-  /* Must specify these values here as something *different* just so that the transition works properly */
-  stroke-dashoffset: 1;
-  stroke-dasharray: 0;
-}
-
-.container {
-  position: absolute;
-  inset: 0;
-  background: #eee;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.5em;
-  border-radius: inherit;
-}
-
-.btn {
-  padding: 0.5em 1.5em;
-  color: #000;
-  cursor: pointer;
-  transition: 0.1s;
-}
-
-.btn:hover {
-  background: #3498db;
-  color: #fff;
-  border-radius: 10px;
+    50% {
+        opacity: 0;
+    }
 }
