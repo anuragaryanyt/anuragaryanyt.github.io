@@ -34,6 +34,9 @@
               <tbody>
           `;
 
+          // ensure records are rendered in serial order by `sno` (client-side safeguard)
+          records.sort((a, b) => (a.sno || 0) - (b.sno || 0));
+
           records.forEach(item => {
             tableHTML += `
               <tr>

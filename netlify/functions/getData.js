@@ -18,10 +18,11 @@ exports.handler = async function (event, context) {
     // 🔹 List all collections you want to fetch
     const collections = ["anurag718", "anuragrajaryan718", "workrajaryan"];
 
-    // 🔹 Fetch data from each collection
+    // 🔹 Fetch data from each collection and sort records by `sno` to ensure serial (ordered) results
     const results = {};
     for (const col of collections) {
-      const data = await db.collection(col).find({}).toArray();
+      // sort by sno ascending to preserve serial/order when displayed
+      const data = await db.collection(col).find({}).sort({ sno: 1 }).toArray();
       results[col] = data;
     }
 
