@@ -4,375 +4,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Aryan | anuragaryanyt's Portfolio</title>
+    <title>RAJ ARYAN — Software & AI Engineer</title>
+
+    <!-- Broadsheet-style typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/mDdPJRVX/Raj-weblogo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <meta name="description"
+    <meta name="description" content="Portfolio of Raj Aryan — Software & AI Engineer at TCS. Projects, skills, certifications." />
+    <meta name="keywords" content="Raj Aryan, anuragaryanyt, software engineer, AI, machine learning, KIIT, TCS, developer portfolio" />
+    <meta name="author" content="Raj Aryan" />
+        <meta name="description"
         content="Official website of Raj Aryan, also known as anuragaryanyt - software engineer, developer, and tech enthusiast. View portfolio, projects, and contact info." />
     <meta name="keywords"
         content="anuragaryanyt, Raj Aryan, rajaryan, rajxaryann, anuragtiwary, developer portfolio, software engineer TCS, KIIT CSE, Kalinga Institute of Industrial Technology, Bhagalpur, Bihar, Bakharpur, Pirpainti, frontend developer, Python developer, C++ programmer, full stack developer, resume screener project, machine learning enthusiast, Raj Aryan portfolio, anuragaryanyt.site, rajaryan.netlify.app, cricket lover, tech blogger, Indian coder" />
-
-
-    <meta name="author" content="Raj Aryan" />
-    <meta name="language" content="en, hi, bho" />
-    <meta name="country" content="IN" />
     <meta name="robots" content="index, follow" />
 
-    <link rel="stylesheet" href="/cssjs/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="scanline"></div>
-    <div class="overlay"></div>
 
-    <header>
-        <nav>
-            <div class="logo">[RAJ.ARYAN]</div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="/">// HOME</a></li>
-                <li><a href="#about">// ABOUT</a></li>
-                <li><a href="#projects">// PROJECTS</a></li>
-                <li><a href="#skills">// SKILLS</a></li>
-                <li><a href="blog.html">// BLOG</a></li>
-                <li><a href="#contact">// CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- ═══════════════════════════════════════════
+         MASTHEAD — Newspaper Header
+    ═══════════════════════════════════════════ -->
+    <div class="masthead">
+        <h1 class="masthead-title">
+            Raj Aryan<span class="dot">.dev</span>
+        </h1>
+        <p class="masthead-tagline">A broadsheet for software that doesn't ask for your email</p>
+    </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <p class="terminal-text">> INITIALIZING_BOOT_SEQUENCE...</p>
-                <h1 class="glitch" data-text="AI ENGINEER">RAJ ARYAN</h1>
-                <p class="bio">Building intelligent systems in the void.</p>
-                <div class="cta-group">
-                    <a href="https://rxresu.me/anuragaryanyt/rajresume" target="_blank" class="cyber-btn">>>
-                        VIEW_RESUME</a>
-                    <a href="mailto:rajaryann@zohomail.in" class="cyber-btn secondary">>> CONTACT_ME</a>
-                </div>
-            </div>
-            <div class="hero-status">
-                <div class="status-card">
-                    <div class="card-header">
-                        <span>SYSTEM_STATUS</span>
-                        <span class="blink">● ONLINE</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="stat-row">
-                            <span>LOCATION:</span>
-                            <span class="highlight">CYBERSPACE</span>
-                        </div>
-                        <div class="stat-row">
-                            <span>CURRENT_TASK:</span>
-                            <span class="highlight">BUILDING_FUTURE</span>
-                        </div>
-                        <div class="stat-row">
-                            <span>AVAILABILITY:</span>
-                            <span class="highlight neon-green">OPEN_TO_WORK</span>
-                        </div>
-                        <div class="code-block">
-                            <code>
-                                const dev = {
-                                    name: "Raj Aryan",
-                                    role: "Architect",
-                                    level: 99
-                                };
-                            </code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION — Newspaper Tab Style
+    ═══════════════════════════════════════════ -->
+    <div class="hamburger-bar">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="nav-bar" id="navBar">
+        <a href="#about" class="active">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certs</a>
+        <a href="#education">Education</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="https://rxresu.me/anuragaryanyt/rajresume" target="_blank">Resume ↗</a>
+    </nav>
 
-        <!-- About Section -->
+    <!-- ═══════════════════════════════════════════
+         MAIN PAGE
+    ═══════════════════════════════════════════ -->
+    <div class="page-wrap">
+
+        <!-- Issue identifier row -->
+        <div class="issue-row">
+            <span class="issue-badge">Issue Latest</span>
+            <span class="issue-date" id="issueDate">Loading date...</span>
+            <span class="issue-date">· Edition A</span>
+        </div>
+
+        <!-- ── HERO — two-column broadsheet layout ── -->
         <section id="about" class="section">
-            <h2 class="section-title"><span class="decor">>></span> ABOUT_ME</h2>
-            <div class="glass-card">
-                <p>
-                    <span class="prompt">user@system:~$</span> cat about.txt<br><br>
-                    I am Raj Aryan, a Computer Science & Engineering graduate from KIIT University, now working at TCS.
-                    I specialize in software development, database management, and machine learning, with strong skills
-                    in C++, JAVA, C, and MySQL. I enjoy cricket, which sharpens my teamwork and leadership, and I follow
-                    geopolitics and technology trends to stay informed and adaptable. I'm focused on growing
-                    professionally and contributing to impactful projects in the tech industry.
-                </p>
+            <div class="hero-grid">
+                <!-- Left: Headline + About -->
+                <div>
+                    <h2 class="hero-headline">
+                        Software Engineer &amp;<br>
+                        <span class="headline-highlight">AI Builder</span><br>
+                        in the Making.
+                    </h2>
+
+                    <p class="hero-sub">
+                        Curating <em>intelligent machine learning systems</em>, high-performance
+                        software, and open-source tooling that shapes the future of development.
+                        <br><br>
+                        KIIT University B.Tech CSE graduate now working at TCS — passionate
+                        about building systems that scale.
+                    </p>
+
+                    <div class="btn-group">
+                        <a href="https://rxresu.me/anuragaryanyt/rajresume" target="_blank" class="btn-ink">View Resume ↗</a>
+                        <a href="#contact" class="btn-outline">Get in Touch</a>
+                        <a href="#projects" class="btn-outline">Projects →</a>
+                    </div>
+
+                    <!-- Newsletter / Contact Subscribe box -->
+                    <div class="newsletter-box">
+                        <h3>Connect with me</h3>
+                        <p>Send a message directly — no account needed, no tracking.</p>
+                        <div class="newsletter-row">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" id="quickEmail">
+                            <button class="newsletter-submit" id="quickContactBtn">Contact</button>
+                        </div>
+                        <p class="newsletter-note">✦ Open for work · No spam · Reply guaranteed</p>
+                    </div>
+                </div>
+
+                <!-- Right: PRESS RUN stats sidebar -->
+                <aside>
+                    <div class="press-run">
+                        <div class="press-run-title">Press Run</div>
+
+                        <div class="press-stat">
+                            <span class="press-stat-value" id="statProjects">4</span>
+                            <span class="press-stat-label">Projects in the index</span>
+                        </div>
+
+                        <div class="press-stat">
+                            <span class="press-stat-value" id="statCerts">6</span>
+                            <span class="press-stat-label">Certifications earned</span>
+                        </div>
+
+                        <div class="press-stat">
+                            <span class="press-stat-value">∞</span>
+                            <span class="press-stat-label">Problems to solve</span>
+                        </div>
+
+                        <div class="press-stat">
+                            <span class="press-stat-value">100%</span>
+                            <span class="press-stat-label">Open Source</span>
+                        </div>
+
+                        <div class="press-run-footer" id="pressRunTime">UPDATED — AUTO</div>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- ── PROJECTS ── -->
         <section id="projects" class="section">
-            <h2 class="section-title"><span class="decor">>></span> DEPLOYED_PROJECTS</h2>
-            <div class="grid">
+            <div class="section-head">
+                <span class="section-label">Curated</span>
+                <h2 class="section-title">Deployed Projects</h2>
+            </div>
+
+            <div class="project-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="card-border"></div>
-                    <h3>Number Plate Detection System</h3>
-                    <p class="project-desc">Our Vehicle Number Plate Detection system extracts number plate information
-                        from real-time footage with precision.</p>
-                    <ul class="tech-list">
-                        <li>[ Python ]</li>
-                        <li>[ Flask ]</li>
-                        <li>[ OpenCV ]</li>
-                        <li>[ MoongoDB ]</li>
-                        <li>[ HTML CSS ]</li>
-                    </ul>
-                    <a href="/blog/Number-plate-detection.html" class="link-btn">ACCESS_PROJECT -></a>
+                    <div>
+                        <div class="project-header">
+                            <span class="project-abbr">NP-DETECT</span>
+                            <span class="project-external">↗</span>
+                        </div>
+                        <h3 class="project-title">Number Plate Detection System</h3>
+                        <p class="project-desc">
+                            Real-time computer vision pipeline extracting number plate data from live video with high throughput. Deployed with a web dashboard interface.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">python</span>
+                            <span class="tech-tag">opencv</span>
+                            <span class="tech-tag">flask</span>
+                            <span class="tech-tag">mongodb</span>
+                        </div>
+                        <a href="/blog/Number-plate-detection.html" class="project-link">Details →</a>
+                    </div>
                 </div>
-
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="card-border"></div>
-                    <h3>Resume Screening & Placement Prediction</h3>
-                    <p class="project-desc">This project leverages Machine Learning and Natural Language Processing
-                        (NLP) for efficient resume screening and placement prediction.</p>
-                    <ul class="tech-list">
-                        <li>[ NumPy ]</li>
-                        <li>[ Pandas ]</li>
-                        <li>[ Scikit-learn ]</li>
-                        <li>[ Matplotlib ]</li>
-                        <li>[ Seaborn ]</li>
-                    </ul>
-                    <a href="/blog/Resume-screening-placement-prediction.html" class="link-btn">ACCESS_PROJECT -></a>
+                    <div>
+                        <div class="project-header">
+                            <span class="project-abbr">RESUME-ML</span>
+                            <span class="project-external">↗</span>
+                        </div>
+                        <h3 class="project-title">Resume Screening & Placement Prediction</h3>
+                        <p class="project-desc">
+                            ML + NLP system for intelligent candidate ranking, resume parsing, and predictive placement analytics using Scikit-learn pipelines.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">nlp</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">matplotlib</span>
+                        </div>
+                        <a href="/blog/Resume-screening-placement-prediction.html" class="project-link">Details →</a>
+                    </div>
                 </div>
-
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <div class="card-border"></div>
-                    <h3>Banking Management System</h3>
-                    <p class="project-desc">Utilizing Python our Bank Management System offers a robust solution for
-                        managing banking operations. Seamlessly handle customer accounts, transactions, and employee
-                        management within a secure, efficient database environment.</p>
-                    <ul class="tech-list">
-                        <li>[ Python ]</li>
-                    </ul>
-                    <a href="/blog/Bank-management-system.html" class="link-btn">ACCESS_PROJECT -></a>
+                    <div>
+                        <div class="project-header">
+                            <span class="project-abbr">BANK-SYS</span>
+                            <span class="project-external">↗</span>
+                        </div>
+                        <h3 class="project-title">Banking Management System</h3>
+                        <p class="project-desc">
+                            Full-featured banking infrastructure with customer account management, transactional ledger integrity, and employee admin controls.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">python</span>
+                            <span class="tech-tag">mysql</span>
+                            <span class="tech-tag">database design</span>
+                        </div>
+                        <a href="/blog/Bank-management-system.html" class="project-link">Details →</a>
+                    </div>
                 </div>
 
+                <!-- Project 4 -->
                 <div class="project-card">
-                    <div class="card-border"></div>
-                    <h3>Weather App</h3>
-                    <p class="project-desc">Harnessing the power of OpenWeather API, our intuitive web app provides
-                        instant, customizable weather updates and forecasts, ensuring accurate planning with ease.</p>
-                    <ul class="tech-list">
-                        <li>[ HTML ]</li>
-                        <li>[ CSS ]</li>
-                        <li>[ JavaScript ]</li>
-                    </ul>
-                    <a href="https://github.com/anuragaryanyt/weatherapp" target="_blank"
-                        class="link-btn">ACCESS_PROJECT -></a>
+                    <div>
+                        <div class="project-header">
+                            <span class="project-abbr">WEATHER-APP</span>
+                            <span class="project-external">↗</span>
+                        </div>
+                        <h3 class="project-title">Weather Intelligence App</h3>
+                        <p class="project-desc">
+                            Responsive weather tracking interface using OpenWeather API for real-time meteorological data, forecasts and location-based updates.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">javascript</span>
+                            <span class="tech-tag">rest api</span>
+                            <span class="tech-tag">css3</span>
+                        </div>
+                        <a href="https://github.com/anuragaryanyt/weatherapp" target="_blank" class="project-link">GitHub →</a>
+                    </div>
                 </div>
-
-
-
-
-
-
-
-
-
-                <!-- ADD MORE PROJECT HERE -->
             </div>
         </section>
 
-
-
-        <!-- Skills Section -->
+        <!-- ── SKILLS ── -->
         <section id="skills" class="section">
-            <h2 class="section-title"><span class="decor">>></span> SKILL_MATRIX</h2>
-            <div class="skills-container">
+            <div class="section-head">
+                <span class="section-label">Stack</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+
+            <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>// LANGUAGES</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>Java</span>
-                        <span>C++</span>
-                        <span>C</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
+                    <div class="skill-category-label">// Core Languages</div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill">JavaScript</span>
                     </div>
                 </div>
 
-
                 <div class="skill-category">
-                    <h3>// TOOLS & FRAMEWORKS</h3>
-                    <div class="skill-tags">
-                        <span>MYSQL</span>
-                        <span>MongoDB</span>
-                        <span>Cloud Computing</span>
-                        <span>Netlify</span>
-                        <span>Vercel</span>
-                        <span>OpenCV</span>
-                        <span>Flask</span>
-                        <span>Visual Studio Code</span>
-                        <span>Visual Studio</span>
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>Linux</span>
+                    <div class="skill-category-label">// Tools & Frameworks</div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">MySQL</span>
+                        <span class="skill-pill">MongoDB</span>
+                        <span class="skill-pill">Flask</span>
+                        <span class="skill-pill">OpenCV</span>
+                        <span class="skill-pill">Git</span>
+                        <span class="skill-pill">GitHub</span>
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">VS Code</span>
+                        <span class="skill-pill">Cloud Computing</span>
+                        <span class="skill-pill">Netlify</span>
+                        <span class="skill-pill">Vercel</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certificates Section -->
+        <!-- ── CERTIFICATIONS ── -->
         <section id="certificates" class="section">
-            <h2 class="section-title"><span class="decor">>></span> CERTIFICATIONS</h2>
-            <div class="cert-grid">
-
-                <div class="cert-item">
-                    <span class="cert-id">ID: TF_DEV_01</span>
-                    <h4>Technical Support Fundamentals </h4>
-                    <span class="issuer">Google</span>
-                </div>
-
-                <div class="cert-item">
-                    <span class="cert-id">ID: AWS_SAA_02</span>
-                    <h4>Microsoft Azure SQL</h4>
-                    <span class="issuer">Microsoft</span>
-                </div>
-                <div class="cert-item">
-                    <span class="cert-id">ID: AWS_SAA_02</span>
-                    <h4>AWS Cloud Foundations</h4>
-                    <span class="issuer">Amazon</span>
-                </div>
-                <div class="cert-item hidden-cert">
-                    <span class="cert-id">ID: AWS_SAA_02</span>
-                    <h4>Linux Tools for Developers</h4>
-                    <span class="issuer">Linux Foundation</span>
-                </div>
-                <div class="cert-item hidden-cert">
-                    <span class="cert-id">ID: AWS_SAA_02</span>
-                    <h4>Introduction to Career Skills in Data Analytics</h4>
-                    <span class="issuer">Linkedin</span>
-                </div>
-
-                <div class="cert-item hidden-cert">
-                    <span class="cert-id">ID: AWS_SAA_02</span>
-                    <h4>Introduction to Career Skills in Data Analytics</h4>
-                    <span class="issuer">Linkedin</span>
-                </div>
-
-
+            <div class="section-head">
+                <span class="section-label">Credentials</span>
+                <h2 class="section-title">Certifications</h2>
             </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <button id="toggleCertBtn" class="cyber-btn">>> SHOW_MORE</button>
+
+            <div class="cert-grid">
+                <a href="https://www.coursera.org/account/accomplishments" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-card-top">
+                            <span class="cert-id">GOOG-TECH-01</span>
+                            <span class="cert-external">↗</span>
+                        </div>
+                        <span class="issuer-stamp">Google</span>
+                        <h4 style="margin-top:8px;">Technical Support Fundamentals</h4>
+                    </div>
+                    <div class="cert-card-footer">
+                        <span></span>
+                        <span class="cert-link-btn">View Cert →</span>
+                    </div>
+                </a>
+
+                <a href="https://learn.microsoft.com/en-us/certifications" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-card-top">
+                            <span class="cert-id">MS-AZURE-02</span>
+                            <span class="cert-external">↗</span>
+                        </div>
+                        <span class="issuer-stamp">Microsoft</span>
+                        <h4 style="margin-top:8px;">Microsoft Azure SQL</h4>
+                    </div>
+                    <div class="cert-card-footer">
+                        <span></span>
+                        <span class="cert-link-btn">View Cert →</span>
+                    </div>
+                </a>
+
+                <a href="https://aws.amazon.com/training/digital/" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-card-top">
+                            <span class="cert-id">AWS-FOUND-03</span>
+                            <span class="cert-external">↗</span>
+                        </div>
+                        <span class="issuer-stamp">Amazon AWS</span>
+                        <h4 style="margin-top:8px;">AWS Cloud Foundations</h4>
+                    </div>
+                    <div class="cert-card-footer">
+                        <span></span>
+                        <span class="cert-link-btn">View Cert →</span>
+                    </div>
+                </a>
+
+                <a href="https://training.linuxfoundation.org" target="_blank" class="cert-card hidden-cert">
+                    <div>
+                        <div class="cert-card-top">
+                            <span class="cert-id">LNX-DEV-04</span>
+                            <span class="cert-external">↗</span>
+                        </div>
+                        <span class="issuer-stamp">Linux Foundation</span>
+                        <h4 style="margin-top:8px;">Linux Tools for Developers</h4>
+                    </div>
+                    <div class="cert-card-footer">
+                        <span></span>
+                        <span class="cert-link-btn">View Cert →</span>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/learning" target="_blank" class="cert-card hidden-cert">
+                    <div>
+                        <div class="cert-card-top">
+                            <span class="cert-id">LNKD-DATA-05</span>
+                            <span class="cert-external">↗</span>
+                        </div>
+                        <span class="issuer-stamp">LinkedIn</span>
+                        <h4 style="margin-top:8px;">Career Skills in Data Analytics</h4>
+                    </div>
+                    <div class="cert-card-footer">
+                        <span></span>
+                        <span class="cert-link-btn">View Cert →</span>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/learning" target="_blank" class="cert-card hidden-cert">
+                    <div>
+                        <div class="cert-card-top">
+                            <span class="cert-id">LNKD-AI-06</span>
+                            <span class="cert-external">↗</span>
+                        </div>
+                        <span class="issuer-stamp">LinkedIn</span>
+                        <h4 style="margin-top:8px;">Machine Learning Fundamentals</h4>
+                    </div>
+                    <div class="cert-card-footer">
+                        <span></span>
+                        <span class="cert-link-btn">View Cert →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 24px;">
+                <button id="toggleCertBtn" class="btn-toggle">Show More Certifications ↓</button>
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- ── EDUCATION ── -->
         <section id="education" class="section">
-            <h2 class="section-title"><span class="decor">>></span> EDUCATION</h2>
+            <div class="section-head">
+                <span class="section-label">Timeline</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-year">2008-2019</div>
-                    <div class="timeline-content">
-                        <h3>Secondary School</h3>
-                        <h4>Completed</h4>
-                        <p>DAV Public School Mathurapur, Bhagalpur, BR</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2019-2021</div>
-                    <div class="timeline-content">
-                        <h3>Senior Secondary School</h3>
-                        <h4>PCM Stream</h4>
-                        <p>Vivekananda Vidya Mandir, Ranchi, JH</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2021-2025</div>
-                    <div class="timeline-content">
-                        <h3>College</h3>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year-tag">2021 — 2025</span>
+                        <h3>KIIT University</h3>
                         <h4>B.Tech in Computer Science & Engineering</h4>
-                        <p>KIIT University</p>
+                        <p>Bhubaneswar, Odisha</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year-tag">2019 — 2021</span>
+                        <h3>Vivekananda Vidya Mandir</h3>
+                        <h4>Senior Secondary School — PCM Stream</h4>
+                        <p>Ranchi, Jharkhand</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year-tag">2008 — 2019</span>
+                        <h3>DAV Public School</h3>
+                        <h4>Secondary School Certificate</h4>
+                        <p>Mathurapur, Bhagalpur, Bihar</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ── CONTACT ── -->
         <section id="contact" class="section">
-            <h2 class="section-title"><span class="decor">>></span> ESTABLISH_UPLINK</h2>
+            <div class="section-head">
+                <span class="section-label">Uplink</span>
+                <h2 class="section-title">Establish Contact</h2>
+            </div>
+
             <div class="contact-wrapper">
-                <form action="https://formsubmit.co/work.rajaryan@gmail.com" method="POST" class="cyber-form">
-                    <!-- <div class="form-group">
-                        <label for="name">USER_NAME:</label>
-                        <input type="text" id="name" placeholder="Enter Name" required>
-                    </div> -->
+                <form action="https://formsubmit.co/work.rajaryan@gmail.com" method="POST" class="contact-form">
                     <div class="form-group">
-                        <label for="email">USER_EMAIL:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="name@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">USER_MESSAGE:</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Enter Message" required></textarea>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Write your message here..." required></textarea>
                     </div>
-                    <button type="submit" class="cyber-btn">>> TRANSMIT_DATA</button>
+                    <button type="submit" class="btn-ink" style="width: 100%; text-align: center;">
+                        Transmit Message →
+                    </button>
                 </form>
             </div>
         </section>
-    </main>
 
+    </div><!-- /page-wrap -->
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
     <footer>
-        <p>RAJ ARYAN © 2025 | <span class="blink">ALL RIGHTS RESERVED</span></p>
+        <div class="footer-inner">
+            <span class="footer-copy">RAJ ARYAN © 2025–2026 · All Rights Reserved</span>
+            <div class="footer-links">
+                <a href="https://github.com/anuragaryanyt" target="_blank">GitHub</a>
+                <a href="mailto:rajaryann@zohomail.in">Email</a>
+                <a href="https://rxresu.me/anuragaryanyt/rajresume" target="_blank">Resume</a>
+                <a href="blog.html">Blog</a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        // Simple glitch effect trigger or other interactions can go here
-        console.log("System Initialized...");
+        // ── Auto-count Press Run stats from actual DOM ──
+        const statProjects = document.getElementById('statProjects');
+        const statCerts = document.getElementById('statCerts');
 
-        // Toggle certificate visibility
+        if (statProjects) {
+            // Count all .project-card elements in the projects section
+            statProjects.textContent = document.querySelectorAll('#projects .project-card').length;
+        }
+        if (statCerts) {
+            // Count ALL cert cards (visible + hidden) so adding new ones updates count
+            statCerts.textContent = document.querySelectorAll('#certificates .cert-card').length;
+        }
+
+        // ── Quick email → Contact form auto-fill ──
+        const quickContactBtn = document.getElementById('quickContactBtn');
+        const quickEmail = document.getElementById('quickEmail');
+        const contactEmail = document.getElementById('email');
+        const contactSection = document.getElementById('contact');
+
+        function goToContact() {
+            const val = quickEmail ? quickEmail.value.trim() : '';
+            // Auto-fill the contact form email
+            if (contactEmail && val) {
+                contactEmail.value = val;
+            }
+            // Smooth scroll to contact section
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                // Focus the message box if email was filled, else focus email
+                setTimeout(() => {
+                    if (val && document.getElementById('message')) {
+                        document.getElementById('message').focus();
+                    } else if (contactEmail) {
+                        contactEmail.focus();
+                    }
+                }, 600);
+            }
+        }
+
+        if (quickContactBtn) {
+            quickContactBtn.addEventListener('click', goToContact);
+        }
+
+        // Also trigger on Enter key inside the quick email input
+        if (quickEmail) {
+            quickEmail.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') { e.preventDefault(); goToContact(); }
+            });
+        }
+        const dateEl = document.getElementById('issueDate');
+        const timeEl = document.getElementById('pressRunTime');
+        if (dateEl) {
+            const d = new Date();
+            const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateEl.textContent = d.toLocaleDateString('en-US', opts).toUpperCase();
+        }
+        if (timeEl) {
+            const now = new Date();
+            const hh = String(now.getHours()).padStart(2,'0');
+            const mm = String(now.getMinutes()).padStart(2,'0');
+            timeEl.textContent = `UPDATED ${hh}:${mm} UTC · AUTO`;
+        }
+
+        // ── Hamburger ──
+        const hamburger = document.getElementById('hamburger');
+        const navBar = document.getElementById('navBar');
+        if (hamburger && navBar) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navBar.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-bar a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navBar.classList.remove('active');
+                });
+            });
+        }
+
+        // ── Cert toggle ──
         const toggleBtn = document.getElementById('toggleCertBtn');
         const hiddenCerts = document.querySelectorAll('.hidden-cert');
-
         let isExpanded = false;
-
-        toggleBtn.addEventListener('click', function () {
-            isExpanded = !isExpanded;
-
-            hiddenCerts.forEach(cert => {
-                if (isExpanded) {
-                    cert.style.display = 'flex';
-                } else {
-                    cert.style.display = 'none';
-                }
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+                hiddenCerts.forEach(c => c.style.display = isExpanded ? 'flex' : 'none');
+                toggleBtn.textContent = isExpanded
+                    ? 'Show Fewer Certifications ↑'
+                    : 'Show More Certifications ↓';
             });
-
-            toggleBtn.textContent = isExpanded ? '>> SHOW_LESS' : '>> SHOW_MORE';
-        });
-
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-
-        hamburger.addEventListener('click', function () {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', function () {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
+        }
     </script>
 </body>
-
 </html>
